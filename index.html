@@ -392,6 +392,19 @@
   .welcome-close { font-size: 11px; color: var(--ink3); text-align: center; margin-top: 10px; cursor: pointer; }
 
 
+
+  /* 상세 모달 버튼 */
+  .modal-actions { display: flex; gap: 8px; margin-top: 18px; }
+  .modal-actions button {
+    flex: 1; padding: 12px; border-radius: 10px; font-size: 13px; font-weight: 700;
+    font-family: 'Pretendard', -apple-system, sans-serif; cursor: pointer; transition: all 0.15s;
+  }
+  .btn-map { background: var(--red); color: white; border: none; }
+  .btn-map:hover { background: var(--red2); }
+  .btn-close-modal { background: white; color: var(--ink2); border: 1px solid var(--border); }
+  /* 모달 info row */
+  .modal-info-row { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--ink2); margin-bottom: 8px; }
+  .modal-info-row .icon { color: var(--red); font-size: 15px; flex-shrink: 0; width: 20px; text-align: center; margin-top: 1px; }
 </style>
 </head>
 <body>
@@ -436,7 +449,7 @@
     </div>
     
   </div>
-  <div class="header-tagline">✨ 오키나와 여행자를 위한 맛집 모음 ver.1</div>
+  <div class="header-tagline">✨ 오키나와 여행자를 위한 맛집 모음 ver.7</div>
 </header>
 
 <!-- 검색 -->
@@ -458,7 +471,7 @@
       <button class="filter-tag" onclick="setFilter('버거·타코', this)">🍔 버거·타코</button>
       <button class="filter-tag" onclick="setFilter('카페·디저트', this)">☕ 카페·디저트</button>
       <button class="filter-tag" onclick="setFilter('아이스크림', this)">🍦 아이스크림</button>
-      <button class="filter-tag" onclick="setFilter('기타', this)">🍙 기타</button>
+      <button class="filter-tag" onclick="setFilter('기타', this)">🍴 기타</button>
     </div>
     <button onclick="scrollFilter(120)" style="flex-shrink:0;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);background:white;color:var(--ink2);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">›</button>
   </div>
@@ -469,28 +482,25 @@
 .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 @media (max-width: 360px) { .partner-grid { grid-template-columns: 1fr; } }
 </style>
-<div style="padding: 8px 12px; display: flex; flex-direction: column; gap: 6px; background: var(--paper); border-bottom: 1px solid var(--border);">
-  <div style="font-size:11px; font-weight:700; color:var(--ink3); letter-spacing:0.5px;">🛫 오키나와 여행 준비하기</div>
+<div style="padding:8px 12px;background:var(--paper);border-bottom:1px solid var(--border);">
+  <div style="font-size:11px;font-weight:700;color:var(--ink3);letter-spacing:0.5px;margin-bottom:6px;">🛫 오키나와 여행 준비하기</div>
   <div class="partner-grid">
     <a href="https://skyscanner.pxf.io/rEzPz3" target="_blank" style="text-decoration:none;">
-      <div style="background:white; border:1px solid var(--border); border-radius:10px; padding:8px; display:flex; align-items:center; gap:8px;">
-        <div style="font-size:18px; flex-shrink:0;">✈️</div>
-        <div style="font-size:11px; font-weight:700; color:var(--ink); line-height:1.35;">항공권<br>최저가 검색</div>
-        <div style="margin-left:auto; color:var(--red); font-size:12px; flex-shrink:0;">→</div>
+      <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;">
+        <div style="font-size:20px;line-height:1;">✈️</div>
+        <div style="font-size:10px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3;word-break:keep-all;">항공권<br>최저가 검색</div>
       </div>
     </a>
     <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1918022&hl=ko-kr&city=717899" target="_blank" style="text-decoration:none;">
-      <div style="background:white; border:1px solid var(--border); border-radius:10px; padding:8px; display:flex; align-items:center; gap:8px;">
-        <div style="font-size:18px; flex-shrink:0;">🏨</div>
-        <div style="font-size:11px; font-weight:700; color:var(--ink); line-height:1.35;">오키나와 숙소<br>최저가 검색</div>
-        <div style="margin-left:auto; color:var(--red); font-size:12px; flex-shrink:0;">→</div>
+      <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;">
+        <div style="font-size:20px;line-height:1;">🏨</div>
+        <div style="font-size:10px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3;word-break:keep-all;">숙소<br>최저가 검색</div>
       </div>
     </a>
     <a href="https://affiliate.klook.com/redirect?aid=40048&aff_adid=1264825&k_site=https%3A%2F%2Fwww.klook.com%2Fko%2Fsearch%2Fresult%2F%3Fquery%3D%25EC%2598%25A4%25ED%2582%25A4%25EB%2582%2598%25EC%2599%2580%26sort%3Dmost_relevant%26tab_key%3D2%26start%3D1" target="_blank" style="text-decoration:none;">
-      <div style="background:white; border:1px solid var(--border); border-radius:10px; padding:8px; display:flex; align-items:center; gap:8px;">
-        <div style="font-size:18px; flex-shrink:0;">🎡</div>
-        <div style="font-size:11px; font-weight:700; color:var(--ink); line-height:1.35;">투어·입장권<br>최저가 예약</div>
-        <div style="margin-left:auto; color:var(--red); font-size:12px; flex-shrink:0;">→</div>
+      <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;">
+        <div style="font-size:20px;line-height:1;">🎡</div>
+        <div style="font-size:10px;font-weight:700;color:var(--ink);text-align:center;line-height:1.3;word-break:keep-all;">투어·입장권<br>최저가 예약</div>
       </div>
     </a>
   </div>
@@ -507,13 +517,7 @@
   <div class="stat-item"><div class="stat-num" id="statShops">54</div><div class="stat-label">등록 맛집</div></div>
   <div class="stat-item">
     <a href="https://www.instagram.com/daero._.nana/" target="_blank" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:3px;">
-      <div style="width:30px;height:30px;border-radius:8px;background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fdf497 18%,#fd5949 43%,#d6249f 68%,#285AEB 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,0.12);" aria-label="인스타그램">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2"/>
-          <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"/>
-          <circle cx="17.4" cy="6.6" r="1.2" fill="white"/>
-        </svg>
-      </div>
+      <div style="width:30px;height:30px;"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig)"/><rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16.5" cy="7.5" r="0.8" fill="white"/></svg></div>
       <div class="stat-label" style="color:#C8281A;font-weight:700;">대로와 나나 인스타그램</div>
     </a>
   </div>
@@ -542,7 +546,7 @@
 </div>
 
 <footer>
-  <div class="footer-logo">🏝️ 대로와 나나의 오키나와 맛집 지도 ver.1</div>
+  <div class="footer-logo">🏝️ 대로와 나나의 오키나와 맛집 지도 ver.7</div>
   <div class="footer-text">여러분들의 오키나와 맛집을 제보해 주세요. 함께 만들어 가요!<br>Copyright 2026 daero._.nana. All Rights Reserved.</div>
 </footer>
 
@@ -555,20 +559,22 @@
       <span class="modal-emoji" id="mEmoji"></span>
       <div id="mPickedBadge" class="picked-badge" style="display:none;">⭐ 대로나나 추천!</div>
       <div class="modal-name" id="mName"></div>
+      <div id="mNameSub" style="font-size:12px;color:var(--ink3);margin-top:-10px;margin-bottom:4px;font-weight:500;line-height:1.3;"></div>
       <div class="modal-area" id="mArea"></div>
       <div class="modal-rating-row">
         <span class="stars" id="mStars"></span>
         <span style="font-weight:700;color:var(--gold);font-size:15px;" id="mRating"></span>
-        <span style="color:var(--ink3);font-size:12px;" id="mReviews"></span>
+        <span style="font-size:12px;color:var(--ink3);" id="mReviews"></span>
       </div>
       <div class="modal-tags" id="mTags"></div>
       <div class="modal-desc" id="mDesc"></div>
-      <div class="modal-info">
-        <div class="info-row" id="mAddr"></div>
-        <div class="info-row" id="mHours"></div>
-        <div class="info-row" id="mPrice"></div>
+      <div class="modal-info-row"><span class="icon">📍</span><span id="mAddr"></span></div>
+      <div class="modal-info-row"><span class="icon">🕐</span><span id="mHours"></span></div>
+      <div class="modal-info-row" id="mPriceRow"><span class="icon">💴</span><span id="mPrice"></span></div>
+      <div class="modal-actions">
+        <button class="btn-map" id="mMapBtn">🗺️ 구글 맵으로 길찾기</button>
+        <button class="btn-close-modal" onclick="document.getElementById('shopModal').classList.remove('open'); document.body.style.overflow=''; document.documentElement.style.overflow='';">닫기</button>
       </div>
-      <a id="mMapLink" href="#" target="_blank" class="map-btn">🗺️ 구글 맵으로 길찾기</a>
     </div>
   </div>
 </div>
@@ -585,84 +591,70 @@
         오키나와 맛집을 알고 계신가요?<br>인스타그램이나 블로그로 제보해 주세요!
       </div>
       <div style="display:flex;gap:10px;flex-direction:column;">
-        <a href="https://www.instagram.com/daero._.nana/" target="_blank" class="map-btn">📸 인스타그램 DM으로 제보</a>
-        <a href="https://m.blog.naver.com/dleogh888" target="_blank" class="map-btn" style="background:var(--paper);color:var(--ink);border:1.5px solid var(--border);">N 블로그 댓글로 제보</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdggckI-u8iKiwaKrbTkk-S5Lj2bWhKCCtjih9iXFj7wW9VKA/viewform?usp=publish-editor" target="_blank" class="map-btn">📝 맛집 제보 폼 바로가기</a>
+        <a href="https://www.instagram.com/daero._.nana/" target="_blank" class="map-btn" style="background:var(--paper);color:var(--ink);border:1.5px solid var(--border);">📸 인스타그램 DM으로 제보</a>
       </div>
     </div>
   </div>
 </div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA0liZL2K6lBXOlpv5o1eujJREDc5cOA0&callback=initMap&language=ko&region=KR"></script>
 <script>
 const shops = [
-  // 🍔 버거·타코
-  { id:1, name:'제프 썬라이즈 나하점', area:'나하 쓰보야', addr:'1 Chome-1-5 Tsuboya, Naha, Okinawa 902-0065', hours:'영업시간 확인 필요', emoji:'🍔', category:'버거·타코', tags:['버거','오키나와한정','고야버거'], rating:3.8, reviews:1200, desc:'오키나와에서만 먹을 수 있는 버거집. 고야(여주)의 쓴맛을 활용한 독특한 버거가 유명. 갓 만든 버거는 매우 뜨거우니 주의할 것!', lat:26.2163, lng:127.7089, mapUrl:'https://www.google.com/maps/search/?api=1&query=ジェフサンライズなは店' },
-  { id:2, name:'킹타코스 기유나점', area:'기노완', addr:'1 Chome-2-5 Kiyuna, Ginowan, Okinawa 901-2222', hours:'10:00~', emoji:'🌮', category:'버거·타코', tags:['타코라이스','원조','로컬'], rating:3.9, reviews:980, desc:'타코라이스의 원조 가게. 전형적인 로컬 분위기의 타코 전문점. 저렴하고 푸짐한 타코라이스를 맛볼 수 있음.', lat:26.2736, lng:127.7716, mapUrl:'https://www.google.com/maps/search/?api=1&query=キングタコス喜友名店' },
-  { id:3, name:'찰리스 타코', area:'차탄', addr:'4 Chome-11-5 Chatan, Okinawa 904-0115', hours:'11:00~', emoji:'🌮', category:'버거·타코', tags:['오키나와최초','타코','아메빌'], rating:3.7, reviews:750, desc:'오키나와 최초의 타코 가게. 아메리칸 빌리지 인근에 위치. 현지인과 관광객 모두에게 인기.', lat:26.3093, lng:127.7583, mapUrl:'https://www.google.com/maps/search/?api=1&query=チャーリーズ多幸寿北谷' },
-  { id:4, name:'A&W 마키미나토점', area:'우라소에', addr:'4 Chome-9-1 Makiminato, Urasoe, Okinawa 901-2131', hours:'24시간', emoji:'🍔', category:'버거·타코', tags:['AW','루트비어','24시간'], rating:3.9, reviews:2100, desc:'A&W 2호점. 간판이 예뻐 사진 명소로 유명. 무알콜 탄산음료 루트비어가 대표 메뉴. 일본 유명 가수 뮤직비디오 촬영지이기도 함.', lat:26.2532, lng:127.7207, mapUrl:'https://www.google.com/maps/search/?api=1&query=AW牧港店' },
-  { id:5, name:'A&W 나하공항점', area:'나하공항', addr:'Naha Airport Domestic Terminal 3F, Naha, Okinawa', hours:'공항 운영 시간', emoji:'🍔', category:'버거·타코', tags:['공항','루트비어','AW'], rating:3.8, reviews:1540, desc:'비행기 타기 전 마지막으로 오키나와 루트비어를 즐기기 딱 좋은 나하공항 내 A&W.', lat:26.1959, lng:127.6467, mapUrl:'https://www.google.com/maps/search/?api=1&query=AW那覇空港店' },
-
-  // 🍜 오키나와소바·라멘
-  { id:6, name:'삿짱 소바', area:'나고', addr:'1153-2 Miyazato, Nago, Okinawa 905-0011', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['소바','로컬','나고'], rating:4.1, reviews:890, desc:'나고 시내의 로컬 소바 맛집. 깔끔한 육수가 특징인 정통 오키나와소바.', lat:26.6100, lng:127.9800, mapUrl:'https://www.google.com/maps/search/?api=1&query=さっちゃんそば名護' },
-  { id:7, name:'킨치치 소바 온나점', area:'온나', addr:'2013-1 Onna, Okinawa 904-0411', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['소바','온나','세련된'], rating:4.2, reviews:1240, desc:'현대적인 감각의 소바 맛집. 깔끔한 인테리어와 정성스러운 소바로 인기.', lat:26.4820, lng:127.8400, mapUrl:'https://www.google.com/maps/search/?api=1&query=金月そば恩納店' },
-  { id:8, name:'킨치치 소바 요미탄본점', area:'요미탄', addr:'201 Kina, Yomitan, Okinawa 904-0302', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['소바','본점','웨이팅'], rating:4.3, reviews:2180, desc:'줄 서서 먹는 킨치치 소바의 본점. 진하고 깊은 국물이 특징. 웨이팅이 있을 수 있으니 일찍 방문 권장.', lat:26.3961, lng:127.7430, mapUrl:'https://www.google.com/maps/search/?api=1&query=金月そば読谷本店' },
-  { id:9, name:'키시모토 식당', area:'모토부', addr:'5 Nishi, Motobu, Okinawa 905-0214', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['100년전통','소바','노포'], rating:4.4, reviews:3200, desc:'100년 넘는 역사를 가진 전통 소바 전문점. 오키나와 소바의 원형을 맛볼 수 있는 역사 깊은 명소.', lat:26.6516, lng:127.9144, mapUrl:'https://www.google.com/maps/search/?api=1&query=きしもと食堂本部' },
-  { id:10, name:'하나무라 소바', area:'나고', addr:'2108-1 Kise, Nago, Okinawa 905-0026', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['소바','나고해안','로컬'], rating:4.1, reviews:760, desc:'나고 해안가 근처에 위치한 소바 맛집. 로컬 단골이 많은 정통 소바집.', lat:26.5920, lng:127.9650, mapUrl:'https://www.google.com/maps/search/?api=1&query=花村そば名護' },
-  { id:11, name:'나카무라 소바', area:'온나', addr:'1669-1 Serakaki, Onna, Okinawa 904-0404', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['파래소바','바다뷰','온나'], rating:4.2, reviews:1050, desc:'바다를 바라보며 먹는 파래 소바 맛집. 이색적인 초록빛 소바와 오션뷰가 매력적.', lat:26.5260, lng:127.8650, mapUrl:'https://www.google.com/maps/search/?api=1&query=なかむらそば恩納' },
-  { id:12, name:'오키나와소바 미네', area:'난조', addr:'1602-1 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['소바','세련된','남부'], rating:4.0, reviews:680, desc:'남부 지역의 세련된 소바 전문점. 깔끔한 분위기에서 정통 오키나와 소바를 즐길 수 있음.', lat:26.1240, lng:127.7500, mapUrl:'https://www.google.com/maps/search/?api=1&query=沖縄そば峰南城' },
-  { id:13, name:'이두메 나키진 다이닝', area:'나키진', addr:'298-1 Tamashiro, Nakijin, Okinawa 905-0412', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['크림소바','이색적','나키진'], rating:3.9, reviews:540, desc:'크림 오키나와 소바가 이색적인 나키진의 다이닝. 대체로 평이 좋음.', lat:26.6800, lng:127.9570, mapUrl:'https://www.google.com/maps/search/?api=1&query=今帰仁ダイニングE-DUME' },
-  { id:14, name:'라멘단보 나하 마키시점', area:'나하 마키시', addr:'2 Chome-16-10 Makishi, Naha, Okinawa 900-0013', hours:'11:00~24:00', emoji:'🍜', category:'오키나와소바', tags:['돈코츠라멘','국제거리','웨이팅'], rating:4.3, reviews:5600, desc:'국제거리에서 가장 줄이 긴 돈코츠 라멘 전문점. 진하고 깊은 육수가 특징. 야식에도 좋음.', lat:26.2171, lng:127.6890, mapUrl:'https://www.google.com/maps/search/?api=1&query=暖暮那覇牧志店' },
-  { id:15, name:'단보 라멘 이토만점', area:'이토만', addr:'1 Chome-35-1 Kaneshiro, Itoman, Okinawa 901-0305', hours:'영업시간 확인 필요', emoji:'🍜', category:'오키나와소바', tags:['돈코츠라멘','남부','이토만'], rating:4.1, reviews:2800, desc:'남부 이토만에 위치한 단보 라멘 지점. 진한 돈코츠 베이스의 라멘.', lat:26.1244, lng:127.6646, mapUrl:'https://www.google.com/maps/search/?api=1&query=暖暮糸満店' },
-
-  // 🥩 스테이크·돈카츠
-  { id:16, name:'얏파리 스테이크 쿠모지점', area:'나하 쿠모지', addr:'3 Chome-5-13 Kumoji, Naha, Okinawa 900-0015', hours:'11:00~23:00', emoji:'🥩', category:'스테이크', tags:['스테이크','가성비','무한리필'], rating:4.1, reviews:3400, desc:'가성비 최고의 스테이크 체인. 밥·수프·샐러드 무한 리필 제공. 오키나와 스테이크 문화의 대표 주자.', lat:26.2160, lng:127.6831, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ久茂地店' },
-  { id:17, name:'얏파리 스테이크 공설시장 인근점', area:'나하 마츠오', addr:'2 Chome-10-1 Matsuo, Naha, Okinawa 900-0014', hours:'11:00~23:00', emoji:'🥩', category:'스테이크', tags:['스테이크','공설시장','가성비'], rating:4.0, reviews:2800, desc:'나하 공설시장 인근에 위치. 관광 중 들르기 좋은 접근성. 무한 리필 포함.', lat:26.2174, lng:127.6858, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ公設市場近隣店' },
-  { id:18, name:'얏파리 스테이크 4th 국제거리점', area:'나하 마키시', addr:'3 Chome-12-4 Makishi, Naha, Okinawa 900-0013', hours:'11:00~23:00', emoji:'🥩', category:'스테이크', tags:['스테이크','국제거리','접근성'], rating:3.9, reviews:2200, desc:'국제거리 한복판에 위치. 쇼핑하다 부담 없이 들어갈 수 있는 가성비 스테이크.', lat:26.2180, lng:127.6890, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ4th国際通り店' },
-  { id:19, name:'얏파리 스테이크 5호점', area:'나하 마키시', addr:'3 Chome-12-4 Makishi, Naha, Okinawa 900-0013', hours:'11:00~23:00', emoji:'🥩', category:'스테이크', tags:['스테이크','국제거리','가성비'], rating:3.8, reviews:1900, desc:'국제거리 내 또 다른 야파리 스테이크 지점. 가성비 좋은 스테이크를 즐길 수 있음.', lat:26.2182, lng:127.6892, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ5th国際通り' },
-  { id:20, name:'잭스 스테이크 하우스', area:'나하', addr:'1 Chome-7-3 Nishi, Naha, Okinawa 900-0036', hours:'영업시간 확인 필요', emoji:'🥩', category:'스테이크', tags:['노포','미국스타일','클래식'], rating:4.0, reviews:2900, desc:'오키나와 스테이크 노포. 클래식한 미국 스타일의 스테이크. 오랜 역사를 가진 현지 명소.', lat:26.2192, lng:127.6770, mapUrl:'https://www.google.com/maps/search/?api=1&query=ジャッキーステーキハウス那覇' },
-  { id:21, name:'스테이크 하우스 88 국제거리본점', area:'나하 마키시', addr:'3 Chome-1-6 Makishi, Naha, Okinawa 900-0013', hours:'영업시간 확인 필요', emoji:'🥩', category:'스테이크', tags:['스테이크체인','국제거리','유명'], rating:4.1, reviews:4100, desc:'오키나와에서 가장 유명한 스테이크 체인 중 하나. 국제거리 본점으로 접근성 최고.', lat:26.2176, lng:127.6876, mapUrl:'https://www.google.com/maps/search/?api=1&query=ステーキハウス88国際通り本店' },
-  { id:22, name:'스테이크 하우스 88 차탄점', area:'차탄', addr:'2 Chome-1-10 Mihama, Chatan, Okinawa 904-0115', hours:'영업시간 확인 필요', emoji:'🥩', category:'스테이크', tags:['스테이크','아메빌','차탄'], rating:4.0, reviews:2300, desc:'차탄 아메리칸 빌리지의 스테이크 명소. 야경과 함께 즐기는 스테이크가 매력.', lat:26.3102, lng:127.7558, mapUrl:'https://www.google.com/maps/search/?api=1&query=ステーキハウス88北谷店' },
-  { id:23, name:'돈카츠타로 차탄점', area:'차탄', addr:'2 Chome-1-11 Mihama, Chatan, Okinawa 904-0115', hours:'영업시간 확인 필요', emoji:'🥩', category:'스테이크', tags:['돈카츠','아메빌','차탄'], rating:4.0, reviews:1150, desc:'아메리칸 빌리지 근처 돈카츠 맛집. 두툼하고 바삭한 돈카츠로 인기.', lat:26.3098, lng:127.7561, mapUrl:'https://www.google.com/maps/search/?api=1&query=とんかつ太郎北谷店' },
-  { id:24, name:'톤카츠 야마시로', area:'나고', addr:'2273-1 Namechi, Nago, Okinawa 905-1155', hours:'영업시간 확인 필요', emoji:'🥩', category:'스테이크', tags:['돈카츠','나고','두툼한'], rating:4.2, reviews:890, desc:'두툼하고 바삭한 돈카츠 전문점. 나고 여행 중 들러볼 만한 맛집.', lat:26.5913, lng:127.9590, mapUrl:'https://www.google.com/maps/search/?api=1&query=とんかつ山しろ名護' },
-
-  // 🍖 야키니쿠
-  { id:25, name:'우시노 이부쿠로', area:'나고', addr:'1099-1 Umusa, Nago, Okinawa 905-0006', hours:'영업시간 확인 필요', emoji:'🍖', category:'야키니쿠', tags:['야키니쿠','고기질좋음','나고'], rating:4.6, reviews:1450, desc:'평점이 매우 높은 나고 야키니쿠 맛집. 고기 질이 훌륭하다는 평이 많음. 예약 필수.', lat:26.5860, lng:127.9550, mapUrl:'https://www.google.com/maps/search/?api=1&query=牛のいぶくろ名護' },
-  { id:26, name:'야키니쿠 BBQ 우무이', area:'나키진', addr:'63-1 Imadomari, Nakijin, Okinawa 905-0428', hours:'영업시간 확인 필요', emoji:'🍖', category:'야키니쿠', tags:['야키니쿠','BBQ','나키진성'], rating:4.0, reviews:680, desc:'나키진 성터 인근의 야키니쿠 전문점. 북부 여행 중 들르기 좋은 위치.', lat:26.7060, lng:127.9280, mapUrl:'https://www.google.com/maps/search/?api=1&query=焼肉BBQうむい今帰仁' },
-  { id:27, name:'시마부타야 온나본점', area:'온나', addr:'2988 Nakama, Onna, Okinawa 904-0401', hours:'영업시간 확인 필요', emoji:'🍖', category:'야키니쿠', tags:['흑돼지','샤브샤브','세이로무시'], rating:4.3, reviews:2100, desc:'흑돼지 샤브샤브와 세이로무시(찜)가 유명한 온나 맛집. 오키나와산 흑돼지를 즐길 수 있음.', lat:26.4920, lng:127.8500, mapUrl:'https://www.google.com/maps/search/?api=1&query=島豚屋恩納本店' },
-  { id:28, name:'시마 우시 이자카야', area:'나하', addr:'1 Chome-3-1 Kumoji, Naha, Okinawa 900-0015', hours:'영업시간 확인 필요', emoji:'🍖', category:'야키니쿠', tags:['이자카야','가성비','고기'], rating:4.0, reviews:1230, desc:'나하 시내 가성비 좋은 고기 요리 이자카야. 저렴한 가격에 퀄리티 있는 고기를 즐길 수 있음.', lat:26.2168, lng:127.6810, mapUrl:'https://www.google.com/maps/search/?api=1&query=島牛居酒屋那覇' },
-
-  // 🦐 해산물
-  { id:29, name:'크레이지 갈릭 쉬림프 8', area:'코우리섬', addr:'161-2 Kouri, Nakijin, Okinawa 905-0406', hours:'영업시간 확인 필요', emoji:'🦐', category:'해산물', tags:['쉬림프박스','코우리섬','필수'], rating:4.3, reviews:3800, desc:'코우리섬 명물 쉬림프 박스. 1,600엔으로 비싼 편이지만 맛은 보장. 섬 드라이브 중 필수 방문.', lat:26.7226, lng:128.0112, mapUrl:'https://www.google.com/maps/search/?api=1&query=CrazyGarlicShrimp8古宇利島' },
-  { id:30, name:'해선 요리 기라라', area:'모토부', addr:'1153-2 Yozumi, Motobu, Okinawa 905-0219', hours:'영업시간 확인 필요', emoji:'🦐', category:'해산물', tags:['해산물','정식','북부'], rating:4.1, reviews:780, desc:'북부 지역의 신선한 해산물 정식 전문점. 합리적 가격에 신선한 해산물을 즐길 수 있음.', lat:26.6570, lng:127.9790, mapUrl:'https://www.google.com/maps/search/?api=1&query=海鮮料理喜らら本部' },
-  { id:31, name:'하마노야', area:'온나', addr:'2097 Nakama, Onna, Okinawa 904-0401', hours:'영업시간 확인 필요', emoji:'🦐', category:'해산물', tags:['생선버터구이','해산물','온나'], rating:4.4, reviews:1680, desc:'생선 버터구이가 매우 유명한 해산물 식당. 현지인 단골이 많은 진짜 맛집.', lat:26.4930, lng:127.8520, mapUrl:'https://www.google.com/maps/search/?api=1&query=浜の家恩納' },
-  { id:32, name:'타마시로 덴푸라', area:'난조', addr:'40 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'영업시간 확인 필요', emoji:'🦐', category:'해산물', tags:['튀김','오우섬입구','인기'], rating:4.2, reviews:2400, desc:'오우섬 입구의 인기 튀김집. 신선한 재료로 만든 튀김을 저렴하게 즐길 수 있음.', lat:26.1240, lng:127.7528, mapUrl:'https://www.google.com/maps/search/?api=1&query=玉城天ぷら店南城' },
-  { id:33, name:'쿠니가미 미나토 쇼쿠도', area:'쿠니가미', addr:'515-4 Hama, Kunigami, Okinawa 905-1412', hours:'영업시간 확인 필요', emoji:'🦐', category:'해산물', tags:['오션뷰','해산물','웨이팅'], rating:4.4, reviews:3100, desc:'오션뷰가 훌륭하고 해산물이 매우 신선함. 웨이팅은 있으나 뷰가 관광지급. 북부 드라이브 코스 필수.', lat:26.8574, lng:128.1766, mapUrl:'https://www.google.com/maps/search/?api=1&query=国頭港食堂' },
-
-  // 🏮 이자카야
-  { id:34, name:'백년고가 우후야', area:'나고', addr:'90 Nakasone, Nago, Okinawa 905-0004', hours:'영업시간 확인 필요', emoji:'🏮', category:'이자카야', tags:['아구흑돼지','폭포뷰','웨이팅'], rating:4.5, reviews:5200, desc:'아구(흑돼지) 요리 전문점으로 폭포 뷰가 유명. 웨이팅이 길지만 그 가치가 있음. 오키나와 대표 맛집.', lat:26.5871, lng:127.9786, mapUrl:'https://www.google.com/maps/search/?api=1&query=百年古家大家名護' },
-  { id:35, name:'류큐 사부로 본점', area:'나하', addr:'1 Chome-2-12 Kumoji, Naha, Okinawa 900-0015', hours:'영업시간 확인 필요', emoji:'🏮', category:'이자카야', tags:['샤브샤브','류큐공연','체험'], rating:4.2, reviews:1870, desc:'샤브샤브와 류큐 전통 공연을 함께 즐기는 특별한 체험. 오키나와 문화와 맛을 동시에.', lat:26.2162, lng:127.6828, mapUrl:'https://www.google.com/maps/search/?api=1&query=琉球三郎那覇' },
-  { id:36, name:'로바타 긴지 신도심점', area:'나하 신도심', addr:'2 Chome-1-1 Ameku, Naha, Okinawa 900-0005', hours:'영업시간 확인 필요', emoji:'🏮', category:'이자카야', tags:['해산물이자카야','화려한인테리어','신도심'], rating:4.1, reviews:2200, desc:'화려한 인테리어로 유명한 해산물 선술집. 신선한 해산물 요리와 다양한 주류를 즐길 수 있음.', lat:26.2243, lng:127.6833, mapUrl:'https://www.google.com/maps/search/?api=1&query=目利きの銀次新都心店那覇' },
-  { id:37, name:'얀바루 식당 나하점', area:'나하', addr:'2 Chome-13-14 Yorimiya, Naha, Okinawa 902-0064', hours:'영업시간 확인 필요', emoji:'🏮', category:'이자카야', tags:['백반','저렴','로컬'], rating:4.0, reviews:1450, desc:'저렴하고 푸짐한 로컬 백반집. 오키나와 가정 요리를 합리적인 가격에 즐길 수 있음.', lat:26.2098, lng:127.6892, mapUrl:'https://www.google.com/maps/search/?api=1&query=やんばる食堂那覇' },
-  { id:38, name:'쿠라 스시 차탄점', area:'차탄', addr:'3 Chome-1-3 Mihama, Chatan, Okinawa 904-0115', hours:'영업시간 확인 필요', emoji:'🍣', category:'이자카야', tags:['회전초밥','가성비','아메빌'], rating:3.9, reviews:2300, desc:'가성비 좋은 회전초밥 체인. 접시 5개당 게임 가능. 아메리칸 빌리지 인근 위치.', lat:26.3105, lng:127.7576, mapUrl:'https://www.google.com/maps/search/?api=1&query=無添くら寿司北谷店' },
-  { id:39, name:'하마 스시 나고점', area:'나고', addr:'1098-1 Umusa, Nago, Okinawa 905-0006', hours:'영업시간 확인 필요', emoji:'🍣', category:'이자카야', tags:['회전초밥','나고','대형'], rating:3.8, reviews:1870, desc:'나고 지역의 대형 회전초밥 체인. 신선한 스시를 저렴하게 즐길 수 있음.', lat:26.5855, lng:127.9552, mapUrl:'https://www.google.com/maps/search/?api=1&query=はま寿司名護店' },
-
-  // 🍦 아이스크림·카페·디저트
-  { id:40, name:'블루실 마키미나토 본점', area:'우라소에', addr:'5 Chome-5-6 Makiminato, Urasoe, Okinawa 901-2131', hours:'영업시간 확인 필요', emoji:'🍦', category:'아이스크림', tags:['아이스크림','본점','오키나와대표'], rating:4.2, reviews:4800, desc:'오키나와 대표 아이스크림 브랜드의 본점. 우베(자색고구마) 등 오키나와 한정 맛이 일품.', lat:26.2540, lng:127.7214, mapUrl:'https://www.google.com/maps/search/?api=1&query=ブルーシール牧港本店' },
-  { id:41, name:'블루실 국제거리점', area:'나하 마키시', addr:'1 Chome-2-32 Makishi, Naha, Okinawa 900-0013', hours:'영업시간 확인 필요', emoji:'🍦', category:'아이스크림', tags:['아이스크림','국제거리','편리'], rating:4.0, reviews:3200, desc:'국제거리 쇼핑 중 들르기 좋은 블루실 아이스크림 매장.', lat:26.2173, lng:127.6869, mapUrl:'https://www.google.com/maps/search/?api=1&query=ブルーシール国際通り店' },
-  { id:42, name:'블루실 아메리칸빌리지점', area:'차탄', addr:'1-15-2 Mihama, Chatan, Okinawa 904-0115', hours:'영업시간 확인 필요', emoji:'🍦', category:'아이스크림', tags:['아이스크림','아메빌','야경'], rating:4.0, reviews:2700, desc:'아메리칸 빌리지 야경과 함께 아이스크림 즐기기 좋은 위치.', lat:26.3109, lng:127.7570, mapUrl:'https://www.google.com/maps/search/?api=1&query=ブルーシール北谷店' },
-  { id:43, name:'오하코르테', area:'나하 이즈미자키', addr:'1 Chome-4-10 Izumizaki, Naha, Okinawa 900-0021', hours:'영업시간 확인 필요', emoji:'🍰', category:'카페·디저트', tags:['과일타르트','유명','공항도있음'], rating:4.4, reviews:3900, desc:'과일 타르트로 유명한 디저트 카페. 공항에도 테이크아웃 매장이 있어 귀국 전에도 구매 가능.', lat:26.2125, lng:127.6837, mapUrl:'https://www.google.com/maps/search/?api=1&query=オハコルテ泉崎' },
-  { id:44, name:'오하코르테 미나토가와점', area:'우라소에', addr:'2 Chome-17-1 Minatogawa, Urasoe, Okinawa 901-2134', hours:'영업시간 확인 필요', emoji:'🍰', category:'카페·디저트', tags:['타르트','이국적마을','디저트'], rating:4.3, reviews:2600, desc:'이국적인 분위기의 미나토가와 마을에 위치한 디저트 카페. 과일 타르트 맛집.', lat:26.2576, lng:127.7130, mapUrl:'https://www.google.com/maps/search/?api=1&query=オハコルテ港川店' },
-  { id:45, name:'스타벅스 오키나와 차탄점', area:'차탄', addr:'2 Chome-15-2 Mihama, Chatan, Okinawa 904-0115', hours:'영업시간 확인 필요', emoji:'☕', category:'카페·디저트', tags:['스타벅스','뷰맛집','아메빌'], rating:4.1, reviews:5600, desc:'아메리칸 빌리지 인근의 뷰가 아름다운 스타벅스. 바다와 석양을 바라보며 커피 한잔.', lat:26.3090, lng:127.7559, mapUrl:'https://www.google.com/maps/search/?api=1&query=スターバックスコーヒー沖縄北谷店' },
-  { id:46, name:'하마베노차야', area:'난조', addr:'2-1 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'영업시간 확인 필요', emoji:'☕', category:'카페·디저트', tags:['바닷가카페','창가자리','뷰맛집'], rating:4.6, reviews:7200, desc:'바닷가 바로 앞 창가 자리가 환상적인 카페. 오키나와 남부 필수 방문지.', lat:26.1181, lng:127.7503, mapUrl:'https://www.google.com/maps/search/?api=1&query=浜辺の茶屋南城' },
-  { id:47, name:'카진호 피자', area:'모토부', addr:'1153-2 Yozumi, Motobu, Okinawa 905-0219', hours:'영업시간 확인 필요', emoji:'🍕', category:'카페·디저트', tags:['바다뷰피자','산정상','아세로라'], rating:4.5, reviews:4300, desc:'산 정상 근처 바다 뷰 피자집. 아세로라 주스도 추천. 오키나와 북부 드라이브 코스 명소.', lat:26.6567, lng:127.9795, mapUrl:'https://www.google.com/maps/search/?api=1&query=花人逢本部' },
-  { id:48, name:'카페 도카도카', area:'온나', addr:'1048-1 Maeda, Onna, Okinawa 904-0417', hours:'영업시간 확인 필요', emoji:'☕', category:'카페·디저트', tags:['오션뷰피자','도자기공방','온나'], rating:4.2, reviews:1890, desc:'오션뷰 피자 카페. 도자기 공방을 겸하는 복합 문화 공간. 아름다운 바다를 바라보며 식사.', lat:26.4618, lng:127.8298, mapUrl:'https://www.google.com/maps/search/?api=1&query=土花土花恩納' },
-
-  // 🍙 기타·백반
-  { id:49, name:'포크타마고 오니기리 나하공항점', area:'나하공항', addr:'Naha Airport Domestic Terminal 1F, Naha, Okinawa', hours:'공항 운영 시간', emoji:'🍙', category:'기타', tags:['스팸주먹밥','공항','테이크아웃'], rating:4.3, reviews:5800, desc:'도착하자마자 먹어야 할 스팸 계란 주먹밥. 나하공항 도착 로비 1층에 위치. 오키나와 여행의 시작!', lat:26.1959, lng:127.6467, mapUrl:'https://www.google.com/maps/search/?api=1&query=ポーたま那覇空港国内線' },
-  { id:50, name:'포크타마고 오니기리 국제거리점', area:'나하 마츠오', addr:'2 Chome-8-35 Matsuo, Naha, Okinawa 900-0014', hours:'07:00~22:00', emoji:'🍙', category:'기타', tags:['스팸주먹밥','국제거리','관광객인기'], rating:4.2, reviews:4200, desc:'국제거리 관광객들이 가장 많이 찾는 포크타마고 지점. 항상 긴 줄이 늘어섬.', lat:26.2172, lng:127.6853, mapUrl:'https://www.google.com/maps/search/?api=1&query=ポーたま国際通り店' },
-  { id:51, name:'아메이로 식당', area:'나하', addr:'1 Chome-3-7 Higashimachi, Naha, Okinawa 900-0034', hours:'영업시간 확인 필요', emoji:'🍱', category:'기타', tags:['집밥','정식','로컬'], rating:4.3, reviews:1150, desc:'집밥 같은 깔끔한 일본 정식을 제공. 현지인들이 즐겨 찾는 편안한 식당.', lat:26.2132, lng:127.6805, mapUrl:'https://www.google.com/maps/search/?api=1&query=雨色那覇' },
-  { id:52, name:'고메야 마츠쿠라', area:'기노완', addr:'2 Chome-11-26 Ojana, Ginowan, Okinawa 901-2225', hours:'영업시간 확인 필요', emoji:'🍱', category:'기타', tags:['직접재배쌀','정성','로컬'], rating:4.4, reviews:870, desc:'직접 농사지은 쌀로 밥을 짓는 정성 가득한 식당. 쌀의 맛을 제대로 느낄 수 있는 특별한 경험.', lat:26.2720, lng:127.7668, mapUrl:'https://www.google.com/maps/search/?api=1&query=米屋松倉宜野湾' },
-  { id:53, name:'나키진 산고 테이블', area:'나키진', addr:'1073-19 Serikyaku, Nakijin, Okinawa 905-0403', hours:'영업시간 확인 필요', emoji:'🍝', category:'기타', tags:['이탈리안','세련된','나키진'], rating:4.3, reviews:920, desc:'나키진 지역의 세련된 이탈리안 다이닝. 현지 재료를 활용한 창의적인 요리.', lat:26.6930, lng:127.9560, mapUrl:'https://www.google.com/maps/search/?api=1&query=今帰仁珊瑚テーブル' },
-  { id:54, name:'텐토무시 나하점', area:'나하', addr:'1 Chome-1-1 Yorimiya, Naha, Okinawa 902-0064', hours:'영업시간 확인 필요', emoji:'🍱', category:'기타', tags:['집밥','로컬','편안한'], rating:4.1, reviews:760, desc:'정갈한 집밥 느낌의 식사를 제공하는 로컬 맛집. 소박하지만 정성스러운 오키나와 가정 요리.', lat:26.2094, lng:127.6898, mapUrl:'https://www.google.com/maps/search/?api=1&query=てんとむし那覇' },
+  { id:1, name:'제프 썬라이즈나하점', area:'나하 쓰보야', addr:'1 Chome-1-5 Tsuboya, Naha, Okinawa 902-0065', hours:'09:00~20:00 (수요일 정기휴무)', price:'¥1 ~ 1,000', emoji:'🍔', category:'버거·타코', tags:['고야버거','오키나와한정','저렴'], nameJp:'ジェフ サンライズなは店', nameEn:'Jef Sunrise Naha', rating:4.3, reviews:1367, desc:'오직 오키나와에만 있는 로컬 패스트푸드 체인 JEF. 고야(여주)의 쓴맛을 잡은 고야 버거가 시그니처. 대표 메뉴는 ʼ뉴야루버거ʼ로 고야·달걀·스팸을 폭신한 번에 넣은 독특한 맛이에요. 갓 만든 버거는 매우 뜨거우니 조심하세요! 고야 링도 꼭 함께 시켜보세요.', lat:26.2163, lng:127.7089, mapUrl:'https://www.google.com/maps/search/?api=1&query=ジェフ+サンライズなは店+那覇' },
+  { id:2, name:'백년고가 우후야', area:'나고', addr:'90 Nakasone, Nago, Okinawa 905-0004', hours:'11:00~15:30 / 17:30~21:00', price:'¥2,000 ~ 4,000', emoji:'🏮', category:'이자카야', tags:['아구샤브샤브','100년고택','웨이팅'], nameJp:'百年古家 大家', nameEn:'Ufuya', rating:4.1, reviews:5770, desc:'100년 전통의 류큐 고택(古民家)에서 즐기는 특별한 식사. 분위기가 압도적이지만 웨이팅이 김. 오키나와 특산 흑돼지 아구(アグー) 샤브샤브와 슈크림빵이 추천 메뉴. 예약 강력 권장.', lat:26.5871, lng:127.9786, mapUrl:'https://www.google.com/maps/search/?api=1&query=百年古家+大家+名護' },
+  { id:3, name:'A&W 마키미나토점', area:'우라소에', addr:'4 Chome-9-1 Makiminato, Urasoe, Okinawa 901-2131', hours:'24시간 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🍔', category:'버거·타코', tags:['루트비어','24시간','포토스팟'], nameJp:'A&W 牧港店', nameEn:'A&W Makiminato', rating:4.3, reviews:4560, desc:'오키나와에만 있는 미국 패스트푸드 체인 A&W. 빈티지 감성 뿜뿜한 레트로 간판이 포토스팟으로 유명해요. 대표 메뉴는 루트비어(무알콜 허브향 탄산음료)로 호불호가 갈리지만 꼭 한번 도전! 24시간 운영.', lat:26.2532, lng:127.7207, mapUrl:'https://www.google.com/maps/search/?api=1&query=A&W+牧港店+浦添' },
+  { id:4, name:'삿짱 소바', area:'나고', addr:'1153-2 Miyazato, Nago, Okinawa 905-0011', hours:'11:00~15:00 (비정기 휴무)', price:'¥1 ~ 1,000', emoji:'🍜', category:'오키나와소바', tags:['현지인단골','담백한','저렴'], nameJp:'さっちゃんそば', nameEn:'Satchan Soba', rating:4.5, reviews:1539, desc:'현지인 단골이 넘쳐나는 정통 오키나와소바 맛집. 맑고 담백한 가다랑어 육수와 쫄깃한 면발이 일품이에요. 오키나와소바는 돼지뼈·가다랑어로 우린 맑은 국물에 두꺼운 밀면을 넣고 삼겹살을 얹은 오키나와 대표 면요리. 대표 메뉴 ʼ소바 大ʼ 추천.', lat:26.6100, lng:127.9800, mapUrl:'https://www.google.com/maps/search/?api=1&query=さっちゃんそば+名護' },
+  { id:5, name:'얏파리 스테이크 쿠모지점', area:'나하 쿠모지', addr:'3 Chome-5-13 Kumoji, Naha, Okinawa 900-0015', hours:'11:00~22:00 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🥩', category:'스테이크', tags:['가성비','무한리필','돌판구이'], nameJp:'やっぱりステーキ 久茂地店', nameEn:'Yappari Steak Kumoji', rating:4.2, reviews:660, desc:'가성비 스테이크의 대명사! 달궈진 돌판 위에 올려주는 스테이크를 직접 구워 먹는 재미가 있어요. 밥·수프·샐러드 무한 리필 포함. 오키나와 스테이크 문화 입문 맛집. 대표 메뉴 ʼ뉴욕스테이크 200gʼ.', lat:26.2160, lng:127.6831, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ+久茂地店+那覇' },
+  { id:6, name:'얏파리 스테이크 공설시장점', area:'나하 마츠오', addr:'2 Chome-10-1 Matsuo, Naha, Okinawa 900-0014', hours:'11:00~22:00 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🥩', category:'스테이크', tags:['가성비','공설시장','회전빠름'], nameJp:'やっぱりステーキ 公設市場近店', nameEn:'Yappari Steak Public Market', rating:4.2, reviews:291, desc:'나하 공설시장(国際市場) 바로 옆에 위치한 얏파리 스테이크 지점. 시장 구경 후 들르기 딱 좋아요. 좁지만 회전율이 빠른 편. 밥·수프·샐러드 무한 리필 포함.', lat:26.2174, lng:127.6858, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ+公設市場近店+那覇' },
+  { id:7, name:'얏파리 스테이크 4호점', area:'나하 마키시', addr:'3 Chome-12-4 Makishi, Naha, Okinawa 900-0013', hours:'11:00~21:00 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🥩', category:'스테이크', tags:['국제거리','접근성최고','가성비'], nameJp:'やっぱりステーキ 4th 国際通り店', nameEn:'Yappari Steak 4th Kokusaidori', rating:4.1, reviews:1687, desc:'국제거리 메인 로드에 위치해 여행객 접근성이 가장 좋은 얏파리 스테이크 지점. 쇼핑 중 부담 없이 들어가기 좋아요. 밥·수프·샐러드 무한 리필 포함.', lat:26.2180, lng:127.6890, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ+4th+国際通り店+那覇' },
+  { id:8, name:'라멘단보 나하 마키시점', area:'나하 마키시', addr:'2 Chome-16-10 Makishi, Naha, Okinawa 900-0013', hours:'평일 10:00~26:00 / 주말 09:00~26:00', price:'¥1,000 ~ 2,000', emoji:'🍜', category:'오키나와소바', tags:['돈코츠라멘','웨이팅','심야영업'], nameJp:'ラーメン暖暮 那覇牧志店', nameEn:'Ramen Danbo Naha Makishi', rating:3.9, reviews:4836, desc:'국제거리에서 가장 줄이 긴 규슈 돈코츠 라멘 전문점. 이치란처럼 면 굵기나 국물 농도를 직접 고를 수 있어요. 크리미하고 진한 돈코츠 육수가 특징. 밤늦게까지 영업해 야식으로도 인기.', lat:26.2171, lng:127.6890, mapUrl:'https://www.google.com/maps/search/?api=1&query=ラーメン暖暮+那覇牧志店' },
+  { id:9, name:'나키진 산고 테이블', area:'나키진', addr:'1073-19 Serikyaku, Nakijin, Okinawa 905-0403', hours:'11:30~15:00 / 18:00~21:00 (부정기 휴무)', price:'¥2,000 ~ 3,000', emoji:'🍴', category:'기타', tags:['이탈리안','세련된','오키나와식재료'], nameJp:'今帰仁珊瑚テーブル', nameEn:'Nakijin Sango Table', rating:4.6, reviews:237, desc:'오키나와 북부 나키진의 분위기 좋은 이탈리안 다이닝. 오키나와 식재료를 활용한 창의적인 이탈리안 요리가 특징이에요. 조용하고 세련된 분위기로 특별한 저녁 식사지로 추천. 예약 권장.', lat:26.6930, lng:127.9560, mapUrl:'https://www.google.com/maps/search/?api=1&query=今帰仁珊瑚テーブル' },
+  { id:10, name:'우시노 이부쿠로', area:'나고', addr:'1099-1 Umusa, Nago, Okinawa 905-0006', hours:'17:00~23:00 (비정기 휴무, 예약 권장)', price:'¥4,000 ~ 6,000', emoji:'🍖', category:'야키니쿠', tags:['고퀄리티','야키니쿠','예약필수'], nameJp:'牛のいぶくろ', nameEn:'Usi no Ibukuro', rating:4.7, reviews:259, desc:'구글맵 평점 4.7의 고퀄리티 야키니쿠 맛집. 신선한 소고기를 테이블 그릴에 직접 구워 먹는 일본식 바베큐예요. 고기 퀄리티가 탁월하다는 평이 많아요. 예약 필수, 저녁만 운영.', lat:26.5860, lng:127.9550, mapUrl:'https://www.google.com/maps/search/?api=1&query=牛のいぶくろ+名護' },
+  { id:11, name:'야키니쿠 BBQ 우무이', area:'나키진', addr:'63-1 Imadomari, Nakijin, Okinawa 905-0428', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🍖', category:'야키니쿠', tags:['야키니쿠','가족단위','나키진'], nameJp:'焼肉BBQ うむい', nameEn:'Yakiniku BBQ Umui', rating:4.4, reviews:157, desc:'현지 느낌 물씬 나는 야키니쿠 전문점. 가격 대비 고기 질이 좋고 가족 단위로 가기 좋아요. 야키니쿠는 고기를 테이블 숯불 그릴에 직접 구워 먹는 일본식 바베큐예요. 나키진성 관광 후 들르기 좋아요.', lat:26.7060, lng:127.9280, mapUrl:'https://www.google.com/maps/search/?api=1&query=焼肉BBQ+うむい+今帰仁' },
+  { id:12, name:'이두메 나키진 다이닝', area:'나키진', addr:'298-1 Tamashiro, Nakijin, Okinawa 905-0412', hours:'11:00~15:00 / 17:00~21:00', price:'¥1,000 ~ 2,000', emoji:'🍜', category:'오키나와소바', tags:['크림소바','퓨전','나키진'], nameJp:'今帰仁ダイニング E-DUME', nameEn:'E-DUME Nakijin Dining', rating:4.8, reviews:113, desc:'일반 소바 외에 크림 오키나와 소바가 별미인 퓨전 소바 맛집. 처음 보는 비주얼이지만 의외로 맛의 조화가 훌륭하다는 평이에요. 오키나와 북부 드라이브 중 점심으로 추천.', lat:26.6800, lng:127.9570, mapUrl:'https://www.google.com/maps/search/?api=1&query=今帰仁ダイニング+E-DUME' },
+  { id:13, name:'타마시로 덴푸라', area:'난조', addr:'40 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'11:00~17:00 (비정기 휴무)', price:'¥1 ~ 1,000', emoji:'🦐', category:'해산물', tags:['튀김','저렴','오지마입구'], nameJp:'玉城天ぷら店', nameEn:'Tamashiro Tenpura', rating:4.6, reviews:102, desc:'오지마섬 근처의 오키나와식 튀김(덴푸라) 전문점. 오키나와 덴푸라는 한국·일본 튀김보다 두꺼운 반죽을 입혀 푹신하게 튀겨요. 개당 ¥100~200로 매우 저렴해요. 새우·고야·이카(오징어) 덴푸라가 인기.', lat:26.1240, lng:127.7528, mapUrl:'https://www.google.com/maps/search/?api=1&query=玉城天ぷら店+南城' },
+  { id:14, name:'크레이지 갈릭 쉬림프 8', area:'코우리섬', addr:'161-2 Kouri, Nakijin, Okinawa 905-0406', hours:'10:00~18:00 (연중무휴)', price:'¥1,500 ~ 2,000', emoji:'🦐', category:'해산물', tags:['쉬림프박스','코우리섬','마늘버터'], nameJp:'Crazy Garlic Shrimp 8', nameEn:'Crazy Garlic Shrimp 8', rating:4.9, reviews:242, desc:'코우리섬 명물 쉬림프 박스 푸드트럭! ¥1,600으로 다소 비싸지만 진한 마늘버터 소스에 볶은 새우가 정말 맛있어요. 한국인 입맛에 딱 맞는 마늘 맛의 정석. 코우리대교 드라이브 코스 필수 방문지.', lat:26.7226, lng:128.0112, mapUrl:'https://www.google.com/maps/search/?api=1&query=Crazy+Garlic+Shrimp+8+古宇利島' },
+  { id:15, name:'킨치치 소바 온나점', area:'온나', addr:'2013-1 Onna, Okinawa 904-0411', hours:'11:00~16:00 (월요일 정기휴무)', price:'¥1,000 ~ 2,000', emoji:'🍜', category:'오키나와소바', tags:['자가제면','쫄깃한','온나'], nameJp:'金月そば 恩納店', nameEn:'Kinchichi Soba Onna', rating:4.2, reviews:430, desc:'자가제면으로 만드는 쫄깃한 면발이 끝내주는 소바 맛집. 8가지 어절로 우린 깊은 국물이 특징이에요. 킨치치 소바는 오키나와 소바 마니아들 사이에서도 손꼽히는 명가. 대표 메뉴 ʼ소바ʼ, ʼ소키소바ʼ.', lat:26.4820, lng:127.8400, mapUrl:'https://www.google.com/maps/search/?api=1&query=金月そば+恩納店' },
+  { id:16, name:'스타벅스 아메리칸 빌리지', area:'차탄', addr:'2 Chome-15-2 Mihama, Chatan, Okinawa 904-0115', hours:'07:00~23:00 (연중무휴)', price:'¥500 ~ 1,500', emoji:'☕', category:'카페·디저트', tags:['뷰맛집','아메빌','야경'], nameJp:'スターバックス 北谷国道58号店', nameEn:'Starbucks American Village', rating:4.3, reviews:483, desc:'아메리칸 빌리지의 랜드마크 스타벅스. 2층 테라스에서 아메리칸 빌리지의 이국적인 야경을 즐기기 좋아요. 저녁 일몰 시간에 방문하면 환상적인 석양 뷰 보장. 오키나와 리저브 메뉴도 일부 취급.', lat:26.3090, lng:127.7559, mapUrl:'https://www.google.com/maps/search/?api=1&query=スターバックス+北谷国道58号店' },
+  { id:17, name:'오하코르테', area:'나하 이즈미자키', addr:'1 Chome-4-10 Izumizaki, Naha, Okinawa 900-0021', hours:'09:30~16:30 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'🍰', category:'카페·디저트', tags:['과일타르트','선물용','공항도있음'], nameJp:'oHacorté 泉崎', nameEn:'oHacorte', rating:4.3, reviews:1013, desc:'오키나와 발 예쁜 과일 타르트 전문 카페. 신선한 오키나와산 과일을 아름답게 올린 타르트가 대표 메뉴예요. 나하 공항에도 테이크아웃 전용 매장이 있어 귀국 선물로도 최고! 시즌 과일 타르트 추천.', lat:26.2125, lng:127.6837, mapUrl:'https://www.google.com/maps/search/?api=1&query=oHacorté+泉崎+那覇' },
+  { id:18, name:'톤카츠 야마시로', area:'나고', addr:'2273-1 Namechi, Nago, Okinawa 905-1155', hours:'11:00~15:00 / 17:00~21:00 (부정기 휴무)', price:'¥2,000 ~ 3,000', emoji:'🥩', category:'스테이크', tags:['프리미엄돈카츠','육즙','예약권장'], nameJp:'とんかつ山しろ', nameEn:'Tonkatsu Yamashiro', rating:4.4, reviews:346, desc:'육즙을 가둬 튀겨낸 두툼한 카츠가 일품인 프리미엄 돈카츠 전문점. 일본 돈카츠(돈가스)는 한국보다 고기가 훨씬 두껍고 육즙이 살아있어요. 나고 드라이브 중 특별한 점심 식사지. 예약 권장.', lat:26.5913, lng:127.9590, mapUrl:'https://www.google.com/maps/search/?api=1&query=とんかつ山しろ+名護' },
+  { id:19, name:'쿠니가미 미나토 쇼쿠도', area:'쿠니가미', addr:'515-4 Hama, Kunigami, Okinawa 905-1412', hours:'11:00~15:00 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'🦐', category:'해산물', tags:['오션뷰','해산물','웨이팅'], nameJp:'国頭港食堂', nameEn:'Kunigami Minato Shokudo', rating:4.5, reviews:1296, desc:'오키나와 최북단 쿠니가미 항구의 최고 오션뷰 식당! 그날 바다에서 직접 잡아온 해산물이 매우 신선하며, 뷰가 웬만한 관광지보다 훨씬 좋아요. 해산물 정식, 활어회 세트 추천. 웨이팅 각오 필요.', lat:26.8574, lng:128.1766, mapUrl:'https://www.google.com/maps/search/?api=1&query=国頭港食堂' },
+  { id:20, name:'카진호 피자', area:'모토부', addr:'1153-2 Yozumi, Motobu, Okinawa 905-0219', hours:'11:30~19:30 (화요일 정기휴무)', price:'¥1,000 ~ 2,000', emoji:'🍕', category:'카페·디저트', tags:['바다뷰피자','산정상','아세로라'], nameJp:'花人逢', nameEn:'Kajinhou', rating:4.6, reviews:3331, desc:'산 정상 근처 100년 된 류큐 고택에서 즐기는 피자! 테라스에서 바라보는 에메랄드빛 오키나와 바다와 이에지마 섬 풍경이 압도적이에요. 마르게리타 피자와 오키나와 특산 아세로라 주스 추천.', lat:26.6567, lng:127.9795, mapUrl:'https://www.google.com/maps/search/?api=1&query=花人逢+本部' },
+  { id:21, name:'카페 도카도카', area:'온나', addr:'1048-1 Maeda, Onna, Okinawa 904-0417', hours:'11:00~18:00 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'☕', category:'카페·디저트', tags:['오션뷰','도자기공방','피자'], nameJp:'土花土花', nameEn:'Cafe Doka Doka', rating:4.5, reviews:636, desc:'오션뷰가 아름다운 피자 카페이자 도자기 공방. 넓은 창문 너머 바다를 바라보며 피자를 즐길 수 있어요. 오키나와 전통 도자기(야치문) 그릇 구경하는 재미도 있어요. 피자, 파스타 추천.', lat:26.4618, lng:127.8298, mapUrl:'https://www.google.com/maps/search/?api=1&query=土花土花+恩納' },
+  { id:22, name:'야치문 킷사 시사엔', area:'온나', addr:'Onna, Okinawa', hours:'임시 휴업 중 (인스타 @yachimunkissa.shisaen 확인)', price:'¥500 ~ 1,500', emoji:'☕', category:'카페·디저트', tags:['드라마촬영지','숲속카페','임시휴업'], nameJp:'やちむん喫茶シーサー園', nameEn:'Yachimun Kissa Shisaen', rating:4.5, reviews:466, desc:'드라마 ʼ괜찮아 사랑이야ʼ 촬영지로 유명한 숲속 힐링 카페. 비 오는 날 2층 지붕 위의 시샤(오키나와 수호신상)를 바라보는 뷰가 일품이에요. 현재 임시 휴업 중이므로 방문 전 인스타 @yachimunkissa.shisaen 에서 반드시 확인!', lat:26.4700, lng:127.8350, mapUrl:'https://www.google.com/maps/search/?api=1&query=やちむん喫茶+シーサー園+恩納' },
+  { id:23, name:'시아와세노 팬케이크', area:'우미카지 테라스', addr:'Senagajima, Tomigusuku, Okinawa', hours:'11:00~20:00 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🍰', category:'카페·디저트', tags:['수플레팬케이크','우미카지테라스','바다뷰'], nameJp:'幸せのパンケーキ', nameEn:'A Happy Pancake', rating:4.2, reviews:4577, desc:'우미카지 테라스의 파란 바다를 보며 먹는 폭신한 수플레 팬케이크 맛집. ʼ시아와세(행복)ʼ라는 이름처럼 폭신폭신한 팬케이크가 행복한 맛이에요. 나하공항 근처라 귀국 전 들르기도 좋아요.', lat:26.1720, lng:127.6730, mapUrl:'https://www.google.com/maps/search/?api=1&query=幸せのパンケーキ+瀬長島ウミカジテラス' },
+  { id:24, name:'아메이로 식당', area:'나하', addr:'1 Chome-3-7 Higashimachi, Naha, Okinawa 900-0034', hours:'11:00~15:00 / 17:00~21:00 (비정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'🍴', category:'기타', tags:['집밥','정갈한','건강식'], nameJp:'雨色', nameEn:'Ameiro Shokudo', rating:4.5, reviews:162, desc:'깔끔하고 정갈한 일본 가정식(집밥) 식당. 자극적이지 않은 건강한 한 끼 식사가 가능해요. 오키나와 가정 요리인 찬푸루(볶음), 두부 요리 등을 즐길 수 있어요. 일일 정식(히가와리 테이쇼쿠) 추천.', lat:26.2132, lng:127.6805, mapUrl:'https://www.google.com/maps/search/?api=1&query=雨色+那覇' },
+  { id:25, name:'파이다마', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🍴', category:'기타', tags:['오키나와가정식','건강식','현지채소'], nameJp:'パイダマ', nameEn:'Paidama', rating:4.6, reviews:167, desc:'오키나와 현지 채소와 식재료를 듬뿍 사용한 건강한 집밥 맛집. 오키나와 특산 채소로 만든 정성스러운 가정 요리를 즐길 수 있어요. 현지인들이 즐겨 찾는 숨은 맛집.', lat:26.2150, lng:127.6820, mapUrl:'https://www.google.com/maps/search/?api=1&query=パイダマ+那覇' },
+  { id:26, name:'농원찻집 시키노아야', area:'오키나와 중부', addr:'Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🍴', category:'기타', tags:['농원직영','건강식','정성'], nameJp:'農園喫茶 四季の彩', nameEn:'Shiki no Aya', rating:4.4, reviews:90, desc:'농원에서 직접 기른 신선한 식재료를 사용하는 건강식 맛집. 자연에서 재배한 채소로 만든 정성 가득한 식사를 제공해요. 오키나와의 자연을 느끼며 건강한 한 끼를 즐길 수 있는 특별한 공간.', lat:26.3500, lng:127.8000, mapUrl:'https://www.google.com/maps/search/?api=1&query=農園喫茶+四季の彩+沖縄' },
+  { id:27, name:'카페 하코니와', area:'오키나와', addr:'Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'☕', category:'카페·디저트', tags:['고민가카페','자연속','여유'], nameJp:'カフェ箱庭', nameEn:'Cafe Hakoniwa', rating:4.3, reviews:174, desc:'오래된 민가(고민가)를 개조한 아늑한 카페. 자연 속에서 조용한 여유를 즐기기 좋아요. 류큐 전통 건물의 분위기를 느끼며 커피 한 잔 하기 좋은 힐링 공간.', lat:26.3300, lng:127.8100, mapUrl:'https://www.google.com/maps/search/?api=1&query=カフェ+箱庭+沖縄' },
+  { id:28, name:'카페 코쿠', area:'오키나와', addr:'Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'☕', category:'카페·디저트', tags:['전망좋음','채식','건강식'], nameJp:'カフェ穀', nameEn:'Cafe Koku', rating:4.6, reviews:410, desc:'언덕 위에 위치해 전망이 좋은 건강식 카페. 정갈한 채식 위주 식단으로 건강하고 맛있는 식사를 즐길 수 있어요. 뷰가 예쁘고 음식도 맛있어 인스타 감성 맛집으로 인기.', lat:26.3200, lng:127.8200, mapUrl:'https://www.google.com/maps/search/?api=1&query=カフェ+穀+沖縄' },
+  { id:29, name:'나가도야', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🍖', category:'야키니쿠', tags:['샤브샤브','아구','깔끔한'], nameJp:'長堂屋', nameEn:'Nagadoya', rating:4.4, reviews:444, desc:'오키나와 특산 아구(アグー) 흑돼지나 소고기 샤브샤브를 깔끔하게 즐길 수 있는 전문점. 샤브샤브는 얇게 썬 고기를 뜨거운 다시 육수에 살짝 데쳐 먹는 일본 요리예요. 아구 샤브샤브 코스 추천.', lat:26.2180, lng:127.6900, mapUrl:'https://www.google.com/maps/search/?api=1&query=長堂屋+那覇' },
+  { id:30, name:'키시모토 식당', area:'모토부', addr:'5 Nishi, Motobu, Okinawa 905-0214', hours:'11:00~17:00 (수요일 정기휴무)', price:'¥1 ~ 1,000', emoji:'🍜', category:'오키나와소바', tags:['100년노포','전통','쥬시'], nameJp:'きしもと食堂', nameEn:'Kishimoto Shokudo', rating:4.1, reviews:2258, desc:'1905년 창업, 120년 역사의 오키나와소바 최고 노포! 목회(나무를 태운 잿물)로 면을 뽑는 전통 방식 그대로예요. 메뉴는 소바 大/小, 쥬시(오키나와식 솥밥) 단 3가지. 쥬시와 함께 먹는 것이 국룰. 수요일 정기휴무, 재료 소진 시 조기 마감.', lat:26.6516, lng:127.9144, mapUrl:'https://www.google.com/maps/search/?api=1&query=きしもと食堂+本部' },
+  { id:31, name:'타코라이스 키지므나', area:'차탄', addr:'Chatan, Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🌮', category:'버거·타코', tags:['오무타코','계란올린타코','원조'], nameJp:'タコライスきじむなぁ', nameEn:'Taco Rice Kyijimuna', rating:4.3, reviews:746, desc:'오무타코(오믈렛 타코)의 원조 맛집! 타코라이스 위에 몽글몽글한 계란을 올린 메뉴가 인기예요. 타코라이스는 멕시코 타코 재료를 밥 위에 올린 오키나와 명물 음식. 아메리칸 빌리지 근처 위치.', lat:26.3100, lng:127.7580, mapUrl:'https://www.google.com/maps/search/?api=1&query=タコライスきじむなぁ+北谷' },
+  { id:32, name:'레스토랑 플리퍼', area:'모토부', addr:'Motobu, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 4,000', emoji:'🥩', category:'스테이크', tags:['오래된스테이크','파이빵','츄라우미'], nameJp:'レストランフリッパー', nameEn:'Restaurant Flipper', rating:4.4, reviews:3243, desc:'츄라우미 수족관 가는 길에 들르기 좋은 오래된 스테이크 맛집. 직접 만드는 파이(빵)도 유명해요. 오키나와 북부 드라이브 코스 중 점심 식사지로 강력 추천. 넉넉한 양과 가격 대비 높은 퀄리티.', lat:26.6400, lng:127.9600, mapUrl:'https://www.google.com/maps/search/?api=1&query=レストランフリッパー+本部' },
+  { id:33, name:'나카무라소바', area:'온나', addr:'1669-1 Serakaki, Onna, Okinawa 904-0404', hours:'11:00~15:00 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'🍜', category:'오키나와소바', tags:['아사소바','매생이면','바다뷰'], nameJp:'なかむらそば', nameEn:'Nakamura Soba', rating:4.2, reviews:3081, desc:'바다를 바라보며 먹는 아사(매생이) 소바 맛집! 면 자체에 매생이가 들어가 초록빛을 띠는 이색적인 소바예요. 창밖 에메랄드빛 오키나와 바다와 함께 먹으면 더욱 특별한 경험. 아사소바 강력 추천.', lat:26.5260, lng:127.8650, mapUrl:'https://www.google.com/maps/search/?api=1&query=なかむらそば+恩納' },
+  { id:34, name:'바카르 오키나와', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥5,000 ~ 10,000', emoji:'🍕', category:'카페·디저트', tags:['인생피자','예약필수','마르게리타'], nameJp:'BACAR OKINAWA', nameEn:'BACAR Okinawa', rating:4.2, reviews:747, desc:'인생 피자집으로 불리는 나하의 숨은 명소. 예약 필수! 마르게리타와 마리나라 딱 두 종류만 판매해요. 1인 500엔 자릿세(오토시) 있음. 단순하지만 진짜 나폴리식 피자의 맛을 경험할 수 있어요.', lat:26.2190, lng:127.6870, mapUrl:'https://www.google.com/maps/search/?api=1&query=BACAR+OKINAWA+那覇' },
+  { id:35, name:'하마베노차야', area:'난조', addr:'2-1 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'평일 08:00~18:00 / 주말 08:00~19:00 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'☕', category:'카페·디저트', tags:['해변카페','창가좌석','오션뷰'], nameJp:'浜辺の茶屋', nameEn:'Hamabe no Chaya', rating:4.4, reviews:2248, desc:'바닷가 바로 앞에 위치한 오키나와 최고의 오션뷰 카페! 창가 카운터 자리에 앉으면 태평양이 눈앞에 펼쳐지는 절경. 만조 때는 파도가 바로 아래까지 밀려오는 특별한 경험. 커피, 모닝 세트 추천.', lat:26.1181, lng:127.7503, mapUrl:'https://www.google.com/maps/search/?api=1&query=浜辺の茶屋+南城' },
+  { id:36, name:'Octopus Garden', area:'온나', addr:'Onna, Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🍴', category:'기타', tags:['조식맛집','가라아게카레','든든한아침'], nameJp:'Octopus Garden', nameEn:'Octopus Garden', rating:4.4, reviews:69, desc:'조식 맛집으로 유명한 숨은 보석 같은 곳. 가라아게(닭튀김) 카레와 아침 식사 메뉴가 든든하고 맛있다는 평이에요. 가라아게는 일본식 순살 닭튀김으로 겉은 바삭하고 속은 촉촉해요. 일찍 방문 추천.', lat:26.4800, lng:127.8500, mapUrl:'https://www.google.com/maps/search/?api=1&query=Octopus+Garden+恩納' },
+  { id:37, name:'긴무 샤브샤브 본점', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🍖', category:'야키니쿠', tags:['킨아구','샤브샤브','본점'], nameJp:'金武シャブシャブ 本店', nameEn:'Kinmu Shabu Shabu', rating:4.4, reviews:219, desc:'오키나와 특산 킨아구(金アグー) 흑돼지 샤브샤브를 제대로 즐길 수 있는 본점. 킨아구는 오키나와에서도 특별히 귀한 품종의 흑돼지로, 지방이 부드럽고 달콤해요. 아구 샤브샤브 코스 추천.', lat:26.2200, lng:127.6950, mapUrl:'https://www.google.com/maps/search/?api=1&query=金武シャブシャブ+本店+那覇' },
+  { id:38, name:'킹타코스 기유나점', area:'기노완', addr:'1 Chome-2-5 Kiyuna, Ginowan, Okinawa 901-2222', hours:'10:00~22:00 (연중무휴)', price:'¥1 ~ 1,000', emoji:'🌮', category:'버거·타코', tags:['타코라이스원조','양많음','로컬'], nameJp:'キングタコス 喜友名店', nameEn:'King Tacos Kiyuna', rating:4.1, reviews:465, desc:'타코라이스의 성지! 양이 어마어마하게 많아요. 타코라이스는 멕시코 타코의 재료(고기·치즈·양상추·살사)를 밥 위에 올린 오키나와 명물 음식. 킹타코스가 1984년에 처음 만든 원조 가게예요. 저렴하고 푸짐!', lat:26.2736, lng:127.7716, mapUrl:'https://www.google.com/maps/search/?api=1&query=キングタコス+喜友名店+宜野湾' },
+  { id:39, name:'Parlor TACOS · TACOS', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🌮', category:'버거·타코', tags:['현지인추천','중독성있는맛','기름진'], nameJp:'Parlor TACOS・TACOS', nameEn:'Parlor TACOS TACOS', rating:4.2, reviews:112, desc:'현지인들이 추천하는 타코 전문점. 조금 기름진 편이지만 중독성 있는 맛의 타코를 즐길 수 있어요. 소박한 분위기의 로컬 맛집으로 오키나와 타코 문화를 제대로 경험할 수 있는 곳.', lat:26.2160, lng:127.6820, mapUrl:'https://www.google.com/maps/search/?api=1&query=Parlor+TACOS+TACOS+那覇' },
+  { id:40, name:'Cafe Ocean', area:'차탄', addr:'Chatan, Okinawa', hours:'영업시간 확인 필요', price:'¥1 ~ 1,000', emoji:'🌮', category:'버거·타코', tags:['1967년노포','라이브바분위기','맥주와타코'], nameJp:'Cafe Ocean', nameEn:'Cafe Ocean', rating:4.3, reviews:113, desc:'1967년 오픈한 타코 노포. 라이브 바 같은 분위기에서 맥주와 함께 즐기는 타코 맛집이에요. 아메리칸 빌리지 근처에 위치해 저녁 한 잔 겸 타코 즐기기 딱 좋아요. 오키나와 타코 역사의 산증인.', lat:26.3110, lng:127.7560, mapUrl:'https://www.google.com/maps/search/?api=1&query=Cafe+Ocean+北谷' },
+  { id:41, name:'코자쿠라', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🏮', category:'이자카야', tags:['이자카야','나하밤문화','예약확인'], nameJp:'小桜', nameEn:'Kozakura', rating:4.4, reviews:258, desc:'나하의 밤을 즐기기 좋은 유명 이자카야. 이자카야는 다양한 음식과 술을 편하게 즐기는 일본식 술집이에요. 오키나와 아와모리(증류주)와 함께 다양한 안주를 즐길 수 있어요. 예약 가능 여부 사전 확인 필요.', lat:26.2180, lng:127.6880, mapUrl:'https://www.google.com/maps/search/?api=1&query=小桜+那覇+居酒屋' },
+  { id:42, name:'Maisukuya', area:'나하', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥2,000 ~ 3,000', emoji:'🏮', category:'이자카야', tags:['정통이자카야','오키나와요리','로컬'], nameJp:'Maisukuya', nameEn:'Maisukuya', rating:4.4, reviews:225, desc:'다양한 오키나와 요리와 술을 곁들이기 좋은 정통 이자카야. 이자카야는 일본식 술집으로 안주 문화가 발달해 있어요. 오키나와 향토 요리를 이자카야 분위기로 즐길 수 있는 로컬 맛집.', lat:26.2170, lng:127.6870, mapUrl:'https://www.google.com/maps/search/?api=1&query=Maisukuya+那覇' },
+  { id:43, name:'찰리스 타코', area:'차탄', addr:'4 Chome-11-5 Chatan, Okinawa 904-0115', hours:'11:00~21:00', price:'¥1,000 ~ 2,000', emoji:'🌮', category:'버거·타코', tags:['오키나와타코역사','부드러운또띠아','아메빌'], nameJp:'チャーリーズ多幸寿', nameEn:'Charlieʼs Tacos', rating:4.3, reviews:1316, desc:'오키나와 타코의 역사를 만든 오래된 명소. 부드러운 밀가루 또띠아 쉘이 특징인 타코를 즐길 수 있어요. 아메리칸 빌리지 인근에 위치해 접근성도 좋아요. 현지인과 관광객 모두에게 꾸준히 사랑받는 곳.', lat:26.3093, lng:127.7583, mapUrl:'https://www.google.com/maps/search/?api=1&query=チャーリーズ多幸寿+北谷' },
+  { id:44, name:'Subaya Matsuyama', area:'나하 마츠야마', addr:'Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥1 ~ 1,000', emoji:'🍜', category:'오키나와소바', tags:['대중적인소바','해장용','유흥가근처'], nameJp:'すば屋 松山', nameEn:'Subaya Matsuyama', rating:4.0, reviews:567, desc:'나하 마츠야마 유흥가 근처에 위치한 대중적인 오키나와 소바 전문점. 밤새 논 후 해장용으로도 인기 있어요. 부담 없이 즐길 수 있는 정통 오키나와 소바. 저렴한 가격이 장점.', lat:26.2200, lng:127.6950, mapUrl:'https://www.google.com/maps/search/?api=1&query=すば屋+松山+那覇' },
+  { id:45, name:'난조 소바 미네', area:'난조', addr:'1602-1 Tamagusuku, Nanjo, Okinawa 901-0604', hours:'11:00~15:00 (부정기 휴무)', price:'¥1,000 ~ 2,000', emoji:'🍜', category:'오키나와소바', tags:['세련된소바','플레이팅예쁜','난조'], nameJp:'沖縄そば 峰', nameEn:'Nanjo Soba Mine', rating:4.0, reviews:451, desc:'난조시 관광 후 들르기 좋은 세련된 오키나와 소바 전문점. 플레이팅이 예쁘고 정갈한 분위기예요. 하마베노차야(해변 카페)와 함께 난조 남부 코스로 묶어서 방문하기 좋아요.', lat:26.1240, lng:127.7500, mapUrl:'https://www.google.com/maps/search/?api=1&query=沖縄そば+峰+南城' },
+  { id:46, name:'포케 팜', area:'차탄', addr:'Chatan, Okinawa', hours:'영업시간 확인 필요', price:'¥1,000 ~ 2,000', emoji:'🍔', category:'버거·타코', tags:['수제버거','아메빌근처','든든한'], nameJp:'ポケファーム', nameEn:'Poke Farm', rating:4.1, reviews:167, desc:'아메리칸 빌리지 근처에서 든든한 버거를 원할 때 찾는 수제 버거 맛집. 오키나와의 미국 문화 영향을 받은 맛있는 수제 버거를 즐길 수 있어요. 아메빌 쇼핑 후 식사지로 추천.', lat:26.3100, lng:127.7570, mapUrl:'https://www.google.com/maps/search/?api=1&query=Poke+Farm+北谷' },
+  { id:47, name:'포크타마고 오니기리', area:'나하', addr:'2 Chome-8-35 Matsuo, Naha, Okinawa 900-0014', hours:'07:00~22:00 (연중무휴)', price:'¥1 ~ 1,000', emoji:'🍴', category:'기타', tags:['스팸주먹밥','아침식사','오키나와소울푸드'], nameJp:'ポーたま 国際通り店', nameEn:'Pork Tamago Onigiri', rating:4.4, reviews:1307, desc:'오키나와식 소울푸드 주먹밥 전문점! ʼ포크타마고 오니기리ʼ는 스팸(포크 런천미트)과 달걀 프라이를 갓 지은 밥으로 싼 삼각 주먹밥이에요. 오키나와 사람들이 어릴 때부터 즐겨 먹는 국민 간식. 아침 식사로 최고! ¥430~', lat:26.2172, lng:127.6853, mapUrl:'https://www.google.com/maps/search/?api=1&query=ポーたま+国際通り店+那覇' },
+  { id:48, name:'얏빠리 스테이크 차탄 미하마점', area:'차탄', addr:'2 Chome-1-11 Mihama, Chatan, Okinawa 904-0115', hours:'11:00~22:00 (연중무휴)', price:'¥1,000 ~ 2,000', emoji:'🥩', category:'스테이크', tags:['가성비','아메빌','체인점'], nameJp:'やっぱりステーキ 北谷店', nameEn:'Yappari Steak Chatan', rating:4.2, reviews:692, desc:'아메리칸 빌리지 근처 가성비 스테이크 체인점. 체인점이라 맛이 일정하고 믿을 수 있어요. 밥·수프·샐러드 무한 리필 포함. 아메빌 쇼핑 중 부담 없이 들르기 좋은 위치.', lat:26.3098, lng:127.7561, mapUrl:'https://www.google.com/maps/search/?api=1&query=やっぱりステーキ+北谷店' },
+  { id:49, name:'돈카츠타로 차탄점', area:'차탄', addr:'2 Chome-1-11 Mihama, Chatan, Okinawa 904-0115', hours:'11:00~22:00', price:'¥1,000 ~ 2,000', emoji:'🥩', category:'스테이크', tags:['돈카츠','리필가능','가족추천'], nameJp:'とんかつ太郎 北谷店', nameEn:'Tonkatsu Taro Chatan', rating:4.2, reviews:658, desc:'아이와 가기 좋은 돈카츠(일본식 돈가스) 전문점. 밥·국·샐러드 리필이 가능하며 무난하고 맛있는 돈카츠를 즐길 수 있어요. 아메리칸 빌리지 근처라 가족 여행 중 식사지로 적합.', lat:26.3098, lng:127.7565, mapUrl:'https://www.google.com/maps/search/?api=1&query=とんかつ太郎+北谷店' },
+  { id:50, name:'하나무라소바', area:'나고', addr:'2108-1 Kise, Nago, Okinawa 905-0026', hours:'11:00~15:00 (부정기 휴무)', price:'¥1 ~ 1,000', emoji:'🍜', category:'오키나와소바', tags:['진한국물','현지인비중높음','숨은맛집'], nameJp:'花村そば', nameEn:'Hanamura Soba', rating:4.4, reviews:254, desc:'관광객보다 현지인 비중이 높은 숨은 소바 맛집. 진하고 깊은 국물 맛이 특징이에요. 나고 드라이브 중 현지인들이 즐겨 찾는 정통 오키나와 소바를 맛볼 수 있어요.', lat:26.5920, lng:127.9650, mapUrl:'https://www.google.com/maps/search/?api=1&query=花村そば+名護' },
+  { id:51, name:'하마노야', area:'온나', addr:'2097 Nakama, Onna, Okinawa 904-0401', hours:'11:00~21:00 (부정기 휴무)', price:'¥2,000 ~ 3,000', emoji:'🦐', category:'해산물', tags:['생선버터구이','현지단골','해산물정식'], nameJp:'浜の家', nameEn:'Hamanoya', rating:4.4, reviews:3340, desc:'생선 버터구이(버터야키)의 전설! 큼직한 생선을 통째로 버터에 구워주는 정식이 시그니처예요. 현지 단골손님이 넘쳐나는 진짜 로컬 해산물 식당. 생선 버터구이는 일본 가정요리의 맛으로 고소하고 맛있어요.', lat:26.4930, lng:127.8520, mapUrl:'https://www.google.com/maps/search/?api=1&query=浜の家+恩納' },
+  { id:52, name:'차탄 둔치', area:'차탄', addr:'Chatan, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🏮', category:'이자카야', tags:['아구스키야키','이자카야분위기','특별한저녁'], nameJp:'北谷屯地', nameEn:'Chatan Dunchi', rating:3.9, reviews:230, desc:'오키나와 특산 아구(흑돼지) 스키야키를 즐길 수 있는 이자카야. 스키야키는 간장·설탕·술로 만든 국물에 고기와 채소를 졸여 먹는 일본 전골 요리예요. 분위기 있는 이자카야 느낌으로 특별한 저녁 식사지.', lat:26.3120, lng:127.7580, mapUrl:'https://www.google.com/maps/search/?api=1&query=北谷+屯地+沖縄' },
+  { id:53, name:'부치 쿠모치점', area:'나하 쿠모지', addr:'Kumoji, Naha, Okinawa', hours:'영업시간 확인 필요', price:'¥3,000 ~ 5,000', emoji:'🍖', category:'야키니쿠', tags:['호르몬야키니쿠','대창','다양한부위'], nameJp:'ぶち 久茂地店', nameEn:'Butchi Kumoji', rating:4.6, reviews:603, desc:'호르몬(내장) 야키니쿠 전문점. 다양한 부위의 내장 요리와 고기를 즐길 수 있는 곳이에요. 야키니쿠는 고기를 테이블 그릴에 직접 구워 먹는 일본식 바베큐. 독특한 내장 부위를 도전해보고 싶은 분께 추천.', lat:26.2165, lng:127.6835, mapUrl:'https://www.google.com/maps/search/?api=1&query=ぶち+久茂地店+那覇' },
+  { id:54, name:'구루메 회전초밥 미하마점', area:'차탄', addr:'Mihama, Chatan, Okinawa', hours:'11:00~22:00 (연중무휴)', price:'¥2,000 ~ 3,000', emoji:'🍣', category:'이자카야', tags:['회전초밥','신선한네타','웨이팅각오'], nameJp:'グルメ回転寿司市場 美浜店', nameEn:'Gourmet Sushi Mihama', rating:4.2, reviews:4009, desc:'가성비 최고의 회전초밥 맛집! 웨이팅이 엄청나지만 그만한 가치가 있어요. 네타(초밥 재료)가 신선하고 두툼한 것이 특징이에요. 오키나와 앞바다에서 잡힌 신선한 해산물로 만든 초밥. 아메리칸 빌리지 근처 위치.', lat:26.3100, lng:127.7570, mapUrl:'https://www.google.com/maps/search/?api=1&query=グルメ回転寿司市場+美浜店+北谷' },
 ];
 
 let currentFilter = 'all', currentSearch = '';
@@ -786,6 +778,7 @@ function renderShops() {
       <div class="shop-emoji-wrap">${s.emoji}</div>
       <div class="shop-info">
         <div class="shop-name">${s.name}</div>
+        ${(s.nameJp && s.nameJp !== s.name) ? `<div style="font-size:10px;color:var(--ink3);margin-top:-2px;font-weight:500;line-height:1.2;">${s.nameJp}</div>` : ''}
         <div class="shop-area">📍 ${s.area} &nbsp;|&nbsp; ${s.category}</div>
         <div class="shop-tags">${tagsHtml}</div>
       </div>
@@ -871,6 +864,13 @@ function openShopModal(id) {
   const badge = document.getElementById('mPickedBadge');
   badge.style.display = 'none'; // picked 필드는 유지, 배지는 현재 비표시
   document.getElementById('mName').textContent = s.name;
+  const subEl = document.getElementById('mNameSub');
+  if(subEl) {
+    const parts = [];
+    if(s.nameJp && s.nameJp !== s.name) parts.push(s.nameJp);
+    if(s.nameEn && s.nameEn !== s.name) parts.push(s.nameEn);
+    subEl.textContent = parts.join('  ·  ');
+  }
   document.getElementById('mArea').textContent = `📍 ${s.area} · ${s.category}`;
   document.getElementById('mStars').textContent = '★'.repeat(Math.floor(s.rating));
   document.getElementById('mRating').textContent = s.rating;
@@ -878,7 +878,10 @@ function openShopModal(id) {
   document.getElementById('mDesc').textContent = s.desc;
   document.getElementById('mAddr').textContent = s.addr;
   document.getElementById('mHours').textContent = s.hours;
-  document.getElementById('mPrice').textContent = s.price;
+  const priceEl2 = document.getElementById('mPrice');
+  const priceRow = document.getElementById('mPriceRow');
+  if(s.price) { priceEl2.textContent = s.price; if(priceRow) priceRow.style.display='flex'; }
+  else { priceEl2.textContent = ''; if(priceRow) priceRow.style.display='none'; }
   document.getElementById('mTags').innerHTML = s.tags.map(t=>`<span class="tag">${t}</span>`).join('');
   document.getElementById('mMapBtn').onclick = () => {
     const placeId = s.mapUrl ? s.mapUrl.split('place_id:')[1] : null;
@@ -897,7 +900,7 @@ function closeShopModal(e) {
 }
 
 function openReport() {
-  window.open('https://docs.google.com/forms/d/e/1FAIpQLSdggckI-u8iKiwaKrbTkk-S5Lj2bWhKCCtjih9iXFj7wW9VKA/viewform?usp=publish-editor', '_blank');
+  window.open('https://docs.google.com/forms/d/e/1FAIpQLScbinBE2Z14hTl1z4PQA9878REXpZfUvLUrV_l9cocMFif04A/viewform?usp=publish-editor', '_blank');
 }
 function closeReportModal(e) {
   if(e.target===document.getElementById('reportModal')) {
@@ -945,8 +948,12 @@ window.addEventListener('focus', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderShops();
-  // 구글맵은 하단 API 스크립트의 callback=initMap으로 안정적으로 실행
-  window.initMap = initMap;
+  // 구글맵이 이미 로드됐으면 바로 실행, 아니면 콜백으로 대기
+  if (typeof google !== 'undefined' && google.maps) {
+    initMap();
+  } else {
+    window.initMap = initMap;
+  }
   const filterRow = document.getElementById('filterRowEl');
   if(filterRow) {
     filterRow.addEventListener('wheel', (e) => {
@@ -971,6 +978,5 @@ function closeWelcome() {
   } catch(e) {}
 })();
 </script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCA0liZL2K6lBXOlpv5o1eujJREDc5cOA0&language=ko&region=KR&loading=async&callback=initMap"></script>
 </body>
 </html>
