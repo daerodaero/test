@@ -1,0 +1,5296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년도 일본 축제 총 정리 | 대로와 나나</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --red-deep:#8B0000;--red-main:#C8102E;--red-light:#E63946;
+    --cream:#FFF5EB;--cream-deep:#FFEAD5;--paper:#FFFAF3;
+    --ink:#1A1A1A;--ink-soft:#4A4A4A;
+    --gold:#D4A24C;--gold-soft:#F2D58C;
+    --shadow-card:0 2px 8px rgba(139,0,0,0.06),0 8px 24px rgba(139,0,0,0.04);
+    --shadow-card-hover:0 4px 12px rgba(139,0,0,0.1),0 16px 36px rgba(139,0,0,0.08);
+  }
+  html,body{background:var(--cream);color:var(--ink);font-family:'Pretendard',-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  body{min-height:100vh}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  a{text-decoration:none;color:inherit}
+  .num-en{font-family:'Outfit','Pretendard',sans-serif;font-feature-settings:'tnum'}
+
+  .container{max-width:720px;margin:0 auto;background:var(--paper);min-height:100vh;position:relative;box-shadow:0 0 60px rgba(0,0,0,0.04)}
+
+  /* Header */
+  .header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red-main) 100%);color:white;padding:28px 24px 20px;position:relative;overflow:hidden}
+  .header::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,255,255,0.08) 0%,transparent 70%);pointer-events:none}
+  .header::after{content:'🏮';position:absolute;top:18px;right:22px;font-size:28px;opacity:0.4}
+  .header-row{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+  .header-logo{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+  .header-text h1{font-weight:800;font-size:22px;letter-spacing:-0.7px;line-height:1.2}
+  .header-text .sub{font-family:'Outfit',sans-serif;font-weight:600;font-size:11px;letter-spacing:2.5px;opacity:0.85;margin-top:5px}
+  .header-banner{margin-top:18px;background:rgba(0,0,0,0.18);border-radius:8px;padding:10px 14px;font-size:13px;font-weight:500;text-align:center;letter-spacing:-0.3px}
+  .header-banner .spark{color:var(--gold-soft)}
+
+  /* Search */
+  .search-wrap{padding:18px 20px 8px}
+  .search-box{display:flex;background:white;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-card);border:1.5px solid var(--cream-deep)}
+  .search-box input{flex:1;border:0;outline:0;padding:14px 16px;font-size:14px;font-family:inherit;background:transparent;color:var(--ink)}
+  .search-box input::placeholder{color:#B0A599}
+  .search-btn{background:var(--red-main);color:white;padding:0 22px;font-size:18px;transition:background 0.2s}
+  .search-btn:hover{background:var(--red-deep)}
+
+  /* CTA */
+  .cta-group{padding:12px 20px 6px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .cta-card{background:white;border-radius:12px;padding:14px 8px;text-align:center;box-shadow:var(--shadow-card);transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;gap:6px;border:1.5px solid var(--cream-deep)}
+  .cta-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-card-hover)}
+  .cta-card .icon{font-size:24px}
+  .cta-card .label{font-size:12px;font-weight:700;color:var(--red-deep);letter-spacing:-0.3px}
+  .cta-card .sub{font-size:10px;color:#999;font-weight:500}
+
+  /* D-day */
+  .highlight-wrap{padding:10px 20px 0}
+  .highlight-box{background:linear-gradient(135deg,#1a1a1a 0%,#3a1f1f 100%);color:white;border-radius:14px;padding:16px 18px;position:relative;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+  .highlight-box:hover{transform:translateY(-2px)}
+  .highlight-box::before{content:'';position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(212,162,76,0.2) 0%,transparent 70%)}
+  .highlight-box .label{font-family:'Outfit',sans-serif;font-size:11px;color:var(--gold-soft);letter-spacing:1.8px;font-weight:700;margin-bottom:4px}
+  .highlight-box .name{font-size:17px;font-weight:800;margin-bottom:6px;letter-spacing:-0.5px}
+  .highlight-box .meta{font-size:12px;opacity:0.7;font-weight:500}
+  .highlight-box .dday{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:'Outfit',sans-serif;font-size:26px;color:var(--gold-soft);font-weight:800;z-index:1;letter-spacing:-0.5px}
+  .next-festival-item{cursor:pointer;padding:3px 0}
+  .next-festival-item+.next-festival-item{margin-top:6px}
+
+  /* Top 3 */
+  .top3-section{padding:22px 20px 0}
+  .top3-card{background:linear-gradient(135deg,#1a1a1a 0%,#2a1010 100%);color:white;border-radius:14px;padding:20px;position:relative;overflow:hidden}
+  .top3-card::before{content:'🎆';position:absolute;right:-10px;top:-10px;font-size:80px;opacity:0.08}
+  .top3-title{font-weight:800;font-size:16px;color:var(--gold-soft);margin-bottom:4px;letter-spacing:-0.3px;display:flex;align-items:center;gap:8px}
+  .top3-title .en{font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:600;color:white;opacity:0.5;letter-spacing:1.2px}
+  .top3-subtitle{font-size:11px;opacity:0.6;letter-spacing:0.3px;margin-bottom:14px;font-weight:500}
+  .top3-list{display:flex;flex-direction:column;gap:10px}
+  .top3-item{display:flex;gap:10px;align-items:center;padding:10px 12px;background:rgba(255,255,255,0.06);border-radius:10px;border-left:3px solid var(--gold-soft);cursor:pointer;transition:all 0.2s}
+  .top3-item:hover{background:rgba(255,255,255,0.12);transform:translateX(2px)}
+  .top3-item .num{font-family:'Outfit',sans-serif;font-size:22px;color:var(--gold-soft);width:24px;font-weight:700}
+  .top3-item .info{flex:1;min-width:0}
+  .top3-item .name{font-size:14px;font-weight:700}
+  .top3-item .when{font-size:11px;opacity:0.6;margin-top:2px;font-weight:500}
+  .top3-item .arr{color:var(--gold-soft);font-size:14px;opacity:0.6}
+
+  /* Channel */
+  .channel-section{padding:22px 20px 6px}
+  .channel-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .channel-btn{background:white;border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-card);border:1.5px solid var(--cream-deep);transition:transform 0.2s,box-shadow 0.2s}
+  .channel-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-card-hover)}
+  .channel-btn .logo{width:36px;height:36px;flex-shrink:0}
+  .channel-btn .text{flex:1;min-width:0}
+  .channel-btn .text .nm{font-size:12.5px;font-weight:800;color:var(--ink);letter-spacing:-0.3px;line-height:1.2}
+  .channel-btn .text .desc{font-size:10.5px;color:#999;margin-top:2px;font-weight:500}
+
+  /* Section title */
+  .section-title{padding:22px 20px 12px;display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .section-title h2{font-size:17px;font-weight:800;letter-spacing:-0.5px;color:var(--ink)}
+  .section-title h2 .count{color:var(--red-main);font-family:'Outfit',sans-serif;font-weight:700;margin-left:2px}
+  .section-title .sort-buttons{display:flex;gap:4px}
+  .sort-btn{padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;background:white;border:1.5px solid var(--cream-deep);color:var(--ink-soft);transition:all 0.2s}
+  .sort-btn.active{background:var(--red-main);color:white;border-color:var(--red-main)}
+
+  /* === COLLAPSIBLE SECTION === */
+  .collapsible-trigger{
+    cursor:pointer;
+    user-select:none;
+    transition:background 0.2s;
+    border-radius:8px;
+  }
+  .collapsible-trigger:hover{background:rgba(200,16,46,0.04)}
+  .collapsible-trigger .toggle-icon{
+    font-family:'Outfit',sans-serif;
+    font-size:14px;
+    color:var(--red-main);
+    transition:transform 0.3s ease;
+    flex-shrink:0;
+    background:white;
+    border:1.5px solid var(--cream-deep);
+    width:28px;height:28px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;
+  }
+  .collapsible-section.closed .toggle-icon{transform:rotate(-90deg)}
+  .collapsible-content{
+    overflow:hidden;
+    transition:max-height 0.4s ease-in-out, opacity 0.3s ease;
+    opacity:1;
+  }
+  .collapsible-section.closed .collapsible-content{
+    max-height:0 !important;
+    opacity:0;
+  }
+  .collapsible-trigger .preview-count{
+    font-size:11px;
+    color:#999;
+    font-weight:500;
+    margin-left:8px;
+  }
+
+  /* Filter chips */
+  .filter-strip-wrap{
+    position:relative;padding:6px 0 14px;margin:0 20px;
+    display:flex;align-items:center;gap:6px;
+  }
+  .scroll-arrow{
+    flex-shrink:0;width:28px;height:28px;border-radius:50%;
+    background:white;box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:none;align-items:center;justify-content:center;
+    color:var(--red-main);font-size:14px;font-weight:700;
+    border:1.5px solid var(--cream-deep);transition:all 0.2s;
+  }
+  .scroll-arrow:hover:not(:disabled){background:var(--red-main);color:white;border-color:var(--red-main)}
+  .scroll-arrow.visible{display:flex}
+  .scroll-arrow:disabled{opacity:0.3;cursor:not-allowed}
+  .filter-strip{flex:1;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;scroll-behavior:smooth;min-width:0}
+  .filter-strip::-webkit-scrollbar{display:none}
+  .filter-chips{display:inline-flex;gap:8px;padding:2px 0 4px}
+  .chip{padding:8px 16px;border-radius:24px;background:white;border:1.5px solid var(--cream-deep);font-size:13px;font-weight:600;color:var(--ink-soft);white-space:nowrap;transition:all 0.2s;flex-shrink:0}
+  .chip:hover{border-color:var(--red-light);color:var(--red-main)}
+  .chip.active{background:var(--red-main);color:white;border-color:var(--red-main);box-shadow:0 2px 8px rgba(200,16,46,0.25)}
+  .chip .emoji{margin-right:4px}
+
+  /* Month filter */
+  .month-filter{padding:0 20px 8px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+  .month-filter::-webkit-scrollbar{display:none}
+  .month-btn{flex-shrink:0;padding:7px 14px;border-radius:8px;background:white;border:1.5px solid var(--cream-deep);font-size:12px;font-weight:700;color:var(--ink-soft);transition:all 0.2s;font-family:'Outfit',sans-serif;letter-spacing:0.8px}
+  .month-btn:hover{border-color:var(--red-light)}
+  .month-btn.active{background:var(--ink);color:white;border-color:var(--ink)}
+
+  /* Festival cards */
+  .festival-list{padding:0 20px 16px;display:flex;flex-direction:column;gap:12px}
+  .fest-card{background:white;border-radius:14px;padding:16px;box-shadow:var(--shadow-card);border:1.5px solid var(--cream-deep);display:flex;gap:14px;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;cursor:pointer}
+  .fest-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-card-hover)}
+  .fest-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--red-main);opacity:0;transition:opacity 0.2s}
+  .fest-card:hover::before{opacity:1}
+  .fest-card.matsuri::before{background:var(--red-main)}
+  .fest-card.hanabi::before{background:var(--gold)}
+  .fest-icon{width:56px;height:56px;background:var(--cream);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+  .fest-card.hanabi .fest-icon{background:linear-gradient(135deg,#FFF8E7 0%,#FFEAB6 100%)}
+  .fest-body{flex:1;min-width:0}
+  .fest-title-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px}
+  .fest-name{font-size:15.5px;font-weight:800;color:var(--ink);letter-spacing:-0.5px;line-height:1.3}
+  .fest-jp{font-size:10.5px;color:#999;font-weight:600;line-height:1.35;margin-top:2px}
+  .fest-date{font-family:'Outfit',sans-serif;font-size:12.5px;color:var(--red-main);flex-shrink:0;font-weight:700;letter-spacing:0.2px;white-space:nowrap}
+  .fest-loc{font-size:12px;color:#888;margin-bottom:8px;font-weight:500}
+  .fest-loc .pin{color:var(--red-main)}
+  .fest-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+  .tag{font-size:11px;padding:3px 9px;border-radius:6px;background:var(--cream);color:var(--ink-soft);font-weight:600}
+  .tag.region{background:#FFE5E5;color:var(--red-deep)}
+  .tag.top3{background:#1a1a1a;color:var(--gold-soft)}
+  .tag.shots{background:#FFF8E7;color:#8B6F1F}
+  .tag.paid{background:#2D1810;color:var(--gold-soft)}
+  .tag.longrun{background:#F0F8E8;color:#3A6B1A}
+  .fest-meta{font-size:12px;color:var(--ink-soft);line-height:1.5;border-top:1px dashed var(--cream-deep);padding-top:8px;font-weight:500}
+  .fest-meta .meta-row{display:flex;gap:6px;align-items:flex-start}
+  .fest-meta .meta-row+.meta-row{margin-top:3px}
+  .fest-meta .key{color:#999;min-width:36px;font-size:11px;padding-top:1px;font-weight:600}
+  .fest-meta .val{flex:1}
+  .fest-detail-hint{margin-top:8px;font-size:11px;color:var(--red-main);font-weight:600;text-align:right}
+
+  /* Pagination */
+  .pagination{display:flex;justify-content:center;align-items:center;gap:6px;padding:8px 20px 24px;flex-wrap:wrap}
+  .page-btn{width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid var(--cream-deep);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--ink-soft);transition:all 0.15s;display:flex;align-items:center;justify-content:center}
+  .page-btn:hover:not(:disabled){border-color:var(--red-main);color:var(--red-main)}
+  .page-btn.active{background:var(--red-main);color:white;border-color:var(--red-main);box-shadow:0 2px 8px rgba(200,16,46,0.25)}
+  .page-btn:disabled{opacity:0.4;cursor:not-allowed}
+  .page-btn.nav{font-size:13px}
+  .page-info{font-size:11px;color:#999;margin-left:8px;font-weight:500}
+
+  .empty{text-align:center;padding:60px 20px;color:#999}
+  .empty .emoji{font-size:40px;margin-bottom:12px}
+  .empty .text{font-size:14px}
+
+  /* Calendar */
+  .calendar-section{padding:0 20px 24px}
+  .cal-month{background:white;border-radius:14px;padding:12px;box-shadow:var(--shadow-card);border:1.5px solid var(--cream-deep);margin-bottom:12px}
+  .cal-month-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;margin-bottom:8px;border-bottom:2px solid var(--cream-deep)}
+  .cal-month-head .en{font-family:'Outfit',sans-serif;font-size:20px;color:var(--red-main);font-weight:700;letter-spacing:1px}
+  .cal-month-head .kr{font-size:12px;color:var(--ink-soft);font-weight:700}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--cream-deep);border-radius:6px;overflow:hidden;border:1px solid var(--cream-deep)}
+  .cal-grid .dow{background:var(--cream);text-align:center;padding:5px 0;font-size:9.5px;font-weight:700;color:var(--ink-soft);font-family:'Outfit',sans-serif;letter-spacing:0.4px}
+  .cal-grid .dow.sun{color:var(--red-main)}
+  .cal-grid .dow.sat{color:#4A6FA5}
+  .cal-cell{background:white;height:64px;padding:3px 2px;display:flex;flex-direction:column;gap:2px;overflow:hidden;position:relative}
+  .cal-cell.empty{background:#FAF6EF}
+  .cal-cell .num{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:1px;padding-left:2px}
+  .cal-cell .num.sun{color:var(--red-main)}
+  .cal-cell .num.sat{color:#4A6FA5}
+  .cal-cell .num.today{background:var(--red-main);color:white;border-radius:50%;width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;font-size:9.5px;padding:0}
+  .cal-event{font-size:8px;padding:2px 3px;border-radius:3px;line-height:1.15;cursor:pointer;overflow:hidden;font-weight:600;transition:transform 0.15s;flex-shrink:0}
+  .cal-event:hover{transform:scale(1.04)}
+  .cal-event.matsuri{background:rgba(200,16,46,0.12);color:var(--red-deep);border-left:2px solid var(--red-main)}
+  .cal-event.hanabi{background:rgba(212,162,76,0.2);color:#7A5A18;border-left:2px solid var(--gold)}
+  .cal-event .reg{font-size:7.5px;font-weight:700;opacity:0.7;display:block;line-height:1.05;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cal-event .nm{font-size:8.5px;font-weight:700;display:block;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cal-more{font-size:8px;color:#888;padding:0 3px;font-weight:700;cursor:pointer;line-height:1.2}
+  .cal-more:hover{color:var(--red-main)}
+  .cal-legend{display:flex;gap:12px;font-size:11px;color:#888;padding:8px 0 0;font-weight:500;justify-content:center}
+  .cal-legend .item{display:flex;align-items:center;gap:4px}
+  .cal-legend .dot{width:8px;height:8px;border-radius:50%}
+  .cal-legend .dot.matsuri{background:var(--red-main)}
+  .cal-legend .dot.hanabi{background:var(--gold)}
+
+  /* Direct flight */
+  .flight-section{padding:0 20px 8px}
+  .flight-card{background:white;border-radius:14px;padding:18px;box-shadow:var(--shadow-card);border:1.5px solid var(--cream-deep)}
+  .flight-card .intro{font-size:12px;color:#888;margin-bottom:12px;font-weight:500;line-height:1.5}
+  .flight-list{display:flex;flex-direction:column;gap:8px}
+  .flight-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--paper);border-radius:10px;border-left:3px solid var(--red-main);transition:all 0.2s}
+  .flight-item:hover{background:var(--cream);transform:translateX(2px)}
+  .flight-item .plane{font-size:18px;flex-shrink:0}
+  .flight-item .city{font-size:13.5px;font-weight:800;color:var(--ink);letter-spacing:-0.3px;flex-shrink:0;min-width:54px}
+  .flight-item .fest{font-size:11.5px;color:var(--ink-soft);flex:1;font-weight:500}
+  .flight-item .route{font-family:'Outfit',sans-serif;font-size:10.5px;color:var(--red-main);font-weight:700;background:#FFE5E5;padding:3px 8px;border-radius:5px;flex-shrink:0}
+
+  /* Footer */
+  .footer-version{text-align:center;padding:18px 20px 2px;border-top:2px solid var(--cream-deep);margin:12px 20px 0}
+  .footer-version .title{font-size:13px;font-weight:800;color:var(--ink);letter-spacing:-0.3px}
+  .footer-version .ver{font-family:'Outfit',sans-serif;font-size:12px;color:var(--red-main);margin-left:6px;letter-spacing:0.5px;font-weight:700}
+  .footer-copyright{text-align:center;padding:4px 20px 28px;font-size:11px;color:#999;letter-spacing:0.3px;font-weight:500;line-height:1.35}
+
+  /* Modals */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s}
+  .modal-overlay.show{opacity:1;pointer-events:auto}
+  .modal{background:white;border-radius:20px;max-width:360px;width:100%;overflow:hidden;transform:translateY(20px) scale(0.96);transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);position:relative}
+  .modal-overlay.show .modal{transform:translateY(0) scale(1)}
+  .modal-header{background:linear-gradient(135deg,var(--red-deep) 0%,var(--red-main) 100%);color:white;padding:24px 20px 18px;text-align:center;position:relative}
+  .modal-header .lantern{font-size:32px;margin-bottom:6px;display:block}
+  .modal-header h3{font-size:18px;font-weight:800;letter-spacing:-0.5px}
+  .modal-header p{font-size:12px;opacity:0.85;margin-top:4px;letter-spacing:-0.3px;font-weight:500}
+  .modal-close{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,0.2);color:white;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;z-index:2}
+  .modal-close:hover{background:rgba(255,255,255,0.3)}
+  .modal-body{padding:18px;display:flex;flex-direction:column;gap:10px}
+  .modal-cta{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--paper);border-radius:12px;border:1.5px solid var(--cream-deep);transition:all 0.2s}
+  .modal-cta:hover{border-color:var(--red-main);background:var(--cream);transform:translateX(2px)}
+  .modal-cta .icon{width:44px;height:44px;background:white;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+  .modal-cta .info{flex:1}
+  .modal-cta .info .title{font-size:14px;font-weight:800;color:var(--ink);letter-spacing:-0.3px}
+  .modal-cta .info .desc{font-size:11px;color:#888;margin-top:2px;font-weight:500}
+  .modal-cta .arrow{color:var(--red-main);font-weight:700;font-family:'Outfit',sans-serif}
+  .modal-foot{padding:0 18px 18px;text-align:center}
+  .modal-skip{font-size:12px;color:#aaa;text-decoration:underline;text-underline-offset:3px;font-weight:500}
+
+  /* Detail Modal */
+  .detail-modal{background:white;border-radius:20px;max-width:440px;width:100%;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(20px) scale(0.96);transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);position:relative}
+  .detail-overlay.show .detail-modal{transform:translateY(0) scale(1)}
+  .detail-header{padding:28px 20px 16px;color:white;background:linear-gradient(135deg,var(--red-deep) 0%,var(--red-main) 100%);position:relative;overflow:hidden}
+  .detail-header.hanabi{background:linear-gradient(135deg,#2A1810 0%,#5C3A18 100%)}
+  .detail-header::after{content:'';position:absolute;top:-30px;right:-30px;width:140px;height:140px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%)}
+  .detail-header .icon-big{font-size:40px;display:block;margin-bottom:8px;line-height:1}
+  .detail-header .name{font-size:21px;font-weight:800;letter-spacing:-0.5px;line-height:1.25;margin-bottom:6px}
+  .detail-header .jp-name{font-size:12px;font-weight:700;line-height:1.35;opacity:0.82;margin:-2px 0 8px}
+  .detail-header .date-pill{display:inline-block;background:rgba(0,0,0,0.25);padding:5px 12px;border-radius:20px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.3px}
+  .detail-header.hanabi .date-pill{background:rgba(212,162,76,0.3);color:var(--gold-soft)}
+  .detail-body{overflow-y:auto;padding:18px 20px 20px;flex:1}
+  .detail-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .detail-section{margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--cream-deep)}
+  .detail-section:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+  .detail-section .label{font-size:11px;font-weight:700;color:var(--red-main);letter-spacing:1px;margin-bottom:6px;font-family:'Outfit',sans-serif;display:flex;align-items:center;gap:5px}
+  .detail-section .label .ko{font-family:'Pretendard',sans-serif;font-size:12px;color:var(--ink);letter-spacing:-0.3px}
+  .detail-section .desc{font-size:13.5px;color:var(--ink);line-height:1.65;letter-spacing:-0.3px;font-weight:500}
+  .detail-section .info-line{font-size:13px;color:var(--ink-soft);line-height:1.5;font-weight:500}
+  .detail-section .info-line+.info-line{margin-top:4px}
+  .detail-section .info-line .k{color:#999;font-size:11px;min-width:48px;display:inline-block;font-weight:600}
+  .detail-official-btn{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;padding:11px 14px;background:linear-gradient(135deg,var(--red-deep),var(--red-main));border-radius:10px;font-size:13px;color:white;text-align:center;font-weight:700;transition:all 0.2s}
+  .detail-official-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(200,16,46,0.3)}
+  .detail-cta-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;padding-top:16px;border-top:2px solid var(--cream-deep)}
+  .detail-cta{background:var(--paper);border:1.5px solid var(--cream-deep);border-radius:10px;padding:10px 6px;text-align:center;transition:all 0.2s}
+  .detail-cta:hover{border-color:var(--red-main);background:var(--cream)}
+  .detail-cta .ic{font-size:20px}
+  .detail-cta .nm{font-size:11px;font-weight:700;color:var(--red-deep);margin-top:2px}
+
+  /* Access info inside modal */
+  .access-route{
+    background:var(--paper);
+    border:1.5px solid var(--cream-deep);
+    border-radius:10px;
+    padding:12px 14px;
+    margin-top:6px;
+  }
+  .access-route + .access-route{margin-top:8px}
+  .access-route .hub-line{
+    display:flex;align-items:center;gap:6px;
+    font-size:12.5px;font-weight:800;
+    color:var(--red-deep);letter-spacing:-0.3px;
+    margin-bottom:6px;
+  }
+  .access-route .hub-line .pin-ic{font-size:14px}
+  .access-route .route-line{
+    font-size:12px;color:var(--ink-soft);
+    line-height:1.5;font-weight:500;
+  }
+  .access-route .route-line .arrow{color:#bbb;margin:0 4px}
+  .access-route .time-pill{
+    display:inline-block;
+    font-family:'Outfit',sans-serif;
+    font-weight:700;color:var(--red-main);
+    background:#FFE5E5;
+    padding:2px 8px;border-radius:5px;
+    margin-top:4px;font-size:11.5px;
+  }
+
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .fest-card{animation:fadeIn 0.35s ease-out backwards}
+
+  @media (max-width:380px){
+    .header-text h1{font-size:20px}
+    .cta-card .label{font-size:11px}
+    .fest-name{font-size:14.5px}
+    .channel-btn .text .nm{font-size:12px}
+    .detail-header .name{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="header">
+    <div class="header-row">
+      <div class="header-logo">🎌</div>
+      <div class="header-text">
+        <h1>2026년도 일본 축제 총 정리</h1>
+        <div class="sub">JAPAN FESTIVAL CALENDAR 2026</div>
+      </div>
+    </div>
+    <div class="header-banner">
+      <span class="spark">✨</span> 마츠리 · 하나비 한눈에 보는 여행자 캘린더
+    </div>
+  </header>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="축제·하나비·지역·도시로 검색..." />
+      <button class="search-btn">🔍</button>
+    </div>
+  </div>
+
+  <div class="cta-group">
+    <a href="https://skyscanner.pxf.io/qWy4RN" target="_blank" rel="noopener" class="cta-card"><div class="icon">✈️</div><div class="label">항공권</div><div class="sub">최저가 검색</div></a>
+    <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1918022&hl=ko-kr" target="_blank" rel="noopener" class="cta-card"><div class="icon">🏨</div><div class="label">숙소</div><div class="sub">최저가 예약</div></a>
+    <a href="https://affiliate.klook.com/redirect?aid=40048&aff_adid=1273059&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener" class="cta-card"><div class="icon">🎟️</div><div class="label">투어·입장권</div><div class="sub">최저가 예약</div></a>
+  </div>
+
+  <div id="ddayBox"></div>
+
+  <div class="top3-section">
+    <div class="top3-card">
+      <div class="top3-title">🏆 일본 3대 하나비 <span class="en">JAPAN'S TOP 3 FIREWORKS</span></div>
+      <div class="top3-subtitle">놓치면 후회하는 콘텐츠 핵심 일정 · 클릭하면 상세 보기</div>
+      <div class="top3-list" id="top3List"></div>
+    </div>
+  </div>
+
+  <div class="section-title" style="padding-bottom:8px;">
+    <h2>🔗 대로와 나나 채널</h2>
+  </div>
+  <div class="channel-section" style="padding-top:0;">
+    <div class="channel-grid">
+      <a href="https://www.instagram.com/daero._.nana/" class="channel-btn" target="_blank" rel="noopener">
+        <svg class="logo" viewBox="0 0 64 64" fill="none">
+          <defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+            <stop offset="0%" stop-color="#FED576"/><stop offset="26%" stop-color="#F47133"/>
+            <stop offset="61%" stop-color="#BC3081"/><stop offset="100%" stop-color="#4C63D2"/>
+          </radialGradient></defs>
+          <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#ig-grad)"/>
+          <rect x="14" y="14" width="36" height="36" rx="10" fill="none" stroke="white" stroke-width="3.5"/>
+          <circle cx="32" cy="32" r="8" fill="none" stroke="white" stroke-width="3.5"/>
+          <circle cx="44" cy="20" r="2.4" fill="white"/>
+        </svg>
+        <div class="text"><div class="nm">Instagram</div><div class="desc">@daero._.nana</div></div>
+      </a>
+      <a href="#" class="channel-btn" target="_blank" rel="noopener">
+        <svg class="logo" viewBox="0 0 64 64">
+          <rect width="64" height="64" rx="14" fill="#03C75A"/>
+          <path d="M19 18h7.5l9 12.4V18H43v28h-7.5l-9-12.4V46H19V18z" fill="white"/>
+        </svg>
+        <div class="text"><div class="nm">Naver Blog</div><div class="desc">대로와 나나 블로그</div></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>🗓️ 전체 축제 <span class="count num-en" id="totalCount">0</span></h2>
+    <div class="sort-buttons">
+      <button class="sort-btn active" data-sort="date">📅 날짜순</button>
+      <button class="sort-btn" data-sort="region">📍 지역순</button>
+    </div>
+  </div>
+
+  <div class="filter-strip-wrap">
+    <button class="scroll-arrow" id="chipPrev">‹</button>
+    <div class="filter-strip" id="filterStrip">
+      <div class="filter-chips" id="catFilter">
+        <button class="chip active" data-cat="all"><span class="emoji">🎪</span>전체</button>
+        <button class="chip" data-cat="matsuri"><span class="emoji">🏮</span>마츠리</button>
+        <button class="chip" data-cat="hanabi"><span class="emoji">🎆</span>하나비</button>
+        <button class="chip" data-cat="top3"><span class="emoji">🏆</span>일본 3대</button>
+        <button class="chip" data-cat="tokyo"><span class="emoji">🗼</span>도쿄권</button>
+        <button class="chip" data-cat="osaka"><span class="emoji">🍡</span>오사카권</button>
+        <button class="chip" data-cat="kyoto"><span class="emoji">⛩️</span>교토권</button>
+        <button class="chip" data-cat="nagoya"><span class="emoji">🍣</span>나고야권</button>
+        <button class="chip" data-cat="kyushu"><span class="emoji">🌋</span>큐슈</button>
+        <button class="chip" data-cat="tohoku"><span class="emoji">🌾</span>도호쿠</button>
+        <button class="chip" data-cat="hokkaido"><span class="emoji">❄️</span>홋카이도</button>
+        <button class="chip" data-cat="shikoku"><span class="emoji">🌊</span>시코쿠</button>
+      </div>
+    </div>
+    <button class="scroll-arrow" id="chipNext">›</button>
+  </div>
+
+  <div class="month-filter" id="monthFilter">
+    <button class="month-btn active" data-month="all">ALL</button>
+    <button class="month-btn" data-month="5">MAY</button>
+    <button class="month-btn" data-month="6">JUN</button>
+    <button class="month-btn" data-month="7">JUL</button>
+    <button class="month-btn" data-month="8">AUG</button>
+    <button class="month-btn" data-month="9">SEP</button>
+    <button class="month-btn" data-month="10">OCT</button>
+    <button class="month-btn" data-month="11">NOV</button>
+  </div>
+
+  <div class="festival-list" id="festivalList"></div>
+  <div id="paginationBox"></div>
+
+  <!-- Calendar (collapsible) -->
+  <div class="collapsible-section" id="calSection">
+    <div class="section-title collapsible-trigger" data-target="calSection" style="padding-top:6px;">
+      <h2>📆 월별 캘린더 한눈에<span class="preview-count">월별 일정 보기</span></h2>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <div class="calendar-section" id="calendarSection"></div>
+    </div>
+  </div>
+
+  <!-- Direct flights (collapsible) -->
+  <div class="collapsible-section" id="flightSec">
+    <div class="section-title collapsible-trigger" data-target="flightSec" style="padding-top:6px;">
+      <h2>✈️ 한국 직항 노선<span class="preview-count">도쿄 · 오사카 · 나고야 제외</span></h2>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="collapsible-content">
+      <div class="flight-section">
+        <div class="flight-card">
+          <div class="intro">도쿄·오사카·나고야 외에 인천·부산에서 직항으로 갈 수 있는 축제 도시들이에요.</div>
+          <div class="flight-list">
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">도쿠시마</span><span class="fest">아와오도리 (8/12~15)</span><span class="route">ICN 직항</span></div>
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">센다이</span><span class="fest">타나바타 축제 (8/6~8)</span><span class="route">ICN 직항</span></div>
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">아오모리</span><span class="fest">네부타 마츠리 (8/2~7)</span><span class="route">ICN 직항</span></div>
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">니가타</span><span class="fest">나가오카 대하나비 (8/2~3)</span><span class="route">ICN 직항</span></div>
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">삿포로</span><span class="fest">요사코이 · 마코마나이 · 토야코</span><span class="route">ICN/PUS</span></div>
+            <div class="flight-item"><span class="plane">✈️</span><span class="city">오이타</span><span class="fest">히타강 관광제 (5/23~24)</span><span class="route">ICN 직항</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-version">
+    <span class="title">2026년도 일본 축제 총 정리</span>
+    <span class="ver">ver.10</span>
+  </div>
+  <div class="footer-copyright">Copyright 2026 daero._.nana. All Rights Reserved.</div>
+
+</div>
+
+<!-- Welcome modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" id="modalClose">×</button>
+      <span class="lantern">🏮</span>
+      <h3>2026 일본 축제 여행 준비</h3>
+      <p>대로와 나나 추천 · 최저가 모음</p>
+    </div>
+    <div class="modal-body">
+      <a href="https://skyscanner.pxf.io/qWy4RN" target="_blank" rel="noopener" class="modal-cta"><div class="icon">✈️</div><div class="info"><div class="title">항공권 최저가</div><div class="desc">스카이스캐너로 한 번에 비교</div></div><div class="arrow">→</div></a>
+      <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1918022&hl=ko-kr" target="_blank" rel="noopener" class="modal-cta"><div class="icon">🏨</div><div class="info"><div class="title">숙소 최저가</div><div class="desc">아고다로 축제 인근 호텔 예약</div></div><div class="arrow">→</div></a>
+      <a href="https://affiliate.klook.com/redirect?aid=40048&aff_adid=1273059&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener" class="modal-cta"><div class="icon">🎟️</div><div class="info"><div class="title">투어·입장권 최저가</div><div class="desc">클룩으로 현지 투어 · 패스 예약</div></div><div class="arrow">→</div></a>
+    </div>
+    <div class="modal-foot"><button class="modal-skip" id="modalSkip">나중에 볼게요</button></div>
+  </div>
+</div>
+
+<div class="modal-overlay detail-overlay" id="detailModal"><div class="detail-modal" id="detailModalBox"></div></div>
+
+<script>
+// hub: tokyo, osaka, kyoto, nagoya, kyushu, tohoku, hokkaido, shikoku
+const festivals =[
+  {
+    "hub": "tokyo",
+    "name": "쿠즈우 마츠리 하나비",
+    "jpName": "くずう祭り花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/9(토)",
+    "dateSort": 509,
+    "region": "토치기",
+    "loc": "사노시 쿠즈우 카와라",
+    "shots": "10,000발",
+    "time": "시간 미정",
+    "desc": "토치기현 사노시의 전통 축제와 결합된 불꽃놀이로 지방 축제 특유의 정겨운 야타이 분위기를 즐길 수 있습니다. 약 1만 발 규모로 밤하늘을 화려하게 장식합니다.",
+    "venue": "152 Kuzuu Higashicho, Sano, Tochigi 327-0501",
+    "price": "무료",
+    "official": "https://www.sano-kanko.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "쿠로후네 축제 해상 불꽃축제",
+    "jpName": "黒船祭海上花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/15(금)",
+    "dateSort": 515,
+    "region": "시즈오카",
+    "loc": "시모다항",
+    "time": "20:15~20:40",
+    "desc": "시모다항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "시즈오카현 시모다시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3만엔부터",
+    "official": "https://www.shimoda-city.info/kurofune"
+  },
+  {
+    "hub": "tokyo",
+    "name": "산자 마츠리",
+    "jpName": "三社祭",
+    "type": "matsuri",
+    "month": 5,
+    "dateText": "5/15(금)~5/17(일)",
+    "dateSort": 515,
+    "region": "도쿄",
+    "loc": "아사쿠사 신사·센소지 일대",
+    "feature": "아사쿠사의 역동적인 가마 행진",
+    "time": "17일 06:00~20:00",
+    "desc": "에도 3대 축제 중 하나로 아사쿠사 전체가 가마 행진의 열기로 가득 차는 역동적인 축제입니다. 마지막 날 거대 가마 3개가 신사를 나서는 '미야다시'의 에너지는 압도적입니다.",
+    "venue": "2 Chome-3-1 Asakusa, Taito City, Tokyo 111-0032",
+    "price": "무료",
+    "official": "https://www.asakusajinja.jp/sanjamatsuri/",
+    "access": [
+      {
+        "hub": "도쿄",
+        "start": "긴자역 출발",
+        "route": "지하철 히비야선",
+        "dest": "아사쿠사역",
+        "time": "약 20~25분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "즈시 해안 하나비",
+    "jpName": "逗子海岸花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/21(목)",
+    "dateSort": 521,
+    "region": "카나가와",
+    "loc": "즈시 해수욕장",
+    "shots": "7,000발",
+    "time": "시간 미정",
+    "desc": "해수욕장 개장 전 열리는 이른 여름의 해변 불꽃놀이입니다. 약 7,000발이 음악에 맞춰 터지는 정교한 연출이 특징입니다.",
+    "venue": "2 Chome-10-18 Shinjuku, Zushi, Kanagawa 249-0007",
+    "price": "무료 (유료석 별도)",
+    "official": "https://zushi-hanabi.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "스타 아일랜드 2026",
+    "jpName": "STAR ISLAND 2026",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/23(토)",
+    "dateSort": 523,
+    "region": "도쿄",
+    "loc": "오다이바 해변공원",
+    "time": "19:30~21:00(예정) 개장 16:00",
+    "desc": "오다이바 해변공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "도쿄도 미나토구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만4000엔부터",
+    "official": "https://star-island.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제79회 히타강 관광축제",
+    "jpName": "第79回 日田川開き観光祭",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/23(토)·24(일)",
+    "dateSort": 523,
+    "region": "오이타",
+    "loc": "히타시 주변, 미쿠마가와 주변",
+    "shots": "약1만발",
+    "time": "불꽃놀이 19:40~21:00(예정)",
+    "desc": "히타시 주변, 미쿠마가와 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "오이타현 히타시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.hita.oita.jp/site/hitanioideyo/2722.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "SBI 마이하나비",
+    "jpName": "SBI舞花火",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "지바",
+    "loc": "이나게 해변공원(이나게 해변)",
+    "time": "19:30~20:30(예정) 개장 15:00",
+    "desc": "이나게 해변공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "지바현 지바시 미하마구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4400엔부터",
+    "official": "https://sbimusiccircus.co.jp/sbimaihanabi/inage/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "No.48 아다치 불꽃놀이",
+    "jpName": "第48回 足立の花火",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "도쿄",
+    "loc": "아라카와 하천 부지(도쿄 메트로 치요다선 철교~니시아라이 다리)",
+    "shots": "3000발",
+    "time": "19:20~20:20",
+    "desc": "아라카와 하천 부지에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "도쿄도 아다치구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.adachikanko.net/adachi_no_hanabi48",
+    "access": [
+      {
+        "hub": "도쿄",
+        "start": "긴자역 출발",
+        "route": "지하철 히비야선",
+        "dest": "기타센주역",
+        "time": "약 25~30분"
+      }
+    ]
+  },
+  {
+    "hub": "osaka",
+    "name": "아이오이페론축제 해상불꽃축제",
+    "jpName": "相生ペーロン祭海上花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "효고",
+    "loc": "아이오이 베이",
+    "shots": "약5000발",
+    "time": "19:50~20:40",
+    "desc": "아이오이 베이에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "효고현 아이오이시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://aioi-peron.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "후지산/야마나카 호수 HANABI MAGIC 2026",
+    "jpName": "HANABI MAGIC(花火マジック) 富士・山中湖 2026",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "야마나시",
+    "loc": "야마나카코 교류플라자 키라라",
+    "time": "19:00~20:00 개장 12:00",
+    "desc": "야마나카코 교류플라자 키라라에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "야마나시현 미나미쓰루군 야마나카코무라 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5만엔부터",
+    "official": "https://yamanakako-hanabi.com/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "교토 예술 불꽃놀이 2026",
+    "jpName": "京都芸術花火2026",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/3(수)",
+    "dateSort": 603,
+    "region": "교토",
+    "loc": "교토 경마장",
+    "shots": "3500발",
+    "time": "19:50~20:50 17:00 개장",
+    "desc": "교토 경마장에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "교토부 교토시 후시미구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만2000엔부터",
+    "official": "https://kyoto-hanabi.com/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "아츠타 마츠리 하나비",
+    "jpName": "熱田まつり花火大会",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/5(금)",
+    "dateSort": 605,
+    "region": "아이치",
+    "loc": "진구 공원",
+    "shots": "1,000발",
+    "time": "19:40~20:30",
+    "desc": "나고야 아츠타 신궁 전통 축제의 하이라이트입니다. 신사 특유의 엄숙함과 야간 등불이 어우러진 고전미가 특징입니다.",
+    "venue": "1 Chome-1-1 Jingu, Atsuta Ward, Nagoya, Aichi 456-8585",
+    "price": "무료",
+    "official": "https://www.atsutajingu.or.jp/",
+    "access": [
+      {
+        "hub": "나고야",
+        "start": "나고야역 출발",
+        "route": "JR/명철",
+        "dest": "진구마에역",
+        "time": "약 10~15분"
+      }
+    ]
+  },
+  {
+    "hub": "osaka",
+    "name": "린쿠 불꽃놀이 2026(ENJOY! Rinku)",
+    "jpName": "りんくう花火2026(ENJOY！りんくう)",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/6(토)",
+    "dateSort": 606,
+    "region": "오사카",
+    "loc": "린쿠 마블 비치, 린쿠 프리미엄 아울렛 씨사이드 파크",
+    "time": "19:30~20:10 이벤트는 16:00~21:00",
+    "desc": "린쿠 마블 비치, 린쿠 프리미엄 아울렛 씨사이드 파크에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "오사카부 이즈미사노시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://www.enjoyrinku.com/",
+    "access": [
+      {
+        "hub": "오사카",
+        "start": "난바역(도톤보리) 출발",
+        "route": "난카이 본선",
+        "dest": "린쿠타운역",
+        "time": "약 45~50분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "산노 마츠리",
+    "jpName": "山王祭",
+    "type": "matsuri",
+    "month": 6,
+    "dateText": "6/7(일)~6/17(수)",
+    "dateSort": 607,
+    "region": "도쿄",
+    "loc": "히에 신사",
+    "feature": "2026 짝수해 본제 · 6/12 메인 행렬",
+    "time": "메인 행렬 07:30~17:00",
+    "desc": "2026년 짝수해 본제 대축제로 도쿄 도심을 가로지르는 전통 행렬이 압권입니다. 에도 시대의 화려함을 담기 좋습니다.",
+    "venue": "2 Chome-10-5 Nagatacho, Chiyoda City, Tokyo 100-0014",
+    "price": "무료",
+    "official": "http://www.tenka-matsuri.jp/",
+    "access": [
+      {
+        "hub": "도쿄",
+        "start": "긴자역 출발",
+        "route": "지하철 긴자선",
+        "dest": "다메이케산노역",
+        "time": "약 10분"
+      }
+    ]
+  },
+  {
+    "hub": "hokkaido",
+    "name": "요사코이 소란 마츠리",
+    "jpName": "YOSAKOIソーラン祭り",
+    "type": "matsuri",
+    "month": 6,
+    "dateText": "6/10(수)~6/14(일)",
+    "dateSort": 610,
+    "region": "삿포로",
+    "loc": "오도리 공원",
+    "feature": "홋카이도 최대 춤 축제",
+    "time": "10:00~22:00",
+    "desc": "삿포로 전역에서 열리는 역동적인 춤 축제로 댄서들의 에너지가 넘칩니다. 화려한 의상이 시각적 즐거움을 줍니다.",
+    "venue": "7 Chome Odorinishi, Chuo Ward, Sapporo, Hokkaido 060-0042",
+    "price": "무료 (메인석 유료)",
+    "official": "https://www.yosakoi-soran.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "도쿄 경마장 하나비",
+    "jpName": "東京競馬場花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/1(수)",
+    "dateSort": 701,
+    "region": "도쿄",
+    "loc": "도쿄 경마장",
+    "shots": "14,000발",
+    "time": "시간 미정",
+    "desc": "쾌적한 경마장 시설 내에서 편하게 대형 쇼를 즐기는 특별한 경험입니다. 시야 방해가 없어 영상 품질이 우수합니다.",
+    "venue": "1-1 Hiyoshicho, Fuchu, Tokyo 183-0024",
+    "price": "유료 예약제 중심",
+    "official": "https://www.jra.go.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "하카타 기온 야마카사",
+    "jpName": "博多祇園山笠",
+    "type": "matsuri",
+    "month": 7,
+    "dateText": "7/1(수)~7/15(수)",
+    "dateSort": 701,
+    "region": "후쿠오카",
+    "loc": "구시다 신사",
+    "feature": "15일 새벽 5시 가마 경주 피날레",
+    "time": "7/15 04:59~06:00",
+    "desc": "거대 가마를 메고 시내를 질주하는 역동적 축제입니다. 마지막 날 새벽 4시 59분에 시작하는 경주가 백미입니다.",
+    "venue": "1-41 Kamikawabatamachi, Hakata Ward, Fukuoka 812-0026",
+    "price": "무료",
+    "official": "https://www.hakatayamakasa.com/",
+    "access": [
+      {
+        "hub": "후쿠오카",
+        "start": "하카타역 출발",
+        "route": "지하철 공항선",
+        "dest": "기온역 (도보 가능)",
+        "time": "약 2분"
+      }
+    ]
+  },
+  {
+    "hub": "kyoto",
+    "name": "교토 기온 마츠리",
+    "jpName": "祇園祭",
+    "type": "matsuri",
+    "month": 7,
+    "dateText": "7/1(수)~7/31(금)",
+    "dateSort": 702,
+    "region": "교토",
+    "loc": "야사카 신사",
+    "feature": "7/17 전제 순행, 7/24 후제 순행",
+    "time": "순행 09:00~13:00",
+    "desc": "일본 최고 고전 축제로 한 달 내내 교토가 살아있는 박물관이 됩니다. 수레 '야마보코' 순행은 교토의 정수입니다.",
+    "venue": "625 Gionmachi Kitagawa, Higashiyama Ward, Kyoto 605-0073",
+    "price": "무료 (관람석 유료)",
+    "official": "https://www.yasaka-jinja.or.jp/event/gion/",
+    "access": [
+      {
+        "hub": "교토",
+        "start": "가와라마치역 출발",
+        "route": "가와라마치역 자체가 축제 중심지",
+        "dest": "",
+        "time": "도보 0분"
+      }
+    ]
+  },
+  {
+    "hub": "kyushu",
+    "name": "바다 히로시라우미 불꽃축제 2026",
+    "jpName": "海洋博美ら海花火大会2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/4(토)",
+    "dateSort": 704,
+    "region": "오키나와",
+    "loc": "오키나와 기념국립공원(해양박공원)/에메랄드 비치",
+    "time": "20:00~21:00",
+    "desc": "오키나와 기념국립공원/에메랄드 비치에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "오키나와현 구니가미군 모토부마치 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://oki-park.jp/hanabi2025/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "가마쿠라 불꽃축제",
+    "jpName": "2026年鎌倉花火大会(第78回)",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/10(금)",
+    "dateSort": 710,
+    "region": "가나가와",
+    "loc": "유이가하마 해변/자이모쿠자 해변",
+    "shots": "약2500발",
+    "time": "19:20~20:10",
+    "desc": "유이가하마 해변/자이모쿠자 해변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "가나가와현 가마쿠라시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.trip-kamakura.com/subsite/topics.php?id=56"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "T×T GARAGE 제14회 마코마나이 불꽃축제",
+    "jpName": "T×T GARAGE 第14回 真駒内花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/11(토)",
+    "dateSort": 711,
+    "region": "홋카이",
+    "loc": "마코마나이 세키스이 하임 스타디움",
+    "shots": "2000발",
+    "time": "불꽃 19:50~20:50 개장 시간 17:00~",
+    "desc": "마코마나이 세키스이 하임 스타디움에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "홋카이도 삿포로시 미나미구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5000엔부터",
+    "official": "https://www.makomanai-hanabi.com"
+  },
+  {
+    "hub": "tohoku",
+    "name": "노시로 하나비",
+    "jpName": "能代の花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "아키타",
+    "loc": "노시로항 하천부지",
+    "shots": "15,000발",
+    "time": "시간 미정",
+    "desc": "일본 최고 직경 '3척옥' 불꽃이 터지는 압도적 스케일입니다. 하늘을 가득 채우는 거대함을 실감할 수 있습니다.",
+    "venue": "Noshiromachi, Noshiro, Akita 016-0801",
+    "price": "무료 (유료석 별도)",
+    "official": "https://noshiro-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제73회 아베강 불꽃축제",
+    "jpName": "第73回 安倍川花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "시즈오카",
+    "loc": "아베 강바닥(다마치 3초메 부근)",
+    "shots": "1만발",
+    "time": "19:30~21:00",
+    "desc": "아베 강바닥에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "시즈오카현 시즈오카시 아오이구 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.abekawa-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제60회 가쓰시카 노료 불꽃축제",
+    "jpName": "第60回 葛飾納涼花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/28(화)",
+    "dateSort": 728,
+    "region": "도쿄",
+    "loc": "가쓰시카구 시바마타 야구장(에도가와 하천부지)",
+    "shots": "약2만발",
+    "time": "19:20~20:30",
+    "desc": "가쓰시카구 시바마타 야구장에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "도쿄도 가쓰시카구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.city.katsushika.lg.jp/tourism/1000064/1000065/1031830.html"
+  },
+  {
+    "hub": "osaka",
+    "name": "오사카 텐진 마츠리",
+    "jpName": "天神祭",
+    "type": "matsuri",
+    "month": 7,
+    "dateText": "7/24(금)~7/25(토)",
+    "dateSort": 724,
+    "region": "오사카",
+    "loc": "오사카 텐만구·오카와 강",
+    "feature": "일본 3대 축제 · 화려한 선상 퍼레이드",
+    "time": "25일 19:30~20:50",
+    "desc": "일본 3대 축제로 100척 이상의 배가 불을 밝히고 지나는 선상 퍼레이드가 백미입니다. 활기차고 전통적입니다.",
+    "venue": "2 Chome-1-8 Tenjinbashi, Kita Ward, Osaka 530-0041",
+    "price": "무료 (유료석 별도)",
+    "official": "https://www.osakatenmangu.or.jp/",
+    "access": [
+      {
+        "hub": "오사카",
+        "start": "난바역(도톤보리) 출발",
+        "route": "지하철 사카이스지선",
+        "dest": "미나미모리마치역",
+        "time": "약 15~20분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "제49회 스미다가와 불꽃축제",
+    "jpName": "第49回 隅田川花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "도쿄",
+    "loc": "사쿠라바시 하류~고토이바시 상류(제1회장), 고마가타바시 하류~우마야바시 상류(제2회장)",
+    "time": "19:00~20:30 제1 회장 19:00~, 제2 회장 19:30~",
+    "desc": "사쿠라바시 하류~고토이바시 상류, 고마가타바시 하류~우마야바시 상류에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "도쿄도 스미다구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.sumidagawa-hanabi.com/",
+    "access": [
+      {
+        "hub": "도쿄",
+        "start": "긴자역 출발",
+        "route": "지하철 히비야선",
+        "dest": "아사쿠사역",
+        "time": "약 20~25분"
+      }
+    ]
+  },
+  {
+    "hub": "osaka",
+    "name": "텐진축제 봉헌 불꽃놀이",
+    "jpName": "天神祭奉納花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "오사카",
+    "loc": "가와사키 공원/사쿠라노미야 공원",
+    "shots": "약3000발",
+    "time": "19:30~20:50",
+    "desc": "가와사키 공원/사쿠라노미야 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "오사카부 오사카시 기타구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://osakatemmangu.or.jp/saijireki/tjm",
+    "access": [
+      {
+        "hub": "오사카",
+        "start": "난바역(도톤보리) 출발",
+        "route": "지하철 사카이스지선",
+        "dest": "미나미모리마치역",
+        "time": "약 15~20분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "후쿠로이 엔슈 불꽃 2026",
+    "jpName": "全国花火名人選抜競技大会 ふくろい遠州の花火2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "시즈오카",
+    "loc": "후쿠로이시 하라노타니강 워터파크",
+    "time": "19:20~21:00 날씨의 급변 등으로 개최 시간을 변경하는 경우 있음",
+    "desc": "후쿠로이시 하라노타니강 워터파크에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "시즈오카현 후쿠로이시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5500엔부터",
+    "official": "https://www.fukuroi-hanabi.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "구와나수이고 불꽃축제 2026",
+    "jpName": "桑名水郷花火大会 2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "미에",
+    "loc": "이비가와 제방(나베야 제방)",
+    "time": "19:30~21:00",
+    "desc": "이비가와 제방에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "미에현 쿠와나시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만5000엔부터",
+    "official": "https://kuwana-hanabi.com/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "기온 가시와자키 축제 바다 불꽃축제",
+    "jpName": "ぎおん柏崎まつり 海の大花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "니가타",
+    "loc": "가시와자키시 중앙해안/미나토마치 해변공원 지역",
+    "time": "19:30~21:10",
+    "desc": "가시와자키시 중앙해안/미나토마치 해변공원 지역에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "니가타현 가시와자키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://kashiwazaki-hanabi.jp/"
+  },
+  {
+    "hub": "osaka",
+    "name": "나니와 요도가와 하나비",
+    "jpName": "なにわ淀川花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "오사카",
+    "loc": "요도가와 하천부지",
+    "shots": "20,000발",
+    "feature": "오사카 최대 규모",
+    "time": "19:30~20:30",
+    "desc": "오사카 최대 규모 민간 주도 대회로 음악과 동기화된 박진감 넘치는 연출이 자부심인 대회입니다.",
+    "venue": "1 Chome Yodogawa, Osaka 532-0025",
+    "price": "무료 (유료석 중심)",
+    "official": "https://www.yodohanabi.com/",
+    "access": [
+      {
+        "hub": "오사카",
+        "start": "난바역(도톤보리) 출발",
+        "route": "지하철/JR (우메다 경유)",
+        "dest": "쓰카모토역",
+        "time": "약 20~25분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "제51회 에도가와구 하나비",
+    "jpName": "江戸川区花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "도쿄",
+    "loc": "시노자키 공원 앞",
+    "shots": "14,000발",
+    "time": "19:15~20:30",
+    "desc": "5초 만에 1,000발을 쏘는 오프닝이 도쿄 최고 화력을 자랑합니다. 색채가 매우 화려합니다.",
+    "venue": "1 Chome-25-1 Kamishinozaki, Edogawa, Tokyo 133-0054",
+    "price": "무료",
+    "official": "https://www.city.edogawa.tokyo.jp/",
+    "access": [
+      {
+        "hub": "도쿄",
+        "start": "긴자역 출발",
+        "route": "지하철/JR",
+        "dest": "고이와역",
+        "time": "약 45~50분"
+      }
+    ]
+  },
+  {
+    "hub": "tokyo",
+    "name": "마쿠하리 해변 불꽃놀이 2026",
+    "jpName": "千葉開府900年記念 幕張ビーチ花火フェスタ2026(第48回 千葉市民花火大会)",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "마쿠하리 해변공원, 마쿠하리 멧세 주차장(지바시 미하마구)",
+    "shots": "약2만발",
+    "time": "19:30~20:30",
+    "desc": "마쿠하리 해변공원, 마쿠하리 멧세 주차장에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "지바현 지바시 미하마구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://chiba-hanabi.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "나가오카 축제 불꽃축제",
+    "jpName": "長岡まつり大花火大会",
+    "type": "hanabi",
+    "top3": true,
+    "month": 8,
+    "dateText": "8/2(일)·3(월)",
+    "dateSort": 802,
+    "region": "니가타",
+    "loc": "시나노강 하천부지",
+    "time": "19:20~21:10 (발사 시간)",
+    "desc": "시나노강 하천부지에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "니가타현 나가오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.nagaokamatsuri.com"
+  },
+  {
+    "hub": "tohoku",
+    "name": "아오모리 네부타 마츠리",
+    "jpName": "青森ねぶた祭",
+    "type": "matsuri",
+    "month": 8,
+    "dateText": "8/2(일)~8/7(금)",
+    "dateSort": 802,
+    "region": "아오모리",
+    "loc": "아오모리 시내 중심가",
+    "feature": "거대 등불 수레 행진 · 7일 피날레 불꽃 10,000발",
+    "time": "야간 행진 19:10~21:00",
+    "desc": "거대 종이 인형 수레가 행진하며 밤거리를 빛내는 동북 최대 축제입니다. 마지막 날 해상 운행이 장관입니다.",
+    "venue": "1 Chome-1-1 Shinmachi, Aomori 030-0801",
+    "price": "무료 (관람석 유료)",
+    "official": "https://www.nebuta.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "아키타 칸토 마츠리",
+    "jpName": "秋田竿燈まつり",
+    "type": "matsuri",
+    "month": 8,
+    "dateText": "8/3(월)~8/6(목)",
+    "dateSort": 803,
+    "region": "아키타",
+    "loc": "칸토 거리 (츄오도리)",
+    "feature": "대나무 장대 등불 묘기",
+    "time": "밤 본방 18:15~21:00",
+    "desc": "거대 등불 장대를 몸으로 지탱하는 신비로운 묘기 축제로 동양적 미학이 돋보입니다.",
+    "venue": "1 Chome Omachi, Akita 010-0921",
+    "price": "무료 (유료석 존재)",
+    "official": "https://www.kantou.gr.jp/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "제40주년 기념 축제 2026년 비와코 불꽃축제",
+    "jpName": "第40回記念大会 2026 びわ湖大花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/6(목)",
+    "dateSort": 806,
+    "region": "시가",
+    "loc": "시가현이 관리하는 오쓰항 앞바다 지역",
+    "shots": "2000발",
+    "time": "19:30~20:30",
+    "desc": "시가현이 관리하는 오쓰항 앞바다 지역에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "시가현 오쓰시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.biwako-visitors.jp/hanabi/",
+    "access": [
+      {
+        "hub": "오사카",
+        "start": "난바역(도톤보리) 출발",
+        "route": "지하철/JR (오사카역 환승)",
+        "dest": "오쓰역",
+        "time": "약 1시간"
+      },
+      {
+        "hub": "교토",
+        "start": "가와라마치역 출발",
+        "route": "케이한 전철",
+        "dest": "비와코하마오쓰역",
+        "time": "약 25~30분"
+      }
+    ]
+  },
+  {
+    "hub": "tohoku",
+    "name": "센다이 타나바타 축제",
+    "jpName": "仙台七夕まつり",
+    "type": "matsuri",
+    "month": 8,
+    "dateText": "8/6(목)~8/8(토)",
+    "dateSort": 806,
+    "region": "센다이",
+    "loc": "센다이 시내 아케이드 상가",
+    "feature": "거리 전체 종이 장식",
+    "time": "시간 미정",
+    "desc": "화려한 종이 장식이 시내를 덮는 감성적 칠석 축제입니다. 독특한 사진 스팟이 많습니다.",
+    "venue": "1 Chome Chuo, Aoba Ward, Sendai 980-0021",
+    "price": "무료",
+    "official": "https://www.sendai-tanabata.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제38회 신메이 불꽃놀이",
+    "jpName": "市川三郷町ふるさと夏まつり　第38回「神明の花火大会」",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/7(금)",
+    "dateSort": 807,
+    "region": "야마나시",
+    "loc": "후에후키강 하류의 산운교",
+    "shots": "약2만발",
+    "time": "19:15~21:00(예정)",
+    "desc": "후에후키강 하류의 산운교에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "야마나시현 니시야쓰시로군 이치카와미사토마치 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.town.ichikawamisato.yamanashi.jp/shinmei/index.html"
+  },
+  {
+    "hub": "shikoku",
+    "name": "아와오도리",
+    "jpName": "阿波おどり",
+    "type": "matsuri",
+    "month": 8,
+    "dateText": "8/12(수)~8/15(토)",
+    "dateSort": 812,
+    "region": "도쿠시마",
+    "loc": "도쿠시마 시내",
+    "feature": "일본 최대 길거리 춤 축제",
+    "time": "18:00~22:00",
+    "desc": "일본 최대 춤 축제로 도시 전체가 무대가 되는 활기를 느낄 수 있습니다. 관객 참여도 즐겁습니다.",
+    "venue": "1 Chome Terashimahonmachi Higashi, Tokushima 770-0832",
+    "price": "무료 (메인 공연장 유료)",
+    "official": "https://www.awaodori.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제78회 스와호 축제 호수 불꽃축제",
+    "jpName": "第78回 諏訪湖祭湖上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/15(토)",
+    "dateSort": 815,
+    "region": "나가노",
+    "loc": "스와시 호반공원 스와호수 앞",
+    "time": "19:00~종료시간 미정 개문시간 미정(결정대로 공식 사이트에서 안내)",
+    "desc": "스와시 호반공원 스와호수 앞에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "나가노현 스와시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 6만5000엔부터",
+    "official": "https://suwako-hanabi.com"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제33회 아카가와 불꽃축제",
+    "jpName": "第33回 赤川花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/15(토)",
+    "dateSort": 815,
+    "region": "야마가타",
+    "loc": "아카가와 강변(하구로교~미카와교)",
+    "shots": "2000발",
+    "time": "19:15~",
+    "desc": "아카가와 강변에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "야마가타현 쓰루오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3만3000엔부터",
+    "official": "https://akagawahanabi.com/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "고잔 오쿠리비",
+    "jpName": "五山送り火",
+    "type": "matsuri",
+    "month": 8,
+    "dateText": "8/16(일)",
+    "dateSort": 816,
+    "region": "교토",
+    "loc": "교토 시내 5개 산",
+    "feature": "산 중턱 거대 불 글자 점화",
+    "time": "20:00~20:40",
+    "desc": "산에 불로 글자를 새겨 조상을 보내는 엄숙하고 신비로운 교토 전통 의식입니다.",
+    "venue": "Kyoto City, Kyoto 600-0000",
+    "price": "무료",
+    "official": "https://www.kyokanko.or.jp/okuribi/",
+    "access": [
+      {
+        "hub": "교토",
+        "start": "가와라마치역 출발",
+        "route": "데마치야나기 등 조망 스팟까지 도보/버스",
+        "dest": "",
+        "time": "약 15~20분"
+      }
+    ]
+  },
+  {
+    "hub": "tohoku",
+    "name": "제98회 전국불꽃대회 '오마가리 불꽃놀이'",
+    "jpName": "第98回 全国花火競技大会「大曲の花火」",
+    "type": "hanabi",
+    "top3": true,
+    "month": 8,
+    "dateText": "8/29(토)",
+    "dateSort": 829,
+    "region": "아키타",
+    "loc": "다이센시 오마가리 오모노가와 강변(\"오마가리 불꽃놀이 공원\")",
+    "time": "17:10~18:00(낮 불꽃놀이), 19:00~21:30(밤 불꽃놀이)",
+    "desc": "다이센시 오마가리 오모노가와 강변에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "아키타현 다이센시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 000엔부터",
+    "official": "https://www.omagari-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제39회 토네강 대하나비",
+    "jpName": "利根川大花火大会",
+    "type": "hanabi",
+    "month": 9,
+    "dateText": "9/19(토)",
+    "dateSort": 919,
+    "region": "이바라키",
+    "loc": "사카이정 하천부지",
+    "shots": "30,000발",
+    "time": "18:00~20:00",
+    "desc": "가을 밤 3만 발을 쏘는 초대형 대회로 시원한 날씨에 압도적 화력을 감상 가능합니다.",
+    "venue": "Sakai, Sashima District, Ibaraki 306-0400",
+    "price": "무료 (유료석 별도)",
+    "official": "https://www.sakai-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "도쿄만 대화화제",
+    "jpName": "東京湾大華火祭",
+    "type": "hanabi",
+    "month": 10,
+    "dateText": "10/24(토)",
+    "dateSort": 1024,
+    "region": "도쿄",
+    "loc": "하루미 부두 일대",
+    "shots": "12,000발",
+    "time": "시간 미정",
+    "desc": "레인보우 브릿지와 야경 배경 현대적 쇼입니다. 가을 선선함을 즐기기 좋습니다.",
+    "venue": "5 Chome-7-1 Harumi, Chuo City, Tokyo 104-0053",
+    "price": "무료 (사전 신청제)",
+    "official": "https://tokyowan-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "쓰치우라 전국 불꽃 경연대회",
+    "jpName": "土浦全国花火競技大会",
+    "type": "hanabi",
+    "top3": true,
+    "month": 11,
+    "dateText": "11/7(토)",
+    "dateSort": 1107,
+    "region": "이바라키",
+    "loc": "사쿠라강 하천부지",
+    "shots": "20,000발",
+    "feature": "🏆 일본 3대 하나비",
+    "time": "17:30~20:30",
+    "desc": "한 해 마무리 3대 하나비로 공기가 맑아 선명도가 역대급인 대회입니다.",
+    "venue": "Sano, Tsuchiura, Ibaraki 300-0000",
+    "price": "무료 (유료석 비중 높음)",
+    "official": "https://www.tsuchiura-hanabi.jp/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제45회 도야코 롱런 불꽃축제",
+    "jpName": "第45回 洞爺湖ロングラン花火大会",
+    "type": "hanabi",
+    "month": 4,
+    "dateText": "4/28(화)~10/31(토)",
+    "dateSort": 428,
+    "region": "홋카이",
+    "loc": "도야호 온천 호반",
+    "time": "20:45~21:05",
+    "fullSchedule": "4월 28일(화)~10월 31일(토)",
+    "desc": "도야호 온천 호반에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "홋카이도 아부타군 도야코초 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.laketoya.com/event/fireworks/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "도쿄 독일마을 25주년 불꽃축제",
+    "jpName": "東京ドイツ村 25th Anniversary Fire Sparkle 〜25周年記念花火大会〜",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/9(토)",
+    "dateSort": 509,
+    "region": "지바",
+    "loc": "도쿄 독일마을",
+    "shots": "5000발",
+    "time": "20:00~발사 시간은 약 20분간 영업시간 8:30~20:00(최종입장 19:0...",
+    "desc": "도쿄 독일마을에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "지바현 소데가우라시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5000엔부터",
+    "official": "https://t-doitsumura.co.jp/event/25th-anniversary-fire-sparkle/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "노리쿠라 고원 하나비 리움",
+    "jpName": "乗鞍高原はなびりうむ",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/9(토)",
+    "dateSort": 509,
+    "region": "나가노",
+    "loc": "노리쿠라 베이스",
+    "time": "16:30 개장, 20:00 발사(45분간 예정)",
+    "desc": "노리쿠라 베이스에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "나가노현 마츠모토시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4500엔부터",
+    "official": "https://www.norikura-hanabi.com/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "심포닉 스타마인 2026",
+    "jpName": "Symphonic Starmine 2026",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/9(토)",
+    "dateSort": 509,
+    "region": "시가",
+    "loc": "가라스마반도 잔디광장",
+    "shots": "최대1만발",
+    "time": "19:30~20:30 개장 15:00",
+    "desc": "가라스마반도 잔디광장에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "시가현 구사쓰시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 8800엔부터",
+    "official": "https://biwakolaa.com/symphonic/"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제9회 하나하나축제",
+    "jpName": "第9回 はなはな祭り",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/16(토)",
+    "dateSort": 516,
+    "region": "에히메",
+    "loc": "사다곶 하나하나",
+    "time": "19:45경~20:10 축제는 9:50~",
+    "desc": "사다곶 하나하나에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "에히메현 니시우와군 이카타마치 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.shirasu.jp/park/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "히메지마 물고기 축제 전날 불꽃놀이",
+    "jpName": "姫島おさかな祭 前夜祭花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/16(토)",
+    "dateSort": 516,
+    "region": "오이타",
+    "loc": "히메지마 해변",
+    "time": "20:30~21:00 축제는 5월 17일(일) 9:00~14:00",
+    "desc": "히메지마 해변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "오이타현 히가시쿠니히가군 히메지마무라 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.himeshima.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "요코타 공군기지 일미 친선 페스티벌",
+    "jpName": "横田基地日米友好祭(フレンドシップフェスティバル)",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/17(일)",
+    "dateSort": 517,
+    "region": "도쿄",
+    "loc": "요코타 공군기지",
+    "time": "20:17~20:40(예정) 페스티벌은 5월 16일(토)·17일(일) 9:00~2...",
+    "fullSchedule": "5월 17일(일) 요코타 기지 일미 우호제(프렌드십 페스티벌)는 16일(토), 17일(일)",
+    "desc": "요코타 공군기지에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "도쿄도 훗사시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.yokota.af.mil/Friendship-Festival/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "제44회 간다항 축제",
+    "jpName": "第44回 かんだ港まつり",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/17(일)",
+    "dateSort": 517,
+    "region": "후쿠오카",
+    "loc": "간다 시청 주차장",
+    "shots": "약2000발",
+    "time": "20:00~20:20 푸드 페스티벌 10:00~17:00",
+    "desc": "간다 시청 주차장에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠오카현 교토군 간다마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://kandaminato.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제55회 사가성 사카에 컨트리 축제 사가성 불꽃축제",
+    "jpName": "第55回 佐賀城下栄の国まつり 佐賀城下花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/23(토)",
+    "dateSort": 523,
+    "region": "사가",
+    "loc": "사가 성터 북쪽 해자 주변",
+    "time": "20:30~20:45 이벤트 15:00~",
+    "desc": "사가 성터 북쪽 해자 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "사가현 사가시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.saga.lg.jp/main/90584.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "봄의 아타미 해상 불꽃축제",
+    "jpName": "春季熱海海上花火大会",
+    "type": "hanabi",
+    "month": 4,
+    "dateText": "4/26(일)·5/24(일)",
+    "dateSort": 426,
+    "region": "시즈오카",
+    "loc": "아타미만(아타미항 7.5m 안벽 - 바다낚시 시설)",
+    "time": "20:20~20:40",
+    "fullSchedule": "4월 26일(일) · 5월 24일(일)",
+    "desc": "아타미만에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 아타미시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.ataminews.gr.jp/event/8/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "긴슈호수축제",
+    "jpName": "錦秋湖湖水まつり",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "이와테",
+    "loc": "유다 청사 주변/긴슈호 가와지리 호숫가",
+    "time": "19:45~20:30",
+    "desc": "유다 청사 주변/긴슈호 가와지리 호숫가에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "이와테현 와가군 니시와가마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://yamanoideyu.com/index.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "2026 후쿠야마 도모노우라 벤텐지마 불꽃축제",
+    "jpName": "2026年福山鞆の浦弁天島花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "히로시마",
+    "loc": "벤텐지마/토모 지점 지역",
+    "time": "19:30~20:30 19:00 오프닝",
+    "desc": "벤텐지마/토모 지점 지역에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "히로시마현 후쿠야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 7000엔부터",
+    "official": "https://bentenjima-hanabi.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "미나마타 불꽃축제",
+    "jpName": "みなまた花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/30(토)",
+    "dateSort": 530,
+    "region": "구마모토",
+    "loc": "에코파크 미나마타 씨소리플라자",
+    "shots": "약800발",
+    "time": "19:45~20:30(예정)",
+    "desc": "에코파크 미나마타 씨소리플라자에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "구마모토현 미나마타시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://minamata-minato.hp.peraichi.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "빛의 샤워: 에반게리온과의 조화",
+    "jpName": "シャワー・オブ・ライツ：HARMONICS WITH EVANGELION(ハーモニクスウィズエヴァンゲリオン)",
+    "type": "hanabi",
+    "month": 4,
+    "dateText": "4/24(금)~9/13(일)",
+    "dateSort": 424,
+    "region": "나가사키",
+    "loc": "하우스텐보스",
+    "time": "20:10~20:20",
+    "desc": "하우스텐보스에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다.",
+    "venue": "나가사키현 사세보시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.huistenbosch.co.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "요코하마 밤의 꽃 × GREEN × EXPO2027",
+    "jpName": "横浜ナイトフラワーズ × GREEN×EXPO2027",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 4,
+    "dateText": "4/4~9/20 다회차",
+    "dateSort": 404,
+    "region": "가나가와",
+    "loc": "요코하마항(신코 부두, 오산바시)",
+    "time": "19:00~19:05.6월~8월은 19:30~19:35",
+    "fullSchedule": "4/4・5・11・27, 5/16・30, 6/13, 7/4・18, 8/9, 9/5・20 ※10월 이후는 후일 발표, 연간 매월 발사 예정",
+    "desc": "요코하마항에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "가나가와현 요코하마시 나카구 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.yokohama-sparkling-twilight.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "요코하마 핫케이지마 씨파라다이스 '불꽃 신포니아'",
+    "jpName": "横浜・八景島シーパラダイス「花火シンフォニア」",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 5,
+    "dateText": "5/30(토) 외",
+    "dateSort": 530,
+    "region": "가나가와",
+    "loc": "요코하마/핫케이지마 씨파라다이스",
+    "shots": "약2500발",
+    "time": "2026년 5월~9월: 20:30~20:40, 2026년 10월~2027년 3월:...",
+    "fullSchedule": "5/30(토), 6/27(토)·7/18(토)·19(일)·25(토), 8/1(토)·8(토)·15(토)·29(토) 9/19(토)~9/22(화·공휴일), 10/10(토)・11(일), 11/21(토)・22(일), 2027년 3/20(토)・21(일)",
+    "desc": "요코하마/핫케이지마 씨파라다이스에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "가나가와현 요코하마시 가나자와구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.seaparadise.co.jp/"
+  },
+  {
+    "hub": "osaka",
+    "name": "가토구 꽃축제 은어축제 불꽃축제",
+    "jpName": "加東市花まつり鮎まつり花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/3(일·공휴일)",
+    "dateSort": 503,
+    "region": "효고",
+    "loc": "Toryuunada",
+    "shots": "약1000발",
+    "time": "19:30~20:00 축제는 8:00~20:30",
+    "desc": "Toryuunada에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "효고현 가토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.kato.lg.jp/kakukanogoannai/sangyoushinkoubu/shokokankoka/event/14913.html"
+  },
+  {
+    "hub": "kyoto",
+    "name": "시노다 불꽃놀이",
+    "jpName": "篠田の花火",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/4(월·공휴일)",
+    "dateSort": 504,
+    "region": "시가",
+    "loc": "시노다 신사",
+    "time": "20:30~21:30 축제 19:00~21:30",
+    "desc": "시노다 신사에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "시가현 오미하치만시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.omi8.com/festival/shinoda"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "루스츠 리조트 골든위크 특별 불꽃축제",
+    "jpName": "ルスツリゾート GWスペシャル花火大会",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/2(토)~5/5(화·공휴일)",
+    "dateSort": 502,
+    "region": "홋카이",
+    "loc": "루스츠 리조트",
+    "shots": "1200발",
+    "time": "19:45~19:55",
+    "desc": "루스츠 리조트에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "홋카이도 아부타군 루스츠무라 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://rusutsu.com/events/gw-fireworks/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "불꽃놀이 스펙터클 '미스티 노체'",
+    "jpName": "花火スペクタキュラ「ミスティ ノーチェ」",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/2(토)~5/5(화·공휴일)",
+    "dateSort": 502,
+    "region": "아이치",
+    "loc": "라구나텐보스 라구나시아",
+    "time": "19:30~(약 15분 정도) 불꽃기간 영업시간 10:00~21:00",
+    "desc": "라구나텐보스 라구나시아에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "아이치현 가마고리시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.lagunatenbosch.co.jp/index.html"
+  },
+  {
+    "hub": "nagoya",
+    "name": "시마 스페인 마을 문라이트 피날레(GW)",
+    "jpName": "志摩スペイン村 ムーンライトフィナーレ(GW)",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/1(금)~5/5(화·공휴일)",
+    "dateSort": 501,
+    "region": "미에",
+    "loc": "시마 스페인 마을",
+    "time": "19:45경~3분간 (파크 영업은 9:30~20:30)",
+    "desc": "시마 스페인 마을에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "미에현 시마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3900엔부터",
+    "official": "https://parque-net.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "하우스텐보스 오케스트라의 하늘 불꽃놀이",
+    "jpName": "ハウステンボス 天空のオーケストラ花火",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/2(토)~5/5(화·공휴일)",
+    "dateSort": 502,
+    "region": "나가사키",
+    "loc": "하우스텐보스",
+    "time": "20:45~20:55",
+    "desc": "하우스텐보스에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "나가사키현 사세보시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.huistenbosch.co.jp/event/fireworks/#panoramasky"
+  },
+  {
+    "hub": "kyushu",
+    "name": "GW 불꽃놀이 환상",
+    "jpName": "GW花火イリュージョン",
+    "type": "hanabi",
+    "month": 5,
+    "dateText": "5/2(토)~5/5(화·공휴일)",
+    "dateSort": 502,
+    "region": "구마모토",
+    "loc": "그린란드(놀이공원)",
+    "shots": "2000발",
+    "time": "19:40~종료 미정 유원지 영업 시간은 공식 사이트 참조",
+    "desc": "그린란드에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "구마모토현 아라오시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.greenland.co.jp/park/event/fireworks_illusion/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제45회 요코하마 개항 축제 '항구의 빔 스펙터클'",
+    "jpName": "第45回 横浜開港祭「ビームスペクタクル in ハーバー」",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 6,
+    "dateText": "6/2(화)",
+    "dateSort": 602,
+    "region": "가나가와",
+    "loc": "린코파크 마리타임",
+    "time": "19:20~20:00",
+    "fullSchedule": "6월 2일(화) 개항제는 6월 1일(월)~2일(화)",
+    "desc": "린코파크 마리타임에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가나가와현 요코하마시 나카구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만1250엔부터",
+    "official": "https://www.kaikosai.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "빙고국후축제 불꽃축제",
+    "jpName": "備後国府まつり 花火大会",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/6(토)",
+    "dateSort": 606,
+    "region": "히로시마",
+    "loc": "후추시 후추학원",
+    "shots": "약3000발",
+    "time": "수통 불꽃은 19:30~20:00, 발사 불꽃은 20:10~20:50 축제는 13...",
+    "desc": "후추시 후추학원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "히로시마현 후추시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://bingokokufufes.com"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제42회 삿카 온천 수중 불꽃놀이 대회",
+    "jpName": "第42回 咲花温泉水中花火大会",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/12(금)",
+    "dateSort": 612,
+    "region": "니가타",
+    "loc": "고센시 사토리의 아가노강",
+    "time": "20:20~21:00",
+    "desc": "고센시 사토리의 아가노강에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "니가타현 고센시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.city.gosen.lg.jp/index.html"
+  },
+  {
+    "hub": "tohoku",
+    "name": "마키 여름축제 불꽃축제",
+    "jpName": "まき夏まつり 花火大会",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 6,
+    "dateText": "6/13(토)",
+    "dateSort": 613,
+    "region": "니가타",
+    "loc": "야가와 후레아이 공원",
+    "time": "20:00~21:00",
+    "fullSchedule": "6월 13일(토) 마키 여름 축제는 2026년 6월 12일(금)~14일(일)",
+    "desc": "야가와 후레아이 공원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "니가타현 니가타시 니시칸구 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://maki-niigata.com/%e3%81%be%e3%81%8d%e5%a4%8f%e3%81%be%e3%81%a4%e3%82%8a/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "나가오카 불꽃놀이 로즈 판타지",
+    "jpName": "長岡花火ローズファンタジー",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/13(토)",
+    "dateSort": 613,
+    "region": "니가타",
+    "loc": "국립 에치고 구릉 공원",
+    "time": "19:00~19:30 개장 17:30",
+    "desc": "국립 에치고 구릉 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "니가타현 나가오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1600엔부터",
+    "official": "https://echigo-park.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "도코수루 해변 일몰 불꽃놀이",
+    "jpName": "常滑りんくうビーチ サンセット花火",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/13(토)",
+    "dateSort": 613,
+    "region": "아이치",
+    "loc": "도코수리 해변녹지",
+    "time": "19:30~20:10 개장 17:30",
+    "desc": "도코수리 해변녹지에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "아이치현 도코나메시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5000엔부터",
+    "official": "https://rinku-beach.jp/sunset-hanabi/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "다키노 불꽃놀이 2026",
+    "jpName": "たきの花火2026",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/20(토)",
+    "dateSort": 620,
+    "region": "홋카이",
+    "loc": "타키노 스즈란 구릉 국영 공원",
+    "time": "19:45~20:15(예정) 개장 14:00 ~, 이벤트 14:30~",
+    "desc": "타키노 스즈란 구릉 국영 공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "홋카이도 삿포로시 미나미구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4800엔부터",
+    "official": "https://www.takinohanabi.com/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제19회 고대 수도 히로사키 불꽃놀이 대회",
+    "jpName": "第19回 古都ひろさき 花火の集い",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/20(토)",
+    "dateSort": 620,
+    "region": "아오모리",
+    "loc": "히로사키시 이와키 하천부지 운동공원",
+    "shots": "약1만발",
+    "time": "개장 15:45, 발사 19:45~(예정), 21:00 종료(예정)",
+    "desc": "히로사키시 이와키 하천부지 운동공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "아오모리현 히로사키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만5000엔부터",
+    "official": "https://hiro-hanabi.com/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제10회 에베쓰 불꽃놀이",
+    "jpName": "第10回 えべつ花火",
+    "type": "hanabi",
+    "month": 6,
+    "dateText": "6/27(토)",
+    "dateSort": 627,
+    "region": "홋카이",
+    "loc": "에베쓰 불꽃놀이 대회장",
+    "time": "19:20~21:10(예정)",
+    "desc": "에베쓰 불꽃놀이 대회장에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "홋카이도 에베쓰시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5만엔부터",
+    "official": "https://ebetsu-hanabi.com/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "지옥계곡 악마 불꽃놀이",
+    "jpName": "地獄の谷の鬼花火",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 6,
+    "dateText": "6/1(월) 외",
+    "dateSort": 601,
+    "region": "홋카이",
+    "loc": "노보리베츠 온천 지고쿠다니 전망대",
+    "time": "개연 20:00~ ※20분 정도 개장 19:00~",
+    "fullSchedule": "6월 1일(월), 6월 4일~6월 30일의 월요일・목요일, 및 7월 2일~31일・9월 3일~24일의 목요일 2026년 6월 1일(월) 오프닝, 9월 24일(목) 파이널",
+    "desc": "노보리베츠 온천 지고쿠다니 전망대에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 노보리베츠시 (상세 주소/번지 사이트 미기재)",
+    "price": "없음 없음. 회장에는 입장권 500엔(초등학생 이하 무료) 필요. ※입장권은 회장...",
+    "official": "https://noboribetsu-spa.jp/spot/spot1005/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제42회 쿄와 칠석 불꽃놀이",
+    "jpName": "第42回 協和七夕花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/4(토)",
+    "dateSort": 704,
+    "region": "아키타",
+    "loc": "아키타현 다이센시 교와후나오카 쇼나이군",
+    "shots": "10발",
+    "time": "19:30~21:00",
+    "desc": "아키타현 다이센시 교와후나오카 쇼나이군에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "아키타현 다이센시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5000엔부터",
+    "official": "https://daisenkankou.com/near/協和七夕花火"
+  },
+  {
+    "hub": "nagoya",
+    "name": "후나미 칠석 불꽃놀이",
+    "jpName": "舟見七夕花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/4(토)",
+    "dateSort": 704,
+    "region": "도야마",
+    "loc": "후나미 지구",
+    "time": "20:00~20:50",
+    "desc": "후나미 지구에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "도야마현 시모신카와군 뉴젠초 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.instagram.com/funamitanabata/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "후지산/가와구치호 개산 불꽃축제",
+    "jpName": "富士山・河口湖山開き花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/4(토)",
+    "dateSort": 704,
+    "region": "야마나시",
+    "loc": "오이케 공원",
+    "time": "20:00~20:20",
+    "desc": "오이케 공원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "야마나시현 미나미쓰루군 후지카와구치코마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://fujisan.ne.jp/pages/387/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "오다 축제 불꽃축제",
+    "jpName": "御田祭の里花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/4(토)",
+    "dateSort": 704,
+    "region": "미야자키",
+    "loc": "하자쿠라 후레아이 공원",
+    "shots": "약1000발",
+    "time": "20:15~21:00(예정)",
+    "desc": "하자쿠라 후레아이 공원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "미야자키현 히가시우스키군 미사토마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.town.miyazaki-misato.lg.jp/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "파이터스 슈퍼 불꽃놀이",
+    "jpName": "ファイターズ超花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "홋카이",
+    "loc": "에스콘필드 홋카이도",
+    "shots": "6000발",
+    "time": "19:45경~, 30분 정도",
+    "desc": "에스콘필드 홋카이도에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 기타히로시마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.fighters.co.jp/news/detail/202400521222.html"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제47회 쿤넵 후루사토 축제 불꽃축제",
+    "jpName": "第47回 くんねっぷふるさとまつり 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/11(토)",
+    "dateSort": 711,
+    "region": "홋카이",
+    "loc": "도코로강 하천바닥",
+    "time": "사이트에 개최시간 미기재",
+    "desc": "도코로강 하천바닥에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 도코로군 쿠니코후마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.town.kunneppu.hokkaido.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "2026 구리하마 페리 축제 불꽃축제",
+    "jpName": "2026 久里浜ペリー祭花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/11(토) 외",
+    "dateSort": 711,
+    "region": "가나가와",
+    "loc": "구리하마해안 근처",
+    "shots": "약7000발",
+    "time": "19:30~20:00(예정)",
+    "fullSchedule": "7월 11일(토) ※2025년 8월 2일(토)의 불꽃놀이는 중지되었습니다",
+    "desc": "구리하마해안 근처에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가나가와현 요코스카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://perryfes.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "기온 노지마 축제 불꽃축제",
+    "jpName": "ぎおん・野島祭り花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/11(토)",
+    "dateSort": 711,
+    "region": "아이치",
+    "loc": "시노시마 어항 앞바다 제방",
+    "time": "19:50~20:30",
+    "desc": "시노시마 어항 앞바다 제방에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "아이치현 치다군 미나미치타마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "tohoku",
+    "name": "시오자와 여름축제 불꽃축제",
+    "jpName": "しおざわ夏まつり 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/16(목)",
+    "dateSort": 716,
+    "region": "니가타",
+    "loc": "시오자와 중학교 우라-우오노가와 지역",
+    "time": "19:45~21:00 시자자와 여름 축제는 7월 14일(화)~16일(목)",
+    "desc": "시오자와 중학교 우라-우오노가와 지역에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "니가타현 미나미우오누마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://shiozawasho.jp/category/event/fastival/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제73회 기타미 본치 축제 여름 불꽃놀이",
+    "jpName": "第73回 北見ぼんちまつり納涼花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토) 외",
+    "dateSort": 718,
+    "region": "홋카이",
+    "loc": "슌코마치/고이즈미 강 유역",
+    "shots": "4000발",
+    "time": "19:40~21:00 축제는 17일(금) 15:00~21:00, 18일(토) 10...",
+    "fullSchedule": "7월 18일(토) 축제는 7월 17일(금), 18일(토)",
+    "desc": "슌코마치/고이즈미 강 유역에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 기타미시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://kitamicci.or.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제40회 일본 해상 불꽃축제",
+    "jpName": "第40回日本海洋上花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "아키타",
+    "loc": "미치카와 어항 해상",
+    "time": "19:30~20:45경",
+    "desc": "미치카와 어항 해상에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "아키타현 유리혼조시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.yurihonjo-kanko.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "아타고야마 테즈츠 불꽃놀이",
+    "jpName": "愛宕山手筒花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "시즈오카",
+    "loc": "히가시자카초 아타고 신사 경내",
+    "shots": "35발",
+    "time": "19:00~21:00",
+    "desc": "히가시자카초 아타고 신사 경내에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "시즈오카현 이와타시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제36회 도요하마 불꽃놀이",
+    "jpName": "気まぐれクック・東海オンエア虫眼鏡・うお一番 presents 第36回 豊浜花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "아이치",
+    "loc": "도요하마 어항 주변 매립지",
+    "time": "19:40~20:10",
+    "desc": "도요하마 어항 주변 매립지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "아이치현 치다군 미나미치타마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "http://minamichita-kk.com/event/%E7%AC%AC24%E5%9B%9E%E8%B1%8A%E6%B5%9C%E8%8A%B1%E7%81%AB%E5%A4%A7%E4%BC%9A%e3%80%80"
+  },
+  {
+    "hub": "nagoya",
+    "name": "오아시구 축제(오아시 자구루마 축제)",
+    "jpName": "大足区祭礼(大足蛇車まつり)",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "아이치",
+    "loc": "도요이시 신사 경내",
+    "time": "19:15~20:30",
+    "desc": "도요이시 신사 경내에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "아이치현 치다군 다케토요마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.town.taketoyo.lg.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제74회 이세신궁 불꽃축제",
+    "jpName": "第74回 伊勢神宮奉納全国花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "미에",
+    "loc": "미에현 이세시 미야가와 강(와타이바시 다리 상류)",
+    "time": "19:20~21:00",
+    "desc": "미에현 이세시 미야가와 강에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "미에현 이세시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.city.ise.mie.jp/hanabi/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "오카야마 국제 순회 불꽃놀이",
+    "jpName": "2026 岡山国際サーキット花火大会 produced by 磯谷煙火店",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "오카야마",
+    "loc": "오카야마 국제 서킷",
+    "time": "19:45~20:45 (예정) 이벤트 회장 입장 12:00 (예정)",
+    "desc": "오카야마 국제 서킷에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "오카야마현 미마사카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 6만5000엔부터",
+    "official": "https://oic-event.studio.site/hanabi-2026"
+  },
+  {
+    "hub": "tokyo",
+    "name": "미야지마산 주최 인노시마 수군 불꽃놀이 대회",
+    "jpName": "2026宮島さん協賛いんのしま水軍花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "히로시마",
+    "loc": "하부항 주변",
+    "time": "20:30~21:00",
+    "desc": "하부항 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "히로시마현 오노미치시 (상세 주소/번지 사이트 미기재)",
+    "price": "없음 1매스 5000엔(장 책상 1・의자 4) 19:00~입장 가능. ※상점가의 ...",
+    "official": "https://kanko-innoshima.jp/infomation/event/innoshimasuigunhanabi"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제32회 가미노세키수군축제 불꽃축제",
+    "jpName": "第32回 上関水軍まつり 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "야마구치",
+    "loc": "가미노세키 다리 주변",
+    "shots": "약1500발",
+    "time": "20:00~20:30",
+    "desc": "가미노세키 다리 주변에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "야마구치현 구마게군 가미노세키마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.kaminoseki-kanko.jp/"
+  },
+  {
+    "hub": "shikoku",
+    "name": "가와노에 여름 축제 불꽃놀이 대회",
+    "jpName": "かわのえ夏まつり花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "에히메",
+    "loc": "가와노에항 방파제",
+    "shots": "약3000발",
+    "time": "20:00~20:45",
+    "desc": "가와노에항 방파제에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "에히메현 시코쿠추오시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "http://www.shikochu-kankou.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제38회 영호쿠 잣토 축제 불꽃놀이",
+    "jpName": "雲仙天草国立公園天草地域指定70周年 第38回苓北じゃっと祭 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토)",
+    "dateSort": 718,
+    "region": "구마모토",
+    "loc": "토미오카항 여객 대기실 수평 방파제",
+    "time": "20:10~20:40 예정 회장 내의 출점은 17:00~21:00 예정",
+    "desc": "토미오카항 여객 대기실 수평 방파제에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "구마모토현 아마쿠사군 레이호쿠마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://reihoku-kumamoto.jp/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제27회 하코다테항 불꽃축제",
+    "jpName": "函館新聞社第27回函館港花火大会 ～海の日制定記念",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "홋카이",
+    "loc": "녹색 섬",
+    "time": "19:45~20:45",
+    "desc": "녹색 섬에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 하코다테시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://digital.hakoshin.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제79회 시오가마 미나토 축제 전야 불꽃놀이",
+    "jpName": "第79回 塩竈みなと祭前夜祭花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "미야기",
+    "loc": "시오가마항 주변",
+    "shots": "약8000발",
+    "time": "20:00~20:40(예정)",
+    "desc": "시오가마항 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "미야기현 시오가마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://shiogama-minatomatsuri.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "모토미야 미즈이로 불꽃놀이",
+    "jpName": "もとみや みずいろ花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "후쿠시마",
+    "loc": "아부쿠마 하천바닥",
+    "time": "19:30~20:30",
+    "desc": "아부쿠마 하천바닥에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠시마현 모토미야시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.motomiyamatsuri.com/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "고향 류구축제 해상불꽃축제",
+    "jpName": "ふるさと龍宮まつり海上花火大会",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/19(일) 외",
+    "dateSort": 719,
+    "region": "도야마",
+    "loc": "도야마 만(반딧불 오징어 박물관 주변)",
+    "time": "20:10~20:45 고향 용궁 축제 11:00~21:00",
+    "fullSchedule": "7월 19일(일) 고향 용궁 축제는 2026년 7월 18일(토)~19일(일)",
+    "desc": "도야마 만에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "도야마현 나메카와시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://ccis-toyama.or.jp/namerikawa/ryugu/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제39회 스자카 민나노 불꽃축제",
+    "jpName": "第39回須坂みんなの花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "나가노",
+    "loc": "모모가와 료쿠치 공원",
+    "time": "19:45~20:30",
+    "desc": "모모가와 료쿠치 공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "나가노현 스자카시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.suzaka.nagano.jp/index.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "도구라 가미야마다 온천 여름 축제 및 불꽃놀이 축제",
+    "jpName": "戸倉上山田温泉夏祭りと煙火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일) 외",
+    "dateSort": 719,
+    "region": "나가노",
+    "loc": "도구라 가미야마다 온천",
+    "shots": "약3000발",
+    "time": "20:30~21:00",
+    "fullSchedule": "7월 19일(일) 도쿠라 카미야마다 온천 여름 축제는 7월 18일(토)·19일(일)",
+    "desc": "도구라 가미야마다 온천에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "나가노현 지쿠마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://chikuma-kanko.com"
+  },
+  {
+    "hub": "osaka",
+    "name": "하마사카 후루사토 여름축제 불꽃축제",
+    "jpName": "浜坂ふるさと夏祭り 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "효고",
+    "loc": "하마사카 현민 선 비치",
+    "shots": "약3000발",
+    "time": "20:00~21:00",
+    "desc": "하마사카 현민 선 비치에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "효고현 미카타군 신온센마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.hamasaka.com/?cat=19"
+  },
+  {
+    "hub": "shikoku",
+    "name": "레트로! 스이토 페스티벌 2026",
+    "jpName": "Retra！水都祭2026",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/18(토) 외",
+    "dateSort": 718,
+    "region": "도쿠시마",
+    "loc": "아이바하마 공원",
+    "time": "20:00~20:10경(예정) 이벤트 개최 시간 7월 17일(금) 17:00~21...",
+    "fullSchedule": "7월 18일(토)·19일(일) Retra! 수도 축제 2026은 7월 17일(금)~19일(일)",
+    "desc": "아이바하마 공원에서 열리는 2026년 하나비 행사입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "도쿠시마현 도쿠시마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://suitosai-tokushima.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "사노요이 파이어 카니발 2026",
+    "jpName": "さのよいファイヤーカーニバル2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "구마모토",
+    "loc": "그린란드(놀이공원)",
+    "shots": "1만발",
+    "time": "20:00~20:30",
+    "desc": "그린란드에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "구마모토현 아라오시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.greenland.co.jp/park/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제31회 리플페스타 2026",
+    "jpName": "第31回 さざ波フェスタ2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/19(일)",
+    "dateSort": 719,
+    "region": "구마모토",
+    "loc": "시로가하마 해변에서",
+    "shots": "약1000발",
+    "time": "20:30~20:55",
+    "desc": "시로가하마 해변에서에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "구마모토현 아마쿠사시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.amakusa.kumamoto.jp/default.html"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제11회 라쿠텐 이글스 불꽃축제",
+    "jpName": "ダイワロイネットホテルズpresents 第11回楽天イーグルス花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/20(월)",
+    "dateSort": 720,
+    "region": "미야기",
+    "loc": "라쿠텐 모바일 파크 미야기",
+    "time": "후쿠오카 소프트뱅크 호크스전의 경기 종료 20분 후~ 시합 개시는 16:00~",
+    "desc": "라쿠텐 모바일 파크 미야기에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "미야기현 센다이시 미야기노구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.rakuteneagles.jp/news/detail/202500809042.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "이루마 베이스 여름 축제",
+    "jpName": "令和8年度入間基地納涼祭～盆踊りと花火の夕べ～",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/22(수)",
+    "dateSort": 722,
+    "region": "사이타마",
+    "loc": "항공자위대 이루마 기지",
+    "time": "20:20~20:50",
+    "desc": "항공자위대 이루마 기지에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "사이타마현 사야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.mod.go.jp/asdf/iruma/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "아타고야마 불꽃축제",
+    "jpName": "愛宕山花火祭大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/23(목)",
+    "dateSort": 723,
+    "region": "기후",
+    "loc": "기후현 구조시 미나미초 하쿠산치",
+    "shots": "약200발",
+    "time": "20:30~20:45",
+    "desc": "기후현 구조시 미나미초 하쿠산치에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "기후현 구조시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제59회 도가시마 불축제",
+    "jpName": "第59回 堂ヶ島火祭り",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/24(금)",
+    "dateSort": 724,
+    "region": "시즈오카",
+    "loc": "가모군 니시이즈초 니시나 도가시마 공원",
+    "time": "20:25~21:00",
+    "desc": "가모군 니시이즈초 니시나 도가시마 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "시즈오카현 가모군 니시이즈마치 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2만엔부터",
+    "official": "https://www.nishiizu-kankou.com/event/himatsuri"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제71회 도바 미나토 축제",
+    "jpName": "第71回鳥羽みなとまつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/24(금)",
+    "dateSort": 724,
+    "region": "미에",
+    "loc": "토바만 위",
+    "time": "20:00~20:45",
+    "desc": "토바만 위에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "미에현 도바시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://r.goope.jp/tobaminatofes/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "하마타마 불꽃축제",
+    "jpName": "浜玉町 花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/24(금)",
+    "dateSort": 724,
+    "region": "사가",
+    "loc": "하마사키 해안",
+    "shots": "1300발",
+    "time": "20:00~20:30",
+    "desc": "하마사키 해안에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "사가현 가라쓰시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.karatsu-kankou.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제74회 혼조가와 축제 불꽃놀이",
+    "jpName": "第74回 本荘川まつり花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "아키타",
+    "loc": "유스이 공원(보트 플라자 아쿠아팔 앞 하천)",
+    "time": "19:30~21:00",
+    "desc": "유스이 공원에서 열리는 2026년 하나비 행사입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "아키타현 유리혼조시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://yurihonjo-kanko.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "다자와코/류진축제 다자와코 불꽃놀이",
+    "jpName": "たざわ湖・龍神まつり たざわ湖花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "아키타",
+    "loc": "다자와 호수",
+    "time": "20:00~20:30",
+    "desc": "다자와 호수에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "아키타현 센보쿠시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.facebook.com/TazawakoSummerFes"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제48회 후쿠시마 불꽃축제",
+    "jpName": "第48回 ふくしま花火大会〜光で紡ぐ感謝と挑戦 ともに未来へ〜",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "후쿠시마",
+    "loc": "시노부가오카 녹지",
+    "time": "19:30~20:30(예정)",
+    "desc": "시노부가오카 녹지에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠시마현 후쿠시마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.city.fukushima.fukushima.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제66회 미토 고몬 축제 미토 가이라쿠엔 불꽃축제",
+    "jpName": "第66回 水戸黄門まつり 水戸偕楽園花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "이바라키",
+    "loc": "센바 공원",
+    "shots": "약5000발",
+    "time": "19:30~20:30",
+    "desc": "센바 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "이바라키현 미토시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://mitokoumon.com/koumon/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제54회 모카시 여름축제 불꽃축제",
+    "jpName": "第54回 真岡市夏祭大花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "도치기",
+    "loc": "모카시청 동쪽 고교강변",
+    "shots": "5000발",
+    "time": "19:30~21:00 축제 광장은 14:30경~",
+    "desc": "모카시청 동쪽 고교강변에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "도치기현 모카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.moka-kankou.org/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "2019년 사이타마시 불꽃축제 오와다 공원 회장",
+    "jpName": "令8年度 さいたま市花火大会 大和田公園会場",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "사이타마",
+    "loc": "오와다 공원 주변",
+    "time": "19:30~20:30(예정) 개장은 17:30~",
+    "desc": "오와다 공원 주변에서 열리는 2026년 하나비 행사입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "사이타마현 사이타마시 기타구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4400엔부터",
+    "official": "https://visitsaitamacity.jp/events/28"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제78회 오가와마치 칠석축제",
+    "jpName": "第78回 小川町七夕まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토) 외",
+    "dateSort": 725,
+    "region": "사이타마",
+    "loc": "오가와마치역 주변",
+    "time": "20:00~20:15 축제는 15:00~21:00",
+    "fullSchedule": "7월 25일(토) 오가와마치 칠석 축제는 7월 25일(토)·26일(일)",
+    "desc": "오가와마치역 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "사이타마현 히키군 오가와마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://x.com/Ogawa_kankou?s=20"
+  },
+  {
+    "hub": "tokyo",
+    "name": "다치카와 축제 쇼와기념공원 전국불꽃축제",
+    "jpName": "立川まつり 国営昭和記念公園花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "도쿄",
+    "loc": "국립 쇼와 기념공원",
+    "time": "19:15~20:15",
+    "desc": "국립 쇼와 기념공원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "도쿄도 다치카와시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://hanabi.tokyo-tachikawa.org/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "야히코 등불 축제 봉헌 불꽃놀이",
+    "jpName": "弥彦燈籠まつり 奉納花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "니가타",
+    "loc": "야히코 공원",
+    "time": "20:00~22:00(예정)",
+    "desc": "야히코 공원에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "니가타현 니시칸바라군 야히코무라 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.e-yahiko.com/spot/tourou-fes/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제67회 후에후키가와현 여름 여름 불꽃축제",
+    "jpName": "第67回 笛吹川県下納涼花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "야마나시",
+    "loc": "후에후키 강 하류의 만리키 다리",
+    "shots": "약2000발",
+    "time": "19:30~21:00 축제는 15:00~",
+    "desc": "후에후키 강 하류의 만리키 다리에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "야마나시현 야마나시시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.yamanashi.yamanashi.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제53회 에나노량 수중불꽃축제",
+    "jpName": "第53回 恵那納涼水上花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "기후",
+    "loc": "에나 협곡",
+    "time": "20:00~21:00 19:00~등편 수채",
+    "desc": "에나 협곡에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "기후현 에나시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.kankou-ena.jp/event/5286.php"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제58회 이즈 시라하마 바다 축제",
+    "jpName": "第58回伊豆白浜海の祭典",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "시즈오카",
+    "loc": "시라하마 오하마 해변",
+    "time": "20:00~20:15",
+    "desc": "시라하마 오하마 해변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 시모다시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.izu-shirahama.jp/?p=4239"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제73회 쓰시 불꽃놀이 2026",
+    "jpName": "津市合併20周年第73回津花火大会2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "미에",
+    "loc": "쓰시 아코우라 해변",
+    "shots": "5000발",
+    "time": "20:00~21:00 서두의 15분간은 드론 세레모니를 실시",
+    "desc": "쓰시 아코우라 해변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "미에현 쓰시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://tsu-hanabi.info/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "2026 기호쿠 등불 축제",
+    "jpName": "2026 きほく燈籠祭",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "미에",
+    "loc": "기호쿠마치 나가시마항",
+    "shots": "약3000발",
+    "time": "19:30~20:30(예정)",
+    "desc": "기호쿠마치 나가시마항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "미에현 기타무로군 기호쿠마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://touroumaturi.com/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "아야베 미나즈키 축제",
+    "jpName": "あやべ水無月まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "교토",
+    "loc": "가와이토초 유라가와 주변",
+    "time": "20:00~20:40",
+    "desc": "가와이토초 유라가와 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "교토부 아야베시 (상세 주소/번지 사이트 미기재)",
+    "price": "없음 미정",
+    "official": "https://ayabeminatsuki.org/"
+  },
+  {
+    "hub": "osaka",
+    "name": "제49회 가스미 후루사토 축제 해상 불꽃축제",
+    "jpName": "第49回 香住ふるさとまつり海上花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "효고",
+    "loc": "가스미 해변(시오카제 공원) 앞바다",
+    "time": "20:00~21:00",
+    "desc": "가스미 해변 앞바다에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "효고현 미카타군 가미마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.town.mikata-kami.lg.jp/www/contents/1427419096379/index.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "히로시마 미나토 드림 불꽃축제 ~불꽃박물관~",
+    "jpName": "広島みなと 夢 花火大会～花火ミュージアム～",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "히로시마",
+    "loc": "히로시마항 10,000톤 부두(히로시마시 미나미구)",
+    "shots": "약1만발",
+    "time": "20:00~21:00",
+    "desc": "히로시마항 10,000톤 부두에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "히로시마현 히로시마시 미나미구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.minato-yumehanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "오노미치 스미요시 불꽃축제",
+    "jpName": "おのみち住吉花火まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "히로시마",
+    "loc": "스미요시 신사 소재지 오노미치 해협 마린",
+    "shots": "3000발",
+    "time": "19:30~20:30",
+    "desc": "스미요시 신사 소재지 오노미치 해협 마린에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "히로시마현 오노미치시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://onomichi-cci.or.jp/hanabi/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제72회 우베시 불꽃축제",
+    "jpName": "第72回 宇部市花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "야마구치",
+    "loc": "우베항 내부",
+    "time": "20:00~20:30",
+    "desc": "우베항 내부에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "야마구치현 우베시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "kyushu",
+    "name": "아시야 불꽃축제 2026",
+    "jpName": "あしや花火大会2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "후쿠오카",
+    "loc": "온가강 하구 지역",
+    "shots": "약5000발",
+    "time": "20:00~21:00",
+    "desc": "온가강 하구 지역에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠오카현 온가군 아시야초 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://ashikan.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "이사하야 만토 리버 페스티벌",
+    "jpName": "諫早万灯川まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "나가사키",
+    "loc": "공원교 하천부지",
+    "shots": "약2500발",
+    "time": "20:30~21:00",
+    "desc": "공원교 하천부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "나가사키현 이사하야시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "http://www.isahaya-portal.com/three-festival/river"
+  },
+  {
+    "hub": "kyushu",
+    "name": "슈 신사 여름 축제 이마후쿠 불꽃놀이",
+    "jpName": "疫神社夏祭り今福花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "나가사키",
+    "loc": "이마후쿠초 우라메 이마후쿠 항 제방~츠네신사 주변",
+    "time": "20:45~21:10",
+    "desc": "이마후쿠초 우라메 이마후쿠 항 제방~츠네신사 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "나가사키현 마츠우라시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "kyushu",
+    "name": "아마쿠사 혼도 불꽃축제",
+    "jpName": "天草ほんど花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)",
+    "dateSort": 725,
+    "region": "구마모토",
+    "loc": "혼도항",
+    "time": "20:20~20:40",
+    "desc": "혼도항에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "구마모토현 아마쿠사시 (상세 주소/번지 사이트 미기재)",
+    "price": "없음 유료석은 미정",
+    "official": "https://haiya.org/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제60회 오타루 우시오 축제 대불꽃축제",
+    "jpName": "第60回 おたる潮まつり 大花火大会",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/26(일) 외",
+    "dateSort": 726,
+    "region": "홋카이",
+    "loc": "오타루항 제3항 부두기지",
+    "time": "20:00~20:30",
+    "fullSchedule": "7월 26일(일) 오타루 조수 축제는 2026년 7월 24일(금)~26일(일)",
+    "desc": "오타루항 제3항 부두기지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 오타루시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://otaru.ushiomatsuri.net/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제140회 광산축제/불꽃축제",
+    "jpName": "第140回 鉱山祭・花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "니가타",
+    "loc": "아이카와하마 공원",
+    "shots": "약500발",
+    "time": "20:00~20:30",
+    "desc": "아이카와하마 공원에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "니가타현 사도시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.s-nets.info/sado.kouzan/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제60회 도야마신항 불꽃축제",
+    "jpName": "第60回 富山新港花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "도야마",
+    "loc": "카이오마루 공원",
+    "shots": "약2000발",
+    "time": "20:00~20:40",
+    "desc": "카이오마루 공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "도야마현 이미즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.imizu-kanko.jp/event/8461/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제79회 누마즈 여름 축제/가노가와 불꽃축제",
+    "jpName": "第79回 沼津夏まつり・狩野川花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)·26(일)",
+    "dateSort": 725,
+    "region": "시즈오카",
+    "loc": "가노강 하천 부지(에이타이교~오나리교~아유미교)",
+    "time": "19:10~20:10",
+    "desc": "가노강 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "시즈오카현 누마즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만1500엔부터",
+    "official": "https://numazukanko.jp/event/50051"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제58회 도요타 오이덴 축제 불꽃축제",
+    "jpName": "第58回 豊田おいでんまつり花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "아이치",
+    "loc": "시라하마 공원 지역",
+    "time": "19:00~20:40(예정) 오이덴 총춤은 7월 25일(토) 18:00~21:00...",
+    "fullSchedule": "7월 26일(일) 오이덴 총춤은 7월 25일(토)",
+    "desc": "시라하마 공원 지역에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "아이치현 도요타시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.oidenmaturi.com/"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제20회 고난시 미나코이 항구 축제",
+    "jpName": "第20回 香南市みなこい港まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "고치",
+    "loc": "요시카와 어항 제방",
+    "time": "21:00~21:25. 미나코이 항구 축제는 15:00~22:00",
+    "desc": "요시카와 어항 제방에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "고치현 고난시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.kochi-konan.lg.jp/index.html"
+  },
+  {
+    "hub": "kyushu",
+    "name": "2026 나가사키 미나토 축제",
+    "jpName": "2026ながさきみなとまつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)·26(일)",
+    "dateSort": 725,
+    "region": "나가사키",
+    "loc": "나가사키항, 나가사키 미즈베노모리 공원",
+    "shots": ",발",
+    "time": "불꽃 놀이 20:30 ~ (예정)",
+    "desc": "나가사키항, 나가사키 미즈베노모리 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "나가사키현 나가사키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.minatomatsuri.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제27회 나나세 불단 페스티벌",
+    "jpName": "第27回 ななせの火群まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/26(일)",
+    "dateSort": 726,
+    "region": "오이타",
+    "loc": "나나세가와 자연공원",
+    "time": "20:45~21:00 「주송」 종료후이기 때문에, 전후할 가능성 있음.",
+    "desc": "나나세가와 자연공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "오이타현 오이타시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.oita.oita.jp/o058/bunkasports/guide/2025homura.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "하토노마츠리 여름 불꽃놀이 축제",
+    "jpName": "波止のまつり納涼花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/27(월)",
+    "dateSort": 727,
+    "region": "돗토리",
+    "loc": "고토우라초 아카사키기쿠항 주변",
+    "shots": "약3000발",
+    "time": "20:00~20:30 노점 출점 18:00~21:00",
+    "desc": "고토우라초 아카사키기쿠항 주변에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "돗토리현 도하쿠군 고토우라초 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.kotoura-kankou.com/event/hanabi2025/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "가모가와 시민 불꽃축제",
+    "jpName": "鴨川市民花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/29(수)",
+    "dateSort": 729,
+    "region": "지바",
+    "loc": "마에바루 요코기 비치",
+    "shots": "약3000발",
+    "time": "19:30~20:10",
+    "desc": "마에바루 요코기 비치에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "지바현 가모가와시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.kamogawa.lg.jp/site/kamogawa-kanko/"
+  },
+  {
+    "hub": "osaka",
+    "name": "사카이 오오 야시장 SBI 마이 불꽃놀이",
+    "jpName": "SBI舞花火 in 堺大魚夜市",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/31(금)",
+    "dateSort": 731,
+    "region": "오사카",
+    "loc": "사카이 옛 항구",
+    "time": "20:20~20:50(예정) 개장 16:30",
+    "desc": "사카이 옛 항구에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "오사카부 사카이시 사카이구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4800엔부터",
+    "official": "https://senshuhanabi.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제63회 아마미 축제 불꽃축제",
+    "jpName": "第63回 奄美まつり花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/31(금)",
+    "dateSort": 731,
+    "region": "가고시마",
+    "loc": "나제 상업항 지구",
+    "time": "20:30~21:00",
+    "desc": "나제 상업항 지구에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가고시마현 아마미시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.amami.lg.jp/kanko/event/2025amamimatsuri.html"
+  },
+  {
+    "hub": "kyoto",
+    "name": "바다의 교토 미야즈만 불꽃놀이 2026",
+    "jpName": "海の京都 みやづBAY花火2026",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토) 외",
+    "dateSort": 718,
+    "region": "교토",
+    "loc": "교토부 미야즈시 몬주텐쿄 공원 내",
+    "shots": "75발",
+    "time": "사이트에 개최시간 미기재",
+    "fullSchedule": "7월 18일(토)·24일(금)·25일(토)·8월 1일(토)·8일(토)",
+    "desc": "교토부 미야즈시 몬주텐쿄 공원 내에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "교토부 미야즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.amanohashidate.jp/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제64회 소운쿄 온천 계곡 불 축제",
+    "jpName": "第64回 層雲峡温泉 峡谷火まつり",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)~8/15(토)",
+    "dateSort": 725,
+    "region": "홋카이",
+    "loc": "소운쿄 온천 소운쿄 공원",
+    "time": "20:30~20:35 7월 26일(토)는 21:00~21:10",
+    "desc": "소운쿄 온천 소운쿄 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "홋카이도 가미카와군 가미카와초 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://sounkyo.net/"
+  },
+  {
+    "hub": "osaka",
+    "name": "기노사키 온천 여름 이야기 '꿈의 불꽃놀이'",
+    "jpName": "城崎温泉夏物語「夢花火」",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/30(목) 외",
+    "dateSort": 730,
+    "region": "효고",
+    "loc": "기노사키 온천마을",
+    "shots": "200발",
+    "time": "21:00~21:05 약 5분간",
+    "fullSchedule": "7월 30일(목)~8월 21일(금) 평일만 개최 ※단 수요일, 8월 10일(월)~14일(금)은 제외",
+    "desc": "기노사키 온천마을에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "효고현 도요오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://kinosaki-spa.gr.jp/"
+  },
+  {
+    "hub": "osaka",
+    "name": "난키 시라하마 온천 2026 메시지 불꽃놀이",
+    "jpName": "南紀白浜温泉 2026年メッセージ花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/18(토) 외",
+    "dateSort": 718,
+    "region": "와카야마",
+    "loc": "시라라하마 해변",
+    "shots": "1발",
+    "time": "20:00~20:40경",
+    "fullSchedule": "7월 18일(토)·25일(토), 8월 1일(토)·8일(토)·15일(토)·22일(토)",
+    "desc": "시라라하마 해변에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "와카야마현 니시무로군 시라하마마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.shirahama-ryokan.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "스와호 여름밤의 불꽃놀이 2026",
+    "jpName": "諏訪湖サマーナイト花火2026",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/24(금) 외",
+    "dateSort": 724,
+    "region": "나가노",
+    "loc": "가미스와 온천 스와호수",
+    "shots": "약500발",
+    "time": "20:30~20:40(약 10분간)",
+    "fullSchedule": "7월 24일(금)~8월 23일(일) ※8월 15일(토)를 제외한다",
+    "desc": "가미스와 온천 스와호수에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "나가노현 스와시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://suwako-hanabi.com/smmr/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "여름에는 매일 밤 도바만 불꽃놀이",
+    "jpName": "夏の鳥羽湾毎夜連続花火",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/25(토)~8/23(일)",
+    "dateSort": 725,
+    "region": "미에",
+    "loc": "사다 해변, 안라시마만, 오바마만",
+    "shots": "약100발",
+    "time": "20:30~20:35",
+    "fullSchedule": "7월 25일(토)~8월 23일(일) 오바마 연속꽃",
+    "desc": "사다 해변, 안라시마만, 오바마만에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "미에현 도바시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "http://www.tobanoyado.com/topics.php"
+  },
+  {
+    "hub": "nagoya",
+    "name": "시마 스페인 마을 나이트 퍼레이드 & 불꽃놀이",
+    "jpName": "志摩スペイン村 ナイトパレード＆花火",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/25(토)~8/23(일)",
+    "dateSort": 725,
+    "region": "미에",
+    "loc": "시마 스페인 마을",
+    "time": "19:30~ (파크 영업은 9:30~20:30)",
+    "desc": "시마 스페인 마을에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "미에현 시마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5700엔부터",
+    "official": "https://www.parque-net.com/special/summer2025/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "여름 아타미 해상 불꽃축제",
+    "jpName": "夏季熱海海上花火大会",
+    "type": "hanabi",
+    "month": 7,
+    "dateText": "7/20(월·공휴일) 외",
+    "dateSort": 720,
+    "region": "시즈오카",
+    "loc": "아타미만(아타미항 7.5m 안벽 - 바다낚시 시설)",
+    "shots": "5000발",
+    "time": "20:15~20:40",
+    "fullSchedule": "7월 20일(월·공휴일)·26일(일)·8월 5일(수)·9일(일)·18일(화)·24일(월)",
+    "desc": "아타미만에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 아타미시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.ataminews.gr.jp"
+  },
+  {
+    "hub": "tokyo",
+    "name": "안진축제, 등불꽃놀이",
+    "jpName": "按針祭・灯籠の流れ打上花火",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "시즈오카",
+    "loc": "이토 해안",
+    "shots": "약800발",
+    "time": "20:50~21:00 등롱 싱크는 19:30~",
+    "desc": "이토 해안에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://itospa.com/event/detail_10019.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "무민밸리 불꽃놀이 축제 2026",
+    "jpName": "ムーミン谷の湖上花火大会～夏2026",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 8,
+    "dateText": "26/7 외",
+    "dateSort": 809,
+    "region": "사이타마",
+    "loc": "무민밸리파크",
+    "time": "19:30~19:35 2026년 8월 29일(토)・30일(일)은 19:00~19:05",
+    "fullSchedule": "2026/7/20・26～31, 8/2～7・9・13・14・16～23・29・30 2026년 8월 9일(일)은 「무민의 일기념 불꽃놀이 2026」의 스페셜 버전",
+    "desc": "무민밸리파크에서 열리는 2026년 하나비 행사입니다. 호수면에 번지는 불꽃 풍경이 인상적입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "사이타마현 한노시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://metsa-hanno.com/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "리틀 월드 불꽃놀이",
+    "jpName": "リトルワールド 花火ショー",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/25(토) 외",
+    "dateSort": 725,
+    "region": "아이치",
+    "loc": "야외민속박물관 리틀월드",
+    "shots": "약500발",
+    "time": "20:15~(약 5분)",
+    "fullSchedule": "7/25(토), 26(일), 8/1(토), 2(일), 8(토)~16(일), 22(토), 23(일), 29(토), 30(일) 9/19(토)~9/22(화·공휴일) ※21일간",
+    "desc": "야외민속박물관 리틀월드에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "아이치현 이누야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.littleworld.jp/"
+  },
+  {
+    "hub": "osaka",
+    "name": "별빛 환상 2026",
+    "jpName": "スターライトイリュージョン2026",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "26/7 외",
+    "dateSort": 719,
+    "region": "와카야마",
+    "loc": "와카야마 마리나시티 서방파제",
+    "time": "2026/7/19(일) 19:45~19:55, 8/13(목)~15(토) 19:30...",
+    "fullSchedule": "2026/7/19(일), 8/13(목)～15(토), 9/20(일)~9/22(화·공휴일)",
+    "desc": "와카야마 마리나시티 서방파제에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "와카야마현 와카야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.marinacity.com/marinacity/"
+  },
+  {
+    "hub": "osaka",
+    "name": "히메 축제 여름 불꽃놀이 2026",
+    "jpName": "姫祭夏花火2026",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/18(토) 외",
+    "dateSort": 718,
+    "region": "효고",
+    "loc": "히메지 중앙공원",
+    "shots": "2000발",
+    "time": "19:50~20:00 약 10분간",
+    "fullSchedule": "7월 18일(토)~9월 27일(일)의 토·일·공휴일 및 8월 10일(월)~14일(금)",
+    "desc": "히메지 중앙공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "효고현 히메지시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료 · 별도 입장료 필요",
+    "official": "https://www.central-park.co.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "이사와 온천 가마우지 낚시 불꽃놀이",
+    "jpName": "石和温泉鵜飼花火",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 7,
+    "dateText": "7/20(월·공휴일) 외",
+    "dateSort": 720,
+    "region": "야마나시",
+    "loc": "후에후키 시청 본청사 앞의 후에후키 하천 부지",
+    "time": "불꽃 20:50~21:00 우가이 이벤트 종료 후 약 10분간",
+    "fullSchedule": "7월 20일(월·공휴일)~8월 17일(일)의 토·일 7/20·25·26·8/1·2·8·9·12·13·15·16 개최(총 11일 개최)",
+    "desc": "후에후키 시청 본청사 앞의 후에후키 하천 부지에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "야마나시현 후에후키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.fuefuki-kanko.jp/scontents/summerfes/1011/index.html"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제71회 도신불꽃축제",
+    "jpName": "函館開港167周年記念 函館港まつり協賛 第71回 道新花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "홋카이",
+    "loc": "녹색 섬",
+    "time": "19:45~21:00",
+    "desc": "녹색 섬에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "홋카이도 하코다테시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.hokkaido-np.co.jp/hanabi2025/hakodate/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제43회 나카후라노 라벤더 축제 및 불꽃축제",
+    "jpName": "第43回 なかふらのラベンダーまつり＆花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "홋카이",
+    "loc": "호쿠세이야마 라벤더원/나카후라노 플라워파크",
+    "time": "19:45~20:30(예정) 축제는 10:00~",
+    "desc": "호쿠세이야마 라벤더원/나카후라노 플라워파크에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "홋카이도 소라치군 나카후라노초 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.town.nakafurano.lg.jp/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "메만베쓰 관광 여름 축제 수중불꽃축제",
+    "jpName": "めまんべつ観光夏まつり 水上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "홋카이",
+    "loc": "아바시리 호수 메만베쓰 호숫가",
+    "shots": "약3000발",
+    "time": "20:00~21:00 비행기의 이착륙에 의해 시간 변경이 되는 경우 있어",
+    "desc": "아바시리 호수 메만베쓰 호숫가에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "홋카이도 아바시리군 오조라마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://ooz-kankou.com/02event/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "산리쿠/오후나토 여름축제 불꽃축제",
+    "jpName": "三陸・大船渡夏まつり 花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토) 외",
+    "dateSort": 801,
+    "region": "이와테",
+    "loc": "미나토 공원",
+    "shots": "약8000발",
+    "time": "미정 이벤트 스케줄은 공식 사이트 참조",
+    "fullSchedule": "8월 1일(토) 산리쿠·오후나 도하츠 축제는 2026년 7월 31일(금)·8월 1일(토)",
+    "desc": "미나토 공원에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "이와테현 오후나토시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5000엔부터",
+    "official": "https://sanriku-ofunato-fes.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제71회 이와키 불꽃축제",
+    "jpName": "第71回 いわき花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "후쿠시마",
+    "loc": "아쿠아마린 파크(오나하마항 부두 1, 2)",
+    "shots": "2000발",
+    "time": "19:00~21:00",
+    "desc": "아쿠아마린 파크에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠시마현 이와키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.iwakihanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제21회 고가불꽃축제",
+    "jpName": "第21回 古河花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "이바라키",
+    "loc": "코가 골프 링크스",
+    "shots": "2발",
+    "time": "19:20~20:30(예정)",
+    "desc": "코가 골프 링크스에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "이바라키현 고가시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2만3100엔부터",
+    "official": "https://www.city.ibaraki-koga.lg.jp/soshiki/kanko/4_1/2026hanabi.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제110회 아시카가 불꽃축제",
+    "jpName": "第110回 足利花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "도치기",
+    "loc": "와타라세 강 다나카 다리 하류 하천 부지",
+    "shots": "약2만발",
+    "time": "19:15~20:50",
+    "desc": "와타라세 강 다나카 다리 하류 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "도치기현 아시카가시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://ashikaga.info/youai_info/15279.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제73회 도다바시시 편입 60주년 기념 불꽃축제",
+    "jpName": "市制施行60周年記念 第73回戸田橋花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "사이타마",
+    "loc": "국도 17호 도다교 상류 아라카와 하천 부지",
+    "shots": "5000발",
+    "time": "19:00~20:30",
+    "desc": "국도 17호 도다교 상류 아라카와 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "사이타마현 도다시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.todabashi-hanabi.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "아사카 시민축제 '사이카사이'",
+    "jpName": "朝霞市民まつり「彩夏祭」",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "사이타마",
+    "loc": "캠프 아사카 유적",
+    "time": "19:15~20:15",
+    "desc": "캠프 아사카 유적에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "사이타마현 아사카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://saikasai.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제42회 이치카와 시민 여름 불꽃축제",
+    "jpName": "第42回 市川市民納涼花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "에도가와 하천바닥",
+    "shots": "4000발",
+    "time": "19:15~20:20(예정)",
+    "desc": "에도가와 하천바닥에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "지바현 이치카와시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2만5000엔부터",
+    "official": "https://www.ichikawa-hanabi.net/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "마쓰도 불꽃축제 2026",
+    "jpName": "松戸花火大会2026",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "후루가사키 하천부지 스포츠 광장",
+    "time": "19:15~20:20",
+    "desc": "후루가사키 하천부지 스포츠 광장에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "지바현 마츠도시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://matsudo-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "데가누마 불꽃축제 2026",
+    "jpName": "手賀沼花火大会2026",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "아비코시/데가누마",
+    "time": "19:10~20:10",
+    "desc": "아비코시/데가누마에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "지바현 가시와시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://teganuma-hanabi.kashiwa-cci.or.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "구주쿠리초 후루사토 축제 불꽃축제",
+    "jpName": "九十九里町ふるさとまつり 花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "가타카이 중앙해안(후루사토 자연공원 내)",
+    "shots": "약2000발",
+    "time": "19:30~20:00 축제는 18:00~20:00",
+    "desc": "가타카이 중앙해안에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "지바현 삼무군 구주쿠리마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.town.kujukuri.chiba.jp/0000008435.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제67회 이타바시 불꽃축제",
+    "jpName": "第67回 いたばし花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "도쿄",
+    "loc": "이타바시구 아라카와 하천부지",
+    "shots": "5000발",
+    "time": "19:00~20:30",
+    "desc": "이타바시구 아라카와 하천부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "도쿄도 이타바시구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://itabashihanabi.jp/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제74회 사가미호 호수축제 불꽃축제",
+    "jpName": "第74回 さがみ湖湖上祭花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "가나가와",
+    "loc": "사가미 호수에서",
+    "shots": "약4000발",
+    "time": "19:30~20:40",
+    "desc": "사가미 호수에서에서 열리는 2026년 하나비 행사입니다. 호수면에 번지는 불꽃 풍경이 인상적입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가나가와현 사가미하라시 미도리구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4000엔부터",
+    "official": "https://sagamiko.info/archives/3281"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제37회 오다와라사카와강 불꽃축제",
+    "jpName": "第37回 小田原酒匂川花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "가나가와",
+    "loc": "사카와가와 스포츠 스퀘어",
+    "time": "19:10~20:10",
+    "desc": "사카와가와 스포츠 스퀘어에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가나가와현 오다와라시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3500엔부터",
+    "official": "https://www.odawara-kankou.com/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제22회 산조 여름축제 불꽃축제",
+    "jpName": "第22回 三条夏まつり大花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "니가타",
+    "loc": "가미스코로 제방 토지",
+    "shots": "4000발",
+    "time": "19:30~21:30",
+    "desc": "가미스코로 제방 토지에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "니가타현 산조시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://sanjo-natsumatsuri.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "야마나카 호수 “호코 축제” 불꽃놀이 대회",
+    "jpName": "山中湖「報湖祭」花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "야마나시",
+    "loc": "야마나카 호숫가",
+    "time": "20:00~20:45 (예정)",
+    "desc": "야마나카 호숫가에서 열리는 2026년 하나비 행사입니다. 호수면에 번지는 불꽃 풍경이 인상적입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "야마나시현 미나미쓰루군 야마나카코무라 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://lake-yamanakako.com/event/10430"
+  },
+  {
+    "hub": "tokyo",
+    "name": "가시마 불꽃축제",
+    "jpName": "鹿島の花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "시즈오카",
+    "loc": "텐류강 하천바닥",
+    "time": "19:00~21:00",
+    "desc": "텐류강 하천바닥에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 하마마츠시 텐류구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1000엔부터",
+    "official": "https://kajima-hanabi.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제39회 오이가와 불꽃축제",
+    "jpName": "第39回 大井川大花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "시즈오카",
+    "loc": "JR 도카이도 본선 '오이가와 철교'와 현도 시마다 오카베 선 '오이가와 다리' 사이의 하천 부지",
+    "shots": "약1만발",
+    "time": "19:00~20:45(시간은 약 90분)",
+    "desc": "JR 도카이도 본선 '오이가와 철교'와 현도 시마다 오카베 선 '오이가와 다리' 사이의 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 시마다시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2000엔부터",
+    "official": "https://ooigawa-hanabi.jp/"
+  },
+  {
+    "hub": "osaka",
+    "name": "키노카와 하시모토 SUMMERBALL2026",
+    "jpName": "紀の川橋本SUMMERBALL2026",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "와카야마",
+    "loc": "미나미바바 녹지",
+    "shots": "약3000발",
+    "time": "20:00~20:30 축제는 16:30~21:00",
+    "desc": "미나미바바 녹지에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "와카야마현 하시모토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.hashimoto.lg.jp/hashimototaikan/asobu/ibennto/summerball/index.html"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제74회 마쓰야마항 축제/미쓰하마 불꽃축제",
+    "jpName": "第74回 松山港まつり・三津浜花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "에히메",
+    "loc": "미츠 부두",
+    "time": "20:00~21:00 (예정) ※유료석의 개장은 17:00~",
+    "desc": "미츠 부두에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "에히메현 마쓰야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.mitsuhama-hanabi.com/"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제67회 스사키 축제 해상 불꽃축제",
+    "jpName": "第67回 須崎まつり海上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "고치",
+    "loc": "스사키시 후지가하마",
+    "shots": "약2000발",
+    "time": "20:00~21:00",
+    "desc": "스사키시 후지가하마에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "고치현 스사키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.susakicci.com/blog"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제64회 시민 축제 아시즈리 축제",
+    "jpName": "第64回 市民祭あしずりまつり",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "고치",
+    "loc": "시미즈항(가시마 주변)",
+    "time": "불꽃놀이 발사는 20:00~20:40(예정) 이벤트는 16:00~20:40(노다이...",
+    "desc": "시미즈항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "고치현 토사시미즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://ashizuri-fes.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제78회 미야자키 여름 불꽃축제",
+    "jpName": "第78回 みやざき納涼花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)",
+    "dateSort": 801,
+    "region": "미야자키",
+    "loc": "오요도 강변",
+    "shots": "약1만발",
+    "time": "19:50~21:00 17:30 개장",
+    "desc": "오요도 강변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "미야자키현 미야자키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3만엔부터",
+    "official": "https://www.miyazaki-cci.or.jp/miyazaki/events/fireworks01/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제77회 시미즈 미나토 축제 해상 불꽃축제",
+    "jpName": "第77回 清水みなと祭り 海上花火大会",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 8,
+    "dateText": "8/2(일) 외",
+    "dateSort": 802,
+    "region": "시즈오카",
+    "loc": "시미즈항 히노데 부두",
+    "time": "19:30~20:30",
+    "fullSchedule": "8월 2일(일) 시미즈 미나토 축제는 2026년 7월 31일(금)~8월 2일(일)",
+    "desc": "시미즈항 히노데 부두에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "시즈오카현 시즈오카시 시미즈구 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.minatokappore.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "우사미 여름 축제 해상 불꽃놀이",
+    "jpName": "宇佐美夏まつり海上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/2(일)",
+    "dateSort": 802,
+    "region": "시즈오카",
+    "loc": "우사미 해안",
+    "shots": "약1000발",
+    "time": "20:00~20:20",
+    "desc": "우사미 해안에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://itospa.com/event/detail_10019.html"
+  },
+  {
+    "hub": "osaka",
+    "name": "도요오카 버드나무 축제 불꽃축제",
+    "jpName": "豊岡 柳まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/2(일) 외",
+    "dateSort": 802,
+    "region": "효고",
+    "loc": "마루야마 강바닥",
+    "time": "20:00~20:50",
+    "fullSchedule": "8월 2일(일) 도요오카 야나기 축제는 ​​2026년 8월 1일(토)·2일(일)",
+    "desc": "마루야마 강바닥에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "효고현 도요오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.storkcci.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "마쓰에 수이고 축제 호수 불꽃축제",
+    "jpName": "2026松江水郷祭 湖上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)·2(일)",
+    "dateSort": 801,
+    "region": "시마네",
+    "loc": "신지호 동쪽",
+    "shots": "4발",
+    "time": "20:15~21:00 20:00~20:15 드론쇼",
+    "desc": "신지호 동쪽에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "시마네현 마쓰에시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://suigosai.com/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "마쿠라자키 항구 축제 불꽃놀이",
+    "jpName": "さつま黒潮「きばらん海」枕崎港まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/2(일)",
+    "dateSort": 802,
+    "region": "가고시마",
+    "loc": "마쿠라자키항 제방",
+    "shots": "총1만발",
+    "time": "20:00~21:00",
+    "fullSchedule": "8월 2일(일) 축제는 8월 2일(토)·3일(일)",
+    "desc": "마쿠라자키항 제방에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가고시마현 마쿠라자키시 (상세 주소/번지 사이트 미기재)",
+    "price": "미정",
+    "official": "http://www.kibarankai.com"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제75회 고쇼가와라 불꽃축제",
+    "jpName": "第75回 五所川原花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/3(월)",
+    "dateSort": 803,
+    "region": "아오모리",
+    "loc": "이와키 하천 부지(호쿠토 그라운드)",
+    "shots": "약5000발",
+    "time": "19:20~21:00",
+    "desc": "이와키 하천 부지에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "아오모리현 고쇼가와라시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 8800엔부터",
+    "official": "https://www.gocci.or.jp/gosyogawarahanabi/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제57회 센다이 칠석 불꽃축제",
+    "jpName": "第57回 仙台七夕花火祭",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/5(수)",
+    "dateSort": 805,
+    "region": "미야기",
+    "loc": "니시 공원 주변 지역, 히로세강 하천 지역, 센다이 지역",
+    "time": "19:15~20:30(예정)",
+    "desc": "니시 공원 주변 지역, 히로세강 하천 지역, 센다이 지역에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "미야기현 센다이시 아오바구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "사이트에 공식 사이트 미기재"
+  },
+  {
+    "hub": "tokyo",
+    "name": "가와구치코 호수 축제",
+    "jpName": "河口湖湖上祭",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/5(수)",
+    "dateSort": 805,
+    "region": "야마나시",
+    "loc": "가와구치호 후나츠 해변",
+    "shots": "약1만발",
+    "time": "미정",
+    "desc": "가와구치호 후나츠 해변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "야마나시현 미나미쓰루군 후지카와구치코마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://fujisan.ne.jp/pages/396/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "“가리야 완사카 축제 2026” 불꽃놀이",
+    "jpName": "「刈谷わんさか祭り2026」花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/5(수)",
+    "dateSort": 805,
+    "region": "아이치",
+    "loc": "카리야 시립운동공원",
+    "time": "19:30~20:15",
+    "desc": "카리야 시립운동공원에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "아이치현 가리야시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.kariya-guide.com/festival/000030.html"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제72회 아오모리 불꽃축제",
+    "jpName": "青森ねぶた祭協賛 第72回 青森花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/7(금)",
+    "dateSort": 807,
+    "region": "아오모리",
+    "loc": "아오모리항(아오우미 공원, 아오우미 공원 서쪽, 신센트럴 부두)",
+    "time": "19:15~21:00",
+    "desc": "아오모리항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "아오모리현 아오모리시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 5500엔부터",
+    "official": "http://aomorihanabitaikai.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제73회 이치노세키 여름 축제 불꽃축제",
+    "jpName": "第73回 一関夏まつり磐井川川開き花火大会",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 8,
+    "dateText": "8/7(금) 외",
+    "dateSort": 807,
+    "region": "이와테",
+    "loc": "이와이 리버 파크",
+    "shots": "약1만발",
+    "time": "19:15~20:30",
+    "fullSchedule": "8월 7일(금) 이치노세키 여름 축제는 8월 7일(금)~9일(일)",
+    "desc": "이와이 리버 파크에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "이와테현 이치노세키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.ichitabi.jp/index.php"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제95회 신슈 치쿠마시 치쿠마강 여름 불꽃축제",
+    "jpName": "第95回 信州千曲市千曲川納涼煙火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/7(금)",
+    "dateSort": 807,
+    "region": "나가노",
+    "loc": "도구라 가미야마다 온천 치쿠마 강변(다이쇼 다리와 만요바시 다리 사이)",
+    "shots": "약1만발",
+    "time": "19:30~21:00",
+    "desc": "도구라 가미야마다 온천 치쿠마 강변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "나가노현 지쿠마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.chikuma-hanabi.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "이하토프 불꽃놀이 판타지",
+    "jpName": "イーハトーブフォーラム2026 光と音のページェント 花火ファンタジー",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "이와테",
+    "loc": "기타카미강 하천 부지(아사히 대교~아사히오하시 대교)",
+    "shots": "약8000발",
+    "time": "19:30~21:00(예정) 개장은 16:00~",
+    "desc": "기타카미강 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "이와테현 하나마키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://hanamaki-cci.or.jp/2025/08/21/%e3%80%90%e4%b8%ad%e6%ad%a2%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%91%e3%82%a4%e3%83%bc%e3%83%8f%e3%83%88%e3%83%bc%e3%83%96%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a9%e3%83%a02025%e8%8a%b1/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제35회 후쿠야마 여름 축제",
+    "jpName": "第35回 ふくやま夏祭り",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "후쿠시마",
+    "loc": "후쿠야마 하천부지 다목적 광장",
+    "time": "19:30~20:20(예정) 개장 15:00, 이벤트 16:30~",
+    "desc": "후쿠야마 하천부지 다목적 광장에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "후쿠시마현 고리야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만엔부터",
+    "official": "https://fukuyama-s.or.jp/hanabi/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "우쓰노미야 불꽃축제",
+    "jpName": "2026うつのみや花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "도치기",
+    "loc": "우츠노미야시 도장주쿠 녹지(기누가와 하천부지)",
+    "time": "19:00~20:15(예정) 18:30 개회식",
+    "desc": "우츠노미야시 도장주쿠 녹지에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "도치기현 우쓰노미야시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.utsunomiya-hanabi.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제37회 닛타 축제 불꽃축제",
+    "jpName": "第37回 新田まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "군마",
+    "loc": "닛타 육상경기장",
+    "time": "19:00~19:30 축제는 17:00~",
+    "desc": "닛타 육상경기장에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "군마현 오타시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.ota.gunma.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "사이타마시 불꽃놀이 히가시우라와 회장",
+    "jpName": "令和8年度 さいたま市花火大会 東浦和 大間木公園会場",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "사이타마",
+    "loc": "오마키 공원 주변",
+    "time": "19:30~20:20(예정) 개장은 16:30~",
+    "desc": "오마키 공원 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "사이타마현 사이타마시 미도리구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4400엔부터",
+    "official": "https://visitsaitamacity.jp/events/29"
+  },
+  {
+    "hub": "tokyo",
+    "name": "조시미나토축제 불꽃축제",
+    "jpName": "銚子みなとまつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토) 외",
+    "dateSort": 808,
+    "region": "지바",
+    "loc": "도네 강변",
+    "time": "19:30~20:20 ※개시는 19:30을 예정, 약 50분 정도",
+    "fullSchedule": "8월 8일(토) ※2025년 8월 2일(토)의 예정이 태풍 때문에 8월 9일(토)로 연기가 되었습니다",
+    "desc": "도네 강변에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "지바현 조시시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://www.city.choshi.chiba.jp/event/page1103_00076.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제49회 오쿠타마 여름 불꽃축제",
+    "jpName": "第49回 奥多摩納涼花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "도쿄",
+    "loc": "아타고야마 플라자",
+    "shots": "약1000발",
+    "time": "19:45~20:20(예정)",
+    "desc": "아타고야마 플라자에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "도쿄도 니시타마군 오쿠타마마치 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.town.okutama.tokyo.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "아라카와 세이류 무라카미시 불꽃축제",
+    "jpName": "村上市花火大会in清流あらかわ",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토) 외",
+    "dateSort": 808,
+    "region": "니가타",
+    "loc": "JR사카마치역 앞",
+    "time": "19:30~20:30",
+    "fullSchedule": "8월 8일(토) 8월 7일(금) 전야제, 8월 8일(토) 불꽃놀이",
+    "desc": "JR사카마치역 앞에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "니가타현 무라카미시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.murakami.lg.jp/site/kanko/arakawataisai.html"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제57회 잔토코이 우오즈 축제",
+    "jpName": "第57回 じゃんとこい魚津まつり",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 8,
+    "dateText": "8/8(토) 외",
+    "dateSort": 808,
+    "region": "도야마",
+    "loc": "우오즈항",
+    "time": "19:40~20:20",
+    "fullSchedule": "8월 8일(토) 쟌토코이 우오즈 축제는 8월 7일(금)~8월 9일(일)",
+    "desc": "우오즈항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "도야마현 우오즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://uozu-kanko.jp/library/jyantokoi_uozu_matsuri/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제4회 기후 나가라강 불꽃놀이 대회",
+    "jpName": "第4回 ぎふ長良川花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "기후",
+    "loc": "나가라 강둑(나가라 다리와 긴카 다리 사이)",
+    "time": "19:30~20:40(예정)",
+    "desc": "나가라 강둑에서 열리는 2026년 하나비 행사입니다.",
+    "venue": "기후현 기후시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3만3000엔부터",
+    "official": "https://nagara-hanabi.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제57회 도카이 축제 불꽃축제",
+    "jpName": "第57回 東海まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "아이치",
+    "loc": "도카이시 주오초 오이케 공원 내",
+    "shots": "약4000발",
+    "time": "19:20~20:30",
+    "desc": "도카이시 주오초 오이케 공원 내에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "아이치현 도카이시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.tokaikanko.com/"
+  },
+  {
+    "hub": "osaka",
+    "name": "제71회 이바라키 벤텐 불꽃축제",
+    "jpName": "第71回 茨木辯天花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/8(토)",
+    "dateSort": 808,
+    "region": "오사카",
+    "loc": "벤천종 메이오지 절 경내",
+    "shots": "약3000발",
+    "time": "19:30~20:30",
+    "desc": "벤천종 메이오지 절 경내에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "오사카부 이바라키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.bentenshu.or.jp/schedule/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "기타카미·미치노쿠 불꽃놀이의 밤",
+    "jpName": "第65回 北上・みちのく芸能まつり「トロッコ流しと花火の夕べ」",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/9(일)",
+    "dateSort": 809,
+    "region": "이와테",
+    "loc": "기타카미 강변",
+    "time": "19:30~20:30",
+    "desc": "기타카미 강변에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "이와테현 기타카미시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2만엔부터",
+    "official": "https://geinoumatsuri.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "안진축제, 북소리와 불꽃놀이",
+    "jpName": "按針祭・太鼓の響き打上花火",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/9(일)",
+    "dateSort": 809,
+    "region": "시즈오카",
+    "loc": "이토 해안",
+    "shots": "약800발",
+    "time": "20:50~21:00",
+    "desc": "이토 해안에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://itospa.com/event/detail_10019.html"
+  },
+  {
+    "hub": "nagoya",
+    "name": "고쿠후 여름 축제",
+    "jpName": "国府夏まつり",
+    "type": "hanabi",
+    "longrun": true,
+    "month": 8,
+    "dateText": "8/8(토) 외",
+    "dateSort": 808,
+    "region": "아이치",
+    "loc": "타이샤 신사",
+    "time": "8월 8일(토) 18:30~21:30, 9일(일) 19:30~21:30",
+    "fullSchedule": "8월 8일(토)·9일(일) 고후 여름 축제는 8월 7일(금)~9일(일)",
+    "desc": "타이샤 신사에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "아이치현 도요카와시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.toyokawa-map.net/event/000043.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제53회 요나고 가이나 축제 불꽃축제",
+    "jpName": "第53回 米子がいな祭 花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/9(일)",
+    "dateSort": 809,
+    "region": "돗토리",
+    "loc": "요나고 항 안벽",
+    "shots": "약4000발",
+    "time": "20:00~종료 미정",
+    "desc": "요나고 항 안벽에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "돗토리현 요나고시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만5000엔부터",
+    "official": "https://www.gainamatsuri.net"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제80회 안진축제 바다불꽃축제",
+    "jpName": "第80回 按針祭 海の花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/10(월)",
+    "dateSort": 810,
+    "region": "시즈오카",
+    "loc": "이토 해안 지역",
+    "shots": "약1만발",
+    "time": "20:00~21:00",
+    "desc": "이토 해안 지역에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://itospa.com/event/detail_10019.html"
+  },
+  {
+    "hub": "tohoku",
+    "name": "모리오카 불꽃축제",
+    "jpName": "盛岡花火の祭典",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/11(화·공휴일)",
+    "dateSort": 811,
+    "region": "이와테",
+    "loc": "토난오하시 다리 기타카미강 하천 부지 하류",
+    "time": "19:25~20:30",
+    "desc": "토난오하시 다리 기타카미강 하천 부지 하류에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "이와테현 모리오카시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1000엔부터",
+    "official": "https://www.ccimorioka.or.jp/hanabi/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "제44회 미쿠니 불꽃놀이",
+    "jpName": "第44回 三国花火",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/11(화·공휴일)",
+    "dateSort": 811,
+    "region": "후쿠이",
+    "loc": "미쿠니 선셋 비치/쿠즈류 강 보트 파크",
+    "shots": "5000발",
+    "time": "19:30~20:30 15:00 개장, 22:00 폐장",
+    "desc": "미쿠니 선셋 비치/쿠즈류 강 보트 파크에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "후쿠이현 사카이시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "http://www.mikuni.org/hanabi/"
+  },
+  {
+    "hub": "shikoku",
+    "name": "제61회 사카이데 대하시 축제 해상불꽃축제",
+    "jpName": "第61回 さかいで大橋まつり 海上花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/11(화·공휴일)",
+    "dateSort": 811,
+    "region": "가가와",
+    "loc": "사카이데항 중앙부두",
+    "shots": "약4000발",
+    "time": "20:00~20:30",
+    "desc": "사카이데항 중앙부두에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가가와현 사카이데시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.sakaide.lg.jp/soshiki/sangyoukankou/oohasimaturi2025.html"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "제74회 가쓰마이 불꽃축제",
+    "jpName": "第74回 勝毎花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/13(목)",
+    "dateSort": 813,
+    "region": "홋카이",
+    "loc": "도카치강 하천부지 특설회장(도카치대교 하류 400m 부근)",
+    "time": "19:20~21:00",
+    "desc": "도카치강 하천부지 특설회장에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "홋카이도 오비히로시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 7150엔부터",
+    "official": "https://www.tokachi.co.jp/hanabi/"
+  },
+  {
+    "hub": "osaka",
+    "name": "구마노 조후쿠 만토 축제 제64회 신구 불꽃축제",
+    "jpName": "熊野徐福万燈祭 第64回 新宮花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/13(목)",
+    "dateSort": 813,
+    "region": "와카야마",
+    "loc": "구마노 강 하천 부지",
+    "shots": "약6000발",
+    "time": "19:30~21:00",
+    "desc": "구마노 강 하천 부지에서 열리는 2026년 하나비 행사입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "와카야마현 신구시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.shingu.lg.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "간몬해협 불꽃축제 2026",
+    "jpName": "アジアポートフェスティバル in KANMON 2026 関門海峡花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/13(목)",
+    "dateSort": 813,
+    "region": "야마구치",
+    "loc": "미사키노마치 부두, 아루카항 시모노세키, 가몬 부두, 가라토 시장",
+    "time": "개회식 19:35, 불꽃놀이 발사 20:00, 발사 종료 20:50",
+    "desc": "미사키노마치 부두, 아루카항 시모노세키, 가몬 부두, 가라토 시장에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "야마구치현 시모노세키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "http://shimonoseki21c.jp/hanabi.html"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제55회 아사카노 여름축제 불꽃축제",
+    "jpName": "第55回 あさか野夏まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/14(금)",
+    "dateSort": 814,
+    "region": "후쿠시마",
+    "loc": "문화공원 근처",
+    "shots": "약7000발",
+    "time": "19:30~20:30경",
+    "desc": "문화공원 근처에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다.",
+    "venue": "후쿠시마현 고리야마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://asaka-s.or.jp/asakanohanabi/index.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "모빌리티 리조트 모테기 불꽃축제",
+    "jpName": "モビリティリゾートもてぎ 花火の祭典",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/14(금)",
+    "dateSort": 814,
+    "region": "도치기",
+    "loc": "모빌리티 리조트 모테기",
+    "time": "19:20(개연 예정)~ 종료시간 미정",
+    "desc": "모빌리티 리조트 모테기에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "도치기현 하가군 모기초 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.mr-motegi.jp/fireworks/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "얀모노사토 불꽃축제",
+    "jpName": "やんもの里花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/14(금)",
+    "dateSort": 814,
+    "region": "시즈오카",
+    "loc": "야하타노항",
+    "shots": "약2000발",
+    "time": "20:00~20:30(예정)",
+    "desc": "야하타노항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://itospa.com/event/detail_10019.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제79회 기사라즈 항 축제 불꽃놀이",
+    "jpName": "第79回 木更津港まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/15(토)",
+    "dateSort": 815,
+    "region": "지바",
+    "loc": "나카노시마 공원",
+    "shots": "4000발",
+    "time": "19:05~20:30",
+    "desc": "나카노시마 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "지바현 기사라즈시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://www.city.kisarazu.lg.jp/soshiki/keizai/kankoshinko/2/2/14381.html"
+  },
+  {
+    "hub": "nagoya",
+    "name": "에치젠시 여름축제 불꽃축제",
+    "jpName": "越前市サマーフェスティバル 花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/15(토)",
+    "dateSort": 815,
+    "region": "후쿠이",
+    "loc": "히노가와 하천 녹지공원",
+    "shots": "40000발",
+    "time": "19:20~20:40",
+    "desc": "히노가와 하천 녹지공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "후쿠이현 에치젠시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://echizen-festival.com"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제53회 무사시노사토 여름밤 축제",
+    "jpName": "第53回 むさしの里の夕涼み夏の夜まつり　大分合同新聞むさし花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/15(토)",
+    "dateSort": 815,
+    "region": "오이타",
+    "loc": "구니사키시 무사시항 앞",
+    "shots": "약4000발",
+    "time": "20:40~21:00 시간 변경 가능성 있음",
+    "desc": "구니사키시 무사시항 앞에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "오이타현 구니사키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.instagram.com/musashinatsunoyomatsuri/?igsh=NGV6Zno0dW8yOXRv#"
+  },
+  {
+    "hub": "kyushu",
+    "name": "기츠키시 여름 불꽃축제",
+    "jpName": "杵築市納涼花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/16(일)",
+    "dateSort": 816,
+    "region": "오이타",
+    "loc": "염전 특설 회장 (키츠키시 해변 드림 파크)",
+    "time": "20:00~20:40",
+    "desc": "염전 특설 회장에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "오이타현 기츠키시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://kit-suki.com/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "매일 밤 불꽃놀이 IN 아마츠 고미나토",
+    "jpName": "連夜の花火 IN 天津小湊",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)~8/17(월)",
+    "dateSort": 801,
+    "region": "지바",
+    "loc": "고미나토 어항",
+    "shots": "약150발",
+    "time": "20:00~20:10",
+    "desc": "고미나토 어항에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "지바현 가모가와시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.kamonavi.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "이나시키 여름축제 불꽃축제",
+    "jpName": "2026 いなしき夏まつり花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토)(예정)",
+    "dateSort": 822,
+    "region": "이바라키",
+    "loc": "에도사키 운동공원 주변",
+    "shots": "약1만발",
+    "time": "19:00~20:30(예정) 스테이지 이벤트는 15:00~",
+    "desc": "에도사키 운동공원 주변에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "이바라키현 이나시키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "http://www.inashiki.com/summer_festa.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제52회 다카사키 불꽃축제",
+    "jpName": "第52回 高崎大花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토) 외",
+    "dateSort": 822,
+    "region": "군마",
+    "loc": "가라스카와 와다바시 상류 하천 부지",
+    "shots": "5000발",
+    "time": "19:30~20:20(예정)",
+    "fullSchedule": "8월 22일(토) 다카사키 축제는 2026년 8월 22일(토)·23일(일)",
+    "desc": "가라스카와 와다바시 상류 하천 부지에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "군마현 다카사키시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 3000엔부터",
+    "official": "https://www.takasaki-matsuri.jp/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "2020년 사이타마시 불꽃축제 이와쓰키 문화공원 회장",
+    "jpName": "令和8年度 さいたま市花火大会 岩槻文化公園会場",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토)",
+    "dateSort": 822,
+    "region": "사이타마",
+    "loc": "이와쓰키 문화공원",
+    "time": "19:30~20:20(예정) 개장은 17:30~",
+    "desc": "이와쓰키 문화공원에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다.",
+    "venue": "사이타마현 사이타마시 이와쓰키구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1100엔부터",
+    "official": "https://visitsaitamacity.jp/events/30"
+  },
+  {
+    "hub": "tokyo",
+    "name": "2026 이나축제",
+    "jpName": "2026 伊奈まつり",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토)",
+    "dateSort": 822,
+    "region": "사이타마",
+    "loc": "이나초 제도 시행 기념공원",
+    "time": "예정 시간 20:10~ 축제는 16:00~21:15",
+    "desc": "이나초 제도 시행 기념공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "사이타마현 기타아다치군 이나마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://inakanko.com/?p=we-page-top-1"
+  },
+  {
+    "hub": "tokyo",
+    "name": "이토온천 유메 불꽃놀이 제7탄",
+    "jpName": "伊東温泉夢花火 Part7 箸まつり花火大会(手筒花火)",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토)",
+    "dateSort": 822,
+    "region": "시즈오카",
+    "loc": "이토 오렌지 비치 센트럴",
+    "shots": "약1500발",
+    "time": "20:30~21:00 식전, 이벤트는 19:00경부터 시작 예정",
+    "desc": "이토 오렌지 비치 센트럴에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "시즈오카현 이토시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://itospa.com/event/detail_54512.html"
+  },
+  {
+    "hub": "osaka",
+    "name": "SBI 마이하나비 in 오사카/센난",
+    "jpName": "SBI舞花火 in 大阪・泉南",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/22(토)",
+    "dateSort": 822,
+    "region": "오사카",
+    "loc": "SENNAN LONG PARK (센난 린쿠 공원)",
+    "time": "15:00 개장, 19:30 개연~20:30 종연(예정)",
+    "desc": "SENNAN LONG PARK에서 열리는 2026년 하나비 행사입니다. 빛과 퍼포먼스를 더한 쇼형 구성이 돋보입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "오사카부 센난시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 공식 사이트 참조",
+    "official": "https://senshuhanabi.com/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "Summer Star 피날레 불꽃축제",
+    "jpName": "ダイワロイネットホテルズpresents 夏スタ! フィナーレ花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/23(일)",
+    "dateSort": 823,
+    "region": "미야기",
+    "loc": "라쿠텐 모바일 파크 미야기",
+    "time": "오릭스·바파로즈전의 경기 종료 20분 후경~ 경기 개시는 16:00~",
+    "desc": "라쿠텐 모바일 파크 미야기에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "미야기현 센다이시 미야기노구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4800엔부터",
+    "official": "https://www.rakuteneagles.jp/news/detail/202500832871.html"
+  },
+  {
+    "hub": "tokyo",
+    "name": "손토쿠 여름 축제 2026년 마지막 대불꽃축제",
+    "jpName": "尊徳夏まつりザ・ファイナル2026 大花火大会",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/29(토)",
+    "dateSort": 829,
+    "region": "도치기",
+    "loc": "기누가와 하천변 녹지공원(스나가하라교 부근)",
+    "time": "19:30-20:20, 지역예능대회 16:30부터 날씨에 따라 변경될 수 있음",
+    "desc": "기누가와 하천변 녹지공원에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "도치기현 모카시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://sontokunatsu.jp/natsu/"
+  },
+  {
+    "hub": "kyoto",
+    "name": "시가 농업공원 블루메힐 음악불꽃축제 2026",
+    "jpName": "滋賀農業公園ブルーメの丘 ミュージック花火大会2026",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/11(화·공휴일), 8/29(토)",
+    "dateSort": 811,
+    "region": "시가",
+    "loc": "시가 농업공원 블루메노오카",
+    "shots": "약1000발",
+    "time": "20:00~20:15",
+    "fullSchedule": "8월 11일(화·공휴일), 2026년 8월 29일(토)",
+    "desc": "시가 농업공원 블루메노오카에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "시가현 가모군 히노마치 (상세 주소/번지 사이트 미기재)",
+    "price": "무료 · 별도 입장료 필요",
+    "official": "https://www.blumenooka.jp/post-18386/"
+  },
+  {
+    "hub": "kyushu",
+    "name": "TKU 고쓰호 불꽃놀이 2025",
+    "jpName": "TKU 江津湖花火大会2025",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/29(토)",
+    "dateSort": 829,
+    "region": "구마모토",
+    "loc": "스이젠지 고쓰코 공원",
+    "shots": "약1만발",
+    "time": "19:15~1시간 정도",
+    "desc": "스이젠지 고쓰코 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "구마모토현 구마모토시 히가시구 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://hanabi.kumamoto-guide.jp/"
+  },
+  {
+    "hub": "nagoya",
+    "name": "가타야마즈 온천 여름 불꽃축제",
+    "jpName": "片山津温泉納涼花火まつり",
+    "type": "hanabi",
+    "month": 8,
+    "dateText": "8/1(토)~8/30(일)",
+    "dateSort": 801,
+    "region": "이시카와",
+    "loc": "가타야마즈 온천 시바야마가타 호수",
+    "time": "21:00~21:10경",
+    "desc": "가타야마즈 온천 시바야마가타 호수에서 열리는 2026년 하나비 행사입니다. 호수면에 번지는 불꽃 풍경이 인상적입니다.",
+    "venue": "이시카와현 가가시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 300엔부터",
+    "official": "https://www.katayamazu-spa.or.jp/event/1465/"
+  },
+  {
+    "hub": "hokkaido",
+    "name": "홋카이도 예술불꽃놀이 2026",
+    "jpName": "北海道芸術花火 2026",
+    "type": "hanabi",
+    "month": 9,
+    "dateText": "9/5(토)",
+    "dateSort": 905,
+    "region": "홋카이",
+    "loc": "모에레누마 공원",
+    "time": "19:15~20:05(예정) 16:00 개장",
+    "desc": "모에레누마 공원에서 열리는 2026년 하나비 행사입니다. 가족 여행 중 들르기 좋은 분위기입니다.",
+    "venue": "홋카이도 삿포로시 히가시구 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 1만엔부터",
+    "official": "https://www.moere.jp/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "사카타 불꽃놀이 2026",
+    "jpName": "酒田の花火 2026「つなぐ絆、未来に響け1万発」",
+    "type": "hanabi",
+    "month": 9,
+    "dateText": "9/12(토)",
+    "dateSort": 912,
+    "region": "야마가타",
+    "loc": "사카타시 모가미가와 공원",
+    "shots": "3발",
+    "time": "19:00~20:00",
+    "desc": "사카타시 모가미가와 공원에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 스타마인과 와이드 연출이 하이라이트입니다.",
+    "venue": "야마가타현 사카타시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 2000엔부터",
+    "official": "https://sakata-hanabi.com/"
+  },
+  {
+    "hub": "tohoku",
+    "name": "제1회 소마불꽃축제",
+    "jpName": "第1回 相馬花火大会",
+    "type": "hanabi",
+    "month": 9,
+    "dateText": "9/12(토)",
+    "dateSort": 912,
+    "region": "후쿠시마",
+    "loc": "마츠카와우라 신어항",
+    "shots": "1만발",
+    "time": "18:30~20:00",
+    "desc": "마츠카와우라 신어항에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "후쿠시마현 소마시 (상세 주소/번지 사이트 미기재)",
+    "price": "유료 · 4만5000엔부터",
+    "official": "https://hanabi-fireworks.shop/news/6645513f2bd35e06b9928a62"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제102회 이즈카 여름 불꽃축제",
+    "jpName": "第102回 飯塚納涼花火大会",
+    "type": "hanabi",
+    "month": 9,
+    "dateText": "9/25(금)",
+    "dateSort": 925,
+    "region": "후쿠오카",
+    "loc": "온가강 나카노시마",
+    "time": "20:00~21:30(예정)",
+    "desc": "온가강 나카노시마에서 열리는 2026년 하나비 행사입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "후쿠오카현 이즈카시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.iizuka-cci.org/tourism/hanabi/"
+  },
+  {
+    "hub": "tokyo",
+    "name": "제80회 아쓰기 은어 축제",
+    "jpName": "第80回 あつぎ鮎まつり",
+    "type": "hanabi",
+    "month": 10,
+    "dateText": "10/10(토)",
+    "dateSort": 1010,
+    "region": "가나가와",
+    "loc": "사가미강 하천 부지(3개 강 합류점)",
+    "time": "미정",
+    "desc": "사가미강 하천 부지에서 열리는 2026년 하나비 행사입니다. 스타마인과 와이드 연출이 하이라이트입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "가나가와현 아쓰기시 (상세 주소/번지 사이트 미기재)",
+    "price": "아츠기측：SS석 3만엔(정원 2명·리클라이닝 체어 첨부), S석 2만엔(정원 2명...",
+    "official": "https://www.atsugi-kankou.jp/soshiki/ac-kankou/ayu-festival9.html"
+  },
+  {
+    "hub": "kyushu",
+    "name": "제8회 아이라시 불꽃축제",
+    "jpName": "第8回 あいら市花火大会",
+    "type": "hanabi",
+    "month": 10,
+    "dateText": "10/11(일)",
+    "dateSort": 1011,
+    "region": "가고시마",
+    "loc": "가지키항",
+    "shots": "약1만발",
+    "time": "20:00~21:00 축제 개최 시간은 미정",
+    "desc": "가지키항에서 열리는 2026년 하나비 행사입니다. 음악과 불꽃이 어우러지는 연출이 특징입니다. 수면에 비치는 불꽃을 함께 감상할 수 있습니다.",
+    "venue": "가고시마현 아이라시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://airasf.wixsite.com/airasf"
+  },
+  {
+    "hub": "osaka",
+    "name": "이나가와 불꽃축제 2026",
+    "jpName": "猪名川花火大会 2026",
+    "type": "hanabi",
+    "month": 11,
+    "dateText": "11/7(토)",
+    "dateSort": 1107,
+    "region": "효고",
+    "loc": "이나가와 하천바닥",
+    "shots": "약4000발",
+    "time": "사이트에 개최시간 미기재",
+    "desc": "이나가와 하천바닥에서 열리는 2026년 하나비 행사입니다. 지역 축제의 분위기와 함께 즐기기 좋습니다.",
+    "venue": "효고현 가와니시시 (상세 주소/번지 사이트 미기재)",
+    "price": "무료",
+    "official": "https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kisetu/1022518.html"
+  }
+];
+
+// State
+let activeCategory='all', activeMonth='all', activeSort='date', searchQuery='', currentPage=1;
+const PAGE_SIZE=5;
+// 실시간 오늘 날짜 (페이지 열릴 때마다 자동 갱신)
+function getToday(){
+  const t=new Date();
+  return new Date(t.getFullYear(),t.getMonth(),t.getDate());
+}
+const TODAY=getToday();
+const TODAY_Y=TODAY.getFullYear();
+const TODAY_M=TODAY.getMonth()+1;
+const TODAY_D=TODAY.getDate();
+
+function matchCategory(f){
+  if(activeCategory==='all') return true;
+  if(activeCategory==='matsuri') return f.type==='matsuri';
+  if(activeCategory==='hanabi') return f.type==='hanabi';
+  if(activeCategory==='top3') return f.top3;
+  return f.hub === activeCategory;
+}
+function matchSearch(f){
+  if(!searchQuery) return true;
+  const q=searchQuery.toLowerCase();
+  return f.name.toLowerCase().includes(q) || f.region.toLowerCase().includes(q) ||
+         (f.jpName && f.jpName.toLowerCase().includes(q)) ||
+         (f.loc && f.loc.toLowerCase().includes(q)) || (f.feature && f.feature.toLowerCase().includes(q)) ||
+         (f.desc && f.desc.toLowerCase().includes(q));
+}
+function matchMonth(f){
+  if(activeMonth==='all') return true;
+  return f.month===parseInt(activeMonth);
+}
+function getFiltered(){
+  let filtered=festivals.filter(f=>matchCategory(f) && matchSearch(f) && matchMonth(f));
+  if(activeSort==='date') filtered.sort((a,b)=>a.dateSort-b.dateSort);
+  else filtered.sort((a,b)=>a.region.localeCompare(b.region) || a.dateSort-b.dateSort);
+  return filtered;
+}
+const getIdx=(f)=>festivals.indexOf(f);
+
+function renderList(){
+  const list=document.getElementById('festivalList');
+  const filtered=getFiltered();
+  document.getElementById('totalCount').textContent=filtered.length+'개';
+  const totalPages=Math.max(1,Math.ceil(filtered.length/PAGE_SIZE));
+  if(currentPage>totalPages) currentPage=totalPages;
+  if(currentPage<1) currentPage=1;
+  const start=(currentPage-1)*PAGE_SIZE;
+  const pageItems=filtered.slice(start,start+PAGE_SIZE);
+
+  if(filtered.length===0){
+    list.innerHTML=`<div class="empty"><div class="emoji">🔍</div><div class="text">검색 결과가 없어요.<br>다른 키워드로 시도해 보세요.</div></div>`;
+    document.getElementById('paginationBox').innerHTML='';
+    return;
+  }
+  list.innerHTML=pageItems.map((f,i)=>{
+    const icon=f.type==='matsuri'?'🏮':'🎆';
+    const tags=[];
+    tags.push(`<span class="tag region">📍${f.region}</span>`);
+    if(f.shots && !f.longrun) tags.push(`<span class="tag shots">${f.shots}</span>`);
+    if(f.top3) tags.push(`<span class="tag top3">🏆 일본 3대</span>`);
+    if(f.longrun) tags.push(`<span class="tag longrun">🌸 매일 진행</span>`);
+    if(f.price && f.price.includes('유료')) tags.push(`<span class="tag paid">💳 유료</span>`);
+    if(f.type==='matsuri') tags.push(`<span class="tag">🏮 마츠리</span>`);
+    else tags.push(`<span class="tag">🎆 하나비</span>`);
+    const idx=getIdx(f);
+    return `
+    <div class="fest-card ${f.type}" data-idx="${idx}" style="animation-delay:${Math.min(i*0.05,0.3)}s">
+      <div class="fest-icon">${icon}</div>
+      <div class="fest-body">
+        <div class="fest-title-row">
+          <div>
+            <div class="fest-name">${f.name}</div>
+            <div class="fest-jp">${f.jpName || ''}</div>
+          </div>
+          <div class="fest-date">${f.dateText}</div>
+        </div>
+        <div class="fest-loc"><span class="pin">📍</span> ${f.loc}</div>
+        <div class="fest-tags">${tags.join('')}</div>
+        <div class="fest-meta">
+          ${f.feature?`<div class="meta-row"><span class="key">특징</span><span class="val">${f.feature}</span></div>`:''}
+          <div class="meta-row"><span class="key">시간</span><span class="val">${f.time}</span></div>
+        </div>
+        <div class="fest-detail-hint">탭하면 상세 정보 보기 →</div>
+      </div>
+    </div>`;
+  }).join('');
+  list.querySelectorAll('.fest-card').forEach(card=>{
+    card.addEventListener('click',()=>openDetail(parseInt(card.dataset.idx)));
+  });
+  renderPagination(totalPages,filtered.length);
+}
+
+function renderPagination(totalPages,totalItems){
+  const box=document.getElementById('paginationBox');
+  if(totalPages<=1){box.innerHTML='';return;}
+  let buttons=`<button class="page-btn nav" data-page="prev" ${currentPage===1?'disabled':''}>‹</button>`;
+  let s=Math.max(1,currentPage-2);
+  let e=Math.min(totalPages,s+4);
+  if(e-s+1<5) s=Math.max(1,e-4);
+  for(let p=s;p<=e;p++){
+    buttons+=`<button class="page-btn ${p===currentPage?'active':''}" data-page="${p}">${p}</button>`;
+  }
+  buttons+=`<button class="page-btn nav" data-page="next" ${currentPage===totalPages?'disabled':''}>›</button>`;
+  buttons+=`<span class="page-info">${currentPage} / ${totalPages} · 총 ${totalItems}개</span>`;
+  box.innerHTML=`<div class="pagination">${buttons}</div>`;
+  box.querySelectorAll('.page-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const p=btn.dataset.page;
+      if(p==='prev') currentPage--;
+      else if(p==='next') currentPage++;
+      else currentPage=parseInt(p);
+      renderList();
+      document.querySelector('.section-title').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+}
+
+function renderDday(){
+  let nextDateSort=null,minDiff=Infinity;
+  festivals.forEach(f=>{
+    if(f.longrun) return;
+    const m=Math.floor(f.dateSort/100), d=f.dateSort%100;
+    const eventDate=new Date(2026,m-1,d);
+    const diff=Math.ceil((eventDate-TODAY)/(1000*60*60*24));
+    if(diff>=0 && diff<minDiff){minDiff=diff;nextDateSort=f.dateSort;}
+  });
+  if(nextDateSort){
+    const nextFestivals=festivals.filter(f=>!f.longrun && f.dateSort===nextDateSort);
+    const ddayLabel=minDiff===0?'TODAY':`D-${minDiff}`;
+    const itemsHtml=nextFestivals.map(f=>`
+          <div class="next-festival-item" data-idx="${getIdx(f)}">
+            <div class="name">${f.name}</div>
+            <div class="meta">📍 ${f.region} · ${f.dateText}</div>
+          </div>`).join('');
+    document.getElementById('ddayBox').innerHTML=`
+      <div class="highlight-wrap">
+        <div class="highlight-box">
+          <div class="dday">${ddayLabel}</div>
+          <div class="label">⏰ NEXT FESTIVAL</div>
+          ${itemsHtml}
+        </div>
+      </div>`;
+    document.querySelectorAll('.next-festival-item').forEach(item=>{
+      item.addEventListener('click',e=>{
+        e.stopPropagation();
+        openDetail(parseInt(e.currentTarget.dataset.idx));
+      });
+    });
+  } else {
+    // 모든 2026 축제 종료
+    document.getElementById('ddayBox').innerHTML=`
+      <div class="highlight-wrap">
+        <div class="highlight-box" style="cursor:default">
+          <div class="dday">2026</div>
+          <div class="label">⏰ SEASON ENDED</div>
+          <div class="name">2026 축제 시즌이 모두 종료됐어요</div>
+          <div class="meta">아래에서 지난 일정 다시 보기</div>
+        </div>
+      </div>`;
+  }
+}
+
+function renderTop3(){
+  const top3=festivals.filter(f=>f.top3).sort((a,b)=>a.dateSort-b.dateSort);
+  document.getElementById('top3List').innerHTML=top3.map((f,i)=>`
+    <div class="top3-item" data-idx="${getIdx(f)}">
+      <div class="num">${i+1}</div>
+      <div class="info">
+        <div class="name">${f.name}</div>
+        <div class="fest-jp">${f.jpName || ''}</div>
+        <div class="when">${f.dateText} · ${f.region}</div>
+      </div>
+      <div class="arr">→</div>
+    </div>
+  `).join('');
+  document.querySelectorAll('.top3-item').forEach(el=>{
+    el.addEventListener('click',()=>openDetail(parseInt(el.dataset.idx)));
+  });
+}
+
+function renderCalendar(){
+  const monthsToShow=[5,6,7,8,9,10,11];
+  const monthNames={5:'MAY',6:'JUN',7:'JUL',8:'AUG',9:'SEP',10:'OCT',11:'NOV'};
+  const dows=['일','월','화','수','목','금','토'];
+  let html='';
+
+  monthsToShow.forEach(m=>{
+    const monthEvents=festivals.filter(f=>f.month===m && !f.longrun);
+    if(monthEvents.length===0) return;
+
+    const eventMap={};
+    monthEvents.forEach(f=>{
+      const day=f.dateSort%100;
+      if(!eventMap[day]) eventMap[day]=[];
+      let shortName=f.name.replace(/^제\d+회\s*/,'').replace('마츠리','').replace('하나비','')
+        .replace('전국 불꽃 경연대회','경연').replace('해상 대하나비','해상').replace('대하나비','').replace(/\s+/g,' ').trim();
+      if(shortName.length>4) shortName=shortName.slice(0,4);
+      eventMap[day].push({idx:getIdx(f),type:f.type,region:f.region,shortName,fullName:f.name});
+    });
+
+    const firstDay=new Date(2026,m-1,1).getDay();
+    const lastDate=new Date(2026,m,0).getDate();
+
+    let cells='';
+    dows.forEach((d,i)=>{
+      const cls=i===0?'sun':(i===6?'sat':'');
+      cells+=`<div class="dow ${cls}">${d}</div>`;
+    });
+    for(let i=0;i<firstDay;i++) cells+=`<div class="cal-cell empty"></div>`;
+    for(let d=1;d<=lastDate;d++){
+      const dow=(firstDay+d-1)%7;
+      const dowCls=dow===0?'sun':(dow===6?'sat':'');
+      const isToday=(TODAY_Y===2026 && m===TODAY_M && d===TODAY_D);
+      const events=eventMap[d]||[];
+      let eventHtml='';
+      const visible=events.slice(0,1);
+      const remaining=events.length-visible.length;
+      visible.forEach(ev=>{
+        eventHtml+=`<div class="cal-event ${ev.type}" data-idx="${ev.idx}" title="${ev.fullName}">
+          <span class="reg">${ev.region}</span>
+          <span class="nm">${ev.shortName}</span>
+        </div>`;
+      });
+      if(remaining>0) eventHtml+=`<div class="cal-more" data-day="${m}-${d}">+${remaining}</div>`;
+      cells+=`<div class="cal-cell">
+        <span class="num ${dowCls} ${isToday?'today':''}">${d}</span>
+        ${eventHtml}
+      </div>`;
+    }
+    const totalCells=firstDay+lastDate;
+    const remCells=(Math.ceil(totalCells/7)*7)-totalCells;
+    for(let i=0;i<remCells;i++) cells+=`<div class="cal-cell empty"></div>`;
+
+    html+=`
+      <div class="cal-month">
+        <div class="cal-month-head">
+          <span class="en">${monthNames[m]}</span>
+          <span class="kr">${m}월 · ${monthEvents.length}개 일정</span>
+        </div>
+        <div class="cal-grid">${cells}</div>
+        <div class="cal-legend">
+          <span class="item"><span class="dot matsuri"></span>마츠리</span>
+          <span class="item"><span class="dot hanabi"></span>하나비</span>
+        </div>
+      </div>`;
+  });
+
+  document.getElementById('calendarSection').innerHTML=html;
+  document.querySelectorAll('.cal-event').forEach(el=>{
+    el.addEventListener('click',()=>openDetail(parseInt(el.dataset.idx)));
+  });
+  document.querySelectorAll('.cal-more').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const [m,d]=el.dataset.day.split('-').map(Number);
+      const evs=festivals.filter(f=>f.month===m && (f.dateSort%100)===d);
+      if(evs.length>0) openDetail(getIdx(evs[0]));
+    });
+  });
+}
+
+function openDetail(idx){
+  const f=festivals[idx];
+  if(!f) return;
+  const icon=f.type==='matsuri'?'🏮':'🎆';
+  const headerCls=f.type==='hanabi'?'hanabi':'';
+  const tags=[];
+  tags.push(`<span class="tag region">📍${f.region}</span>`);
+  tags.push(`<span class="tag">${f.type==='matsuri'?'🏮 마츠리':'🎆 하나비'}</span>`);
+  if(f.shots && !f.longrun) tags.push(`<span class="tag shots">${f.shots}</span>`);
+  if(f.top3) tags.push(`<span class="tag top3">🏆 일본 3대</span>`);
+  if(f.longrun) tags.push(`<span class="tag longrun">🌸 매일 진행</span>`);
+  const isPaid=f.price && f.price.includes('유료');
+  const priceIcon=isPaid?'💳':'🆓';
+
+  document.getElementById('detailModalBox').innerHTML=`
+    <div class="detail-header ${headerCls}">
+      <button class="modal-close" id="detailClose">×</button>
+      <span class="icon-big">${icon}</span>
+      <div class="name">${f.name}</div>
+      <div class="jp-name">${f.jpName || ''}</div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-tags">${tags.join('')}</div>
+
+      <div class="detail-section">
+        <div class="label">DESCRIPTION <span class="ko">· 특징</span></div>
+        <div class="desc">${f.desc || f.feature || ''}</div>
+      </div>
+
+      <div class="detail-section">
+        <div class="label">LOCATION <span class="ko">· 장소</span></div>
+        <div class="info-line"><span class="k">위치</span>${f.loc}</div>
+        <div class="info-line"><span class="k">주소</span>${f.venue || '-'}</div>
+      </div>
+
+      <div class="detail-section">
+        <div class="label">INFO <span class="ko">· 정보</span></div>
+        <div class="info-line"><span class="k">날짜</span>${f.dateText}</div>
+        <div class="info-line"><span class="k">시간</span>${f.time}</div>
+        ${f.fullSchedule?`<div class="info-line"><span class="k">전체 일정</span>${f.fullSchedule}</div>`:''}
+        ${f.shots && !f.longrun?`<div class="info-line"><span class="k">발사 수</span>${f.shots}</div>`:''}
+        <div class="info-line"><span class="k">${priceIcon} 입장료</span>${f.price || '-'}</div>
+        ${f.feature?`<div class="info-line"><span class="k">하이라이트</span>${f.feature}</div>`:''}
+      </div>
+
+      ${f.official?`
+      <div class="detail-section">
+        <div class="label">OFFICIAL <span class="ko">· 공식 사이트</span></div>
+        <a href="${f.official}" target="_blank" rel="noopener" class="detail-official-btn">🔗 공식 사이트 바로가기 →</a>
+      </div>`:''}
+
+      <div class="detail-section">
+        <div class="label">BOOKING <span class="ko">· 여행 준비</span></div>
+        <div class="detail-cta-row">
+          <a href="https://skyscanner.pxf.io/qWy4RN" target="_blank" rel="noopener" class="detail-cta"><div class="ic">✈️</div><div class="nm">항공권</div></a>
+          <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1918022&hl=ko-kr" target="_blank" rel="noopener" class="detail-cta"><div class="ic">🏨</div><div class="nm">숙소</div></a>
+          <a href="https://affiliate.klook.com/redirect?aid=40048&aff_adid=1273059&k_site=https%3A%2F%2Fwww.klook.com%2F" target="_blank" rel="noopener" class="detail-cta"><div class="ic">🎟️</div><div class="nm">투어</div></a>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('detailModal').classList.add('show');
+  document.body.style.overflow='hidden';
+  document.getElementById('detailClose').addEventListener('click',closeDetail);
+}
+function closeDetail(){
+  document.getElementById('detailModal').classList.remove('show');
+  document.body.style.overflow='';
+}
+
+// ===== Collapsible toggle =====
+function setupCollapsibles(){
+  document.querySelectorAll('.collapsible-trigger').forEach(trigger=>{
+    const sec=trigger.closest('.collapsible-section');
+    const content=sec.querySelector('.collapsible-content');
+    // initialize: CLOSED
+    sec.classList.add('closed');
+    content.style.maxHeight='0px';
+
+    trigger.addEventListener('click',()=>{
+      const isClosed=sec.classList.contains('closed');
+      if(isClosed){
+        // open
+        sec.classList.remove('closed');
+        content.style.maxHeight=content.scrollHeight+'px';
+        setTimeout(()=>{
+          if(!sec.classList.contains('closed')) content.style.maxHeight='9999px';
+        },420);
+      } else {
+        // close
+        content.style.maxHeight=content.scrollHeight+'px';
+        requestAnimationFrame(()=>{
+          sec.classList.add('closed');
+          content.style.maxHeight='0px';
+        });
+      }
+    });
+  });
+}
+
+// Listeners
+document.getElementById('catFilter').addEventListener('click',e=>{
+  const btn=e.target.closest('.chip'); if(!btn) return;
+  document.querySelectorAll('#catFilter .chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active'); activeCategory=btn.dataset.cat; currentPage=1; renderList();
+});
+document.getElementById('monthFilter').addEventListener('click',e=>{
+  const btn=e.target.closest('.month-btn'); if(!btn) return;
+  document.querySelectorAll('.month-btn').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active'); activeMonth=btn.dataset.month; currentPage=1; renderList();
+});
+document.querySelectorAll('.sort-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.sort-btn').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active'); activeSort=btn.dataset.sort; currentPage=1; renderList();
+  });
+});
+document.getElementById('searchInput').addEventListener('input',e=>{
+  searchQuery=e.target.value.trim(); currentPage=1; renderList();
+});
+
+// Filter strip arrows
+const filterStrip=document.getElementById('filterStrip');
+const chipPrev=document.getElementById('chipPrev');
+const chipNext=document.getElementById('chipNext');
+function updateScrollState(){
+  const max=filterStrip.scrollWidth-filterStrip.clientWidth;
+  const left=filterStrip.scrollLeft;
+  if(max>4){
+    chipPrev.classList.add('visible'); chipNext.classList.add('visible');
+    chipPrev.disabled=left<=2; chipNext.disabled=left>=max-2;
+  } else {
+    chipPrev.classList.remove('visible'); chipNext.classList.remove('visible');
+  }
+}
+chipPrev.addEventListener('click',()=>filterStrip.scrollBy({left:-160,behavior:'smooth'}));
+chipNext.addEventListener('click',()=>filterStrip.scrollBy({left:160,behavior:'smooth'}));
+filterStrip.addEventListener('scroll',updateScrollState);
+window.addEventListener('resize',updateScrollState);
+
+// Welcome modal
+const modal=document.getElementById('modal');
+function closeModal(){modal.classList.remove('show')}
+document.getElementById('modalClose').addEventListener('click',closeModal);
+document.getElementById('modalSkip').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal) closeModal()});
+document.getElementById('detailModal').addEventListener('click',e=>{if(e.target.id==='detailModal') closeDetail()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeDetail()}});
+
+window.addEventListener('load',()=>{
+  setTimeout(()=>modal.classList.add('show'),400);
+  updateScrollState();
+});
+
+// Init
+renderList();
+renderDday();
+renderTop3();
+renderCalendar();
+setupCollapsibles();
+setTimeout(updateScrollState,100);
+</script>
+</body>
+</html>
