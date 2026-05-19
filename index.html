@@ -135,7 +135,7 @@
   .quick {
     padding: 16px 14px 6px;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
     gap: 8px;
   }
   .quick a {
@@ -248,7 +248,6 @@
   }
   .dot.main { background: var(--sea); }
   .dot.candidate { background: var(--sea2); }
-  .dot.ref { background: #8A9A9C; }
   .dot.yoron { background: var(--warn); }
   .map-error {
     display: none;
@@ -326,7 +325,8 @@
     border-radius: 12px;
     background: linear-gradient(135deg, #E7FAF7, #FFF2D9);
     color: var(--sea);
-    font-size: 16px;
+    font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Pretendard', sans-serif;
+    font-size: 20px;
     font-weight: 900;
   }
   .name {
@@ -447,17 +447,6 @@
     color: var(--sea);
     background: #EAF8F7;
   }
-  .ref {
-    border-left: 4px solid #B9DCD8;
-  }
-  .ref .num {
-    background: #F2F5F4;
-    color: #607477;
-  }
-  .ref .type span {
-    color: #607477;
-    background: #F6F8F8;
-  }
   .candidate {
     border-left: 4px solid rgba(21,166,181,.55);
   }
@@ -566,9 +555,9 @@
       <div class="brand-icon">🤿</div>
       <div class="brand-title">대로와 나나의 오키나와 스노클링맵</div>
     </div>
-    <div class="count-pill">명소 19 + 추가 8</div>
+    <div class="count-pill">지역별 명소 27</div>
   </div>
-  <p class="lead">구글맵 저장 장소를 실제 입수 가능한 해변·해안 포인트와 투어·이동 참고 장소로 나누고, 오키나와 관광권역 기준에 맞춰 남부·중부·북부로 정리했습니다.</p>
+  <p class="lead">대로와 나나가 실제 입수 가능한 해변·해안 포인트 중심으로 추려, 오키나와 관광권역 기준에 맞춰 남부·중부·북부로 정리했습니다.</p>
   <div class="notice">날씨, 파도, 조류, 유영 가능 구역은 매일 달라질 수 있어요. 아이 동반이나 초보자는 구명조끼와 아쿠아슈즈를 준비하고, 무리한 셀프 입수보다 투어 이용을 우선 검토해 주세요.</div>
 </header>
 
@@ -576,19 +565,18 @@
   <a href="#south">남부·섬</a>
   <a href="#central">중부</a>
   <a href="#north">북부</a>
-  <a href="#candidates">추가 후보</a>
-  <a href="#reference">참고 데이터</a>
+  <a href="#yoron">요론섬</a>
 </nav>
 
 <section class="summary" aria-label="요약">
-  <div class="summary-card"><b>2</b><span>남부·나하 출발</span></div>
-  <div class="summary-card"><b>1</b><span>중부</span></div>
-  <div class="summary-card"><b>15</b><span>북부</span></div>
+  <div class="summary-card"><b>4</b><span>남부·나하 출발</span></div>
+  <div class="summary-card"><b>3</b><span>중부</span></div>
+  <div class="summary-card"><b>19</b><span>북부</span></div>
 </section>
 <section class="summary" aria-label="요론섬 요약">
   <div class="summary-card"><b>1</b><span>요론섬 별도</span></div>
-  <div class="summary-card"><b>8</b><span>공식 추가 후보</span></div>
-  <div class="summary-card"><b>36</b><span>전체 표시 데이터</span></div>
+  <div class="summary-card"><b>8</b><span>마린 세이프티 반영</span></div>
+  <div class="summary-card"><b>27</b><span>전체 표시 명소</span></div>
 </section>
 
 <section class="map-wrap" aria-label="오키나와 스노클링 지도">
@@ -596,15 +584,13 @@
     <div class="map-head">
       <div class="map-title">
         <b>스노클링 포인트 지도</b>
-        <span>메인 명소 19개, 공식 추가 후보 8개, 참고 장소 9개를 함께 표시했어요.</span>
+        <span>남부·중부·북부·요론섬으로 정리한 27개 명소를 표시했어요.</span>
       </div>
       <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Okinawa%20snorkeling" target="_blank" rel="noopener">구글맵 열기</a>
     </div>
     <div id="map" role="img" aria-label="오키나와 스노클링 명소 지도"></div>
     <div class="legend" aria-label="지도 범례">
-      <span><i class="dot main"></i>메인 명소</span>
-      <span><i class="dot candidate"></i>공식 추가 후보</span>
-      <span><i class="dot ref"></i>참고 데이터</span>
+      <span><i class="dot main"></i>지역별 명소</span>
       <span><i class="dot yoron"></i>요론섬</span>
     </div>
     <div class="map-error" id="mapError">구글맵을 불러오지 못했습니다. API 키, 도메인 제한, 결제 설정을 확인해 주세요.</div>
@@ -615,13 +601,13 @@
   <section class="section" id="south">
     <div class="section-head">
       <h2 class="section-title">남부·나하 출발 섬 포인트<small>나하 권역과 치비시 제도처럼 남부에서 접근하는 해상 포인트</small></h2>
-      <div class="section-count">2곳</div>
+      <div class="section-count">4곳</div>
     </div>
     <div class="cards">
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">1</div>
+            <div class="num" data-id="1">🚤</div>
             <div class="name"><b>쿠에프 비치</b><span>クエフ島 / Kuefu Beach</span></div>
             <div class="type"><span>보트 투어</span><em>치비시 제도</em></div>
           </div>
@@ -630,14 +616,14 @@
           <p class="desc">치비시 제도 3섬 중 하나로, 투어를 통해 접근하는 무인도형 포인트입니다. 맑은 바다와 산호, 물고기 관찰 후보로 정리하면 좋습니다.</p>
           <div class="meta"><div><b>아이와 함께</b>투어 이용 시 가능</div><div><b>안전요원</b>장소 상주가 아니라 투어 가이드 여부 확인</div></div>
           <div class="caution">개별 접근보다 투어 이용 전제. 해황에 따라 출항·입수 여부가 달라질 수 있습니다.</div>
-          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2499375,127.5615625" target="_blank" rel="noopener">지도 열기</a><a class="secondary" href="#reference">투어 참고</a></div>
+          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2499375,127.5615625" target="_blank" rel="noopener">지도 열기</a></div>
         </div>
       </details>
 
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">2</div>
+            <div class="num" data-id="2">🐢</div>
             <div class="name"><b>가미야마 섬</b><span>神山島 / Kamiyama Island</span></div>
             <div class="type"><span>보트 투어</span><em>치비시 제도</em></div>
           </div>
@@ -646,8 +632,18 @@
           <p class="desc">치비시 제도 중 하나로, 보트 스노클링 투어 후보입니다. 저장 메모 기준으로는 가미야마·나간누·쿠에프 섬을 함께 보는 자료로 남겨두면 좋습니다.</p>
           <div class="meta"><div><b>아이와 함께</b>투어 이용 시 가능</div><div><b>안전요원</b>투어 가이드 여부 확인</div></div>
           <div class="caution">구글맵에서 “더 이상 존재하지 않는 장소”로 표시되어 장소 링크 상태 확인이 필요합니다.</div>
-          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2618128,127.5808638" target="_blank" rel="noopener">지도 열기</a><a class="secondary" href="#reference">투어 참고</a></div>
+          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2618128,127.5808638" target="_blank" rel="noopener">지도 열기</a></div>
         </div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B1">⚠️</div><div class="name"><b>존만 비치 · 오도 해안</b><span>ジョン万ビーチ / 大度海岸</span></div><div class="type"><span>주의 후보</span><em>이토만</em></div></div></summary>
+        <div class="card-body"><p class="desc">이토만 남부의 자연 해안 포인트입니다. 스노클링 후보로 볼 수 있지만 공식 위험 태그가 많은 편이라 초보자 단독 입수보다는 해황 확인과 동행이 필요합니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 주의태그: 이안류, 갑자기 깊어짐, 높은 파도, 위험 생물, 미끄러운 바위, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.089811,127.706341" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B2">🌊</div><div class="name"><b>기타나시로 비치</b><span>北名城ビーチ</span></div><div class="type"><span>자연 해변</span><em>이토만</em></div></div></summary>
+        <div class="card-body"><p class="desc">이토만 쪽 자연 해변 후보입니다. 남부권 스노클링 후보를 늘릴 때 넣기 좋지만, 가족 추천보다는 주의형 포인트로 정리하는 게 맞습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 주의태그: 갑자기 깊어짐, 위험 생물, 바닥 장애물, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.108761,127.661348" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
     </div>
@@ -656,13 +652,13 @@
   <section class="section" id="central">
     <div class="section-head">
       <h2 class="section-title">중부 포인트<small>차탄·기노완 주변 해안. 경험자용 성격이 강한 편</small></h2>
-      <div class="section-count">1곳</div>
+      <div class="section-count">3곳</div>
     </div>
     <div class="cards">
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">3</div>
+            <div class="num" data-id="3">🤿</div>
             <div class="name"><b>미야기 해안</b><span>宮城海岸 / 미야기 해안</span></div>
             <div class="type"><span>경험자</span><em>차탄</em></div>
           </div>
@@ -675,29 +671,39 @@
         </div>
       </details>
 
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B3">🪸</div><div class="name"><b>스나베 해안</b><span>砂辺海岸</span></div><div class="type"><span>경험자</span><em>차탄</em></div></div></summary>
+        <div class="card-body"><p class="desc">차탄의 다이빙·프리다이빙 성격이 강한 해안 후보입니다. 기존 미야기 해안과 같은 해안권으로 묶어 볼 수 있습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 주의태그: 미끄러운 바위, 서퍼·보트 접촉, 기타 주의. 아이 동반 물놀이용으로는 비추천.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.334951,127.745333" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B6">🏖️</div><div class="name"><b>이케이 비치</b><span>伊計ビーチ</span></div><div class="type"><span>관리 해변</span><em>우루마</em></div></div></summary>
+        <div class="card-body"><p class="desc">우루마 이케이섬의 관리형 해변 후보입니다. 스노클링 핵심 명소라기보다 가족 물놀이와 관리 해변 선택지로 넣는 편이 자연스럽습니다.</p><div class="meta"><div><b>공식 분류</b>지정 해변 · 민간 관리</div><div><b>안전요원</b>운영처 확인 필요</div></div><div class="caution">공식 위험 태그는 비어 있지만, 이용 가능 구역·요금·영업 상태는 방문 전 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.388179,127.991017" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
     </div>
   </section>
 
   <section class="section" id="north">
     <div class="section-head">
       <h2 class="section-title">북부 포인트<small>공식 관광권역 기준으로 온나촌·나고·모토부·나키진·코우리섬까지 포함</small></h2>
-      <div class="section-count">15곳</div>
+      <div class="section-count">19곳</div>
     </div>
     <div class="cards">
       <details class="card">
-        <summary><div class="card-main"><div class="num">4</div><div class="name"><b>나카유쿠이 전망대 인근 포인트</b><span>ナカユクイ展望台</span></div><div class="type"><span>상급자</span><em>온나촌</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="4">🐢</div><div class="name"><b>나카유쿠이 전망대 인근 포인트</b><span>ナカユクイ展望台</span></div><div class="type"><span>상급자</span><em>온나촌</em></div></div></summary>
         <div class="card-body"><p class="desc">전망대 자체보다 인근 해변과 먼바다 쪽 포인트로 보는 게 맞습니다. 바다거북 목격 리뷰가 있지만 조우는 보장되지 않습니다.</p><div class="meta"><div><b>아이와 함께</b>비추천</div><div><b>안전요원</b>없음</div></div><div class="caution">먼바다 접근, 조류, 체력 부담 확인 필요. 초보자 셀프 입수는 피하는 편이 좋습니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.5052532,127.8793526" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">5</div><div class="name"><b>우라마에다비치</b><span>裏真栄田ビーチ / 우라마에다비치(마에다 플랫)</span></div><div class="type"><span>셀프 후보</span><em>온나촌</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="5">🐠</div><div class="name"><b>우라마에다비치</b><span>裏真栄田ビーチ / 우라마에다비치(마에다 플랫)</span></div><div class="type"><span>셀프 후보</span><em>온나촌</em></div></div></summary>
         <div class="card-body"><p class="desc">물고기가 많다고 알려진 얕은 해변형 포인트입니다. 마에다곶·푸른동굴 인근 대안 포인트로 볼 수 있습니다.</p><div class="meta"><div><b>아이와 함께</b>가능하나 보호자 동행 필수</div><div><b>안전요원</b>없음</div></div><div class="caution">산호·바위 바닥 가능성이 있어 아쿠아슈즈를 권장합니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.4431517,127.7688869" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">6</div>
+            <div class="num" data-id="6">🔵</div>
             <div class="name"><b>오키나와 푸른동굴</b><span>青の洞窟 / 오키나와 푸른동굴</span></div>
             <div class="type"><span>대표 명소</span><em>마에다곶</em></div>
           </div>
@@ -706,49 +712,49 @@
           <p class="desc">물고기가 많고 동굴 안의 푸른빛으로 유명한 대표 스노클링 포인트입니다. 초보자나 아이 동반은 투어 업체 이용이 안전합니다.</p>
           <div class="meta"><div><b>아이와 함께</b>투어 이용 시 가능</div><div><b>안전요원</b>투어 가이드 이용 권장</div></div>
           <div class="caution">해황에 따라 입장 제한 가능. 셀프 진입보다 가이드 투어를 우선 검토하세요.</div>
-          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.4442875,127.7745368" target="_blank" rel="noopener">지도 열기</a><a class="secondary" href="#reference">주차 참고</a></div>
+          <div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.4442875,127.7745368" target="_blank" rel="noopener">지도 열기</a></div>
         </div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">7</div><div class="name"><b>코우리 해변</b><span>古宇利ビーチ / 코우리해변</span></div><div class="type"><span>물놀이</span><em>코우리섬</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="7">🏝️</div><div class="name"><b>코우리 해변</b><span>古宇利ビーチ / 코우리해변</span></div><div class="type"><span>물놀이</span><em>코우리섬</em></div></div></summary>
         <div class="card-body"><p class="desc">코우리대교 근처의 대표 해변입니다. 스노클링보다 아이와 물놀이, 사진, 쉬어가기 좋은 장소로 정리하는 게 적합합니다.</p><div class="meta"><div><b>아이와 함께</b>추천</div><div><b>안전요원</b>시즌별 확인 필요</div></div><div class="caution">물고기·거북이 목적지로 과하게 소개하지 않는 편이 정확합니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6946875,128.0210625" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">8</div><div class="name"><b>나가하마 해변</b><span>長浜ビーチ / 나가하마 해변</span></div><div class="type"><span>자연 해변</span><em>나키진</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="8">🌿</div><div class="name"><b>나가하마 해변</b><span>長浜ビーチ / 나가하마 해변</span></div><div class="type"><span>자연 해변</span><em>나키진</em></div></div></summary>
         <div class="card-body"><p class="desc">조용한 자연 해변으로 산책, 물놀이, 한적한 바다 감상에 좋습니다. 스노클링 특화보다는 자연 해변으로 소개하는 게 안전합니다.</p><div class="meta"><div><b>아이와 함께</b>가능</div><div><b>안전요원</b>확인 필요</div></div><div class="caution">시설과 해황 확인 필요. 무리한 먼바다 진입은 피하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.7118671,127.9542034" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">9</div><div class="name"><b>오키나와 에메랄드 비치</b><span>エメラルドビーチ / 오키나와 에메랄드 비치</span></div><div class="type"><span>가족 해변</span><em>모토부</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="9">💎</div><div class="name"><b>오키나와 에메랄드 비치</b><span>エメラルドビーチ / 오키나와 에메랄드 비치</span></div><div class="type"><span>가족 해변</span><em>모토부</em></div></div></summary>
         <div class="card-body"><p class="desc">모래가 곱고 물색이 예쁜 해변입니다. 츄라우미 수족관 일정과 함께 묶기 좋지만, 물고기 관찰 목적의 스노클링 포인트로는 약합니다.</p><div class="meta"><div><b>아이와 함께</b>추천</div><div><b>안전요원</b>시즌별 확인 필요</div></div><div class="caution">스노클링보다 해수욕·산책 중심으로 소개하는 게 맞습니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.7001475,127.8765239" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">10</div><div class="name"><b>코키 비치</b><span>幸喜ビーチ / 코키 비치</span></div><div class="type"><span>가족 해변</span><em>나고</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="10">🏖️</div><div class="name"><b>코키 비치</b><span>幸喜ビーチ / 코키 비치</span></div><div class="type"><span>가족 해변</span><em>나고</em></div></div></summary>
         <div class="card-body"><p class="desc">주차와 세척 편의성이 좋은 해변으로 정리하기 좋습니다. 쉬어가는 해변, 아이와 물놀이 장소로 적합합니다.</p><div class="meta"><div><b>아이와 함께</b>추천</div><div><b>안전요원</b>확인 필요</div></div><div class="caution">스노클링 특화 포인트로 단정하지 않는 게 좋습니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.5385217,127.9443582" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">11</div><div class="name"><b>온나촌 해변공원 나비비치</b><span>恩納村海浜公園ナビービーチ</span></div><div class="type"><span>가족 해변</span><em>온나촌</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="11">🛟</div><div class="name"><b>온나촌 해변공원 나비비치</b><span>恩納村海浜公園ナビービーチ</span></div><div class="type"><span>가족 해변</span><em>온나촌</em></div></div></summary>
         <div class="card-body"><p class="desc">수심이 깊지 않고 편의시설이 있어 아이와 놀기 좋은 해변입니다.</p><div class="meta"><div><b>아이와 함께</b>추천</div><div><b>안전요원</b>있음으로 알려져 있으나 시즌별 확인 필요</div></div><div class="caution">모래가 굵어 모래놀이에는 덜 맞을 수 있습니다. 샤워·락커 비용은 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.5042651,127.8576328" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">12</div><div class="name"><b>만자 비치</b><span>万座ビーチ / 만자 비치</span></div><div class="type"><span>리조트</span><em>온나촌</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="12">🏨</div><div class="name"><b>만자 비치</b><span>万座ビーチ / 만자 비치</span></div><div class="type"><span>리조트</span><em>온나촌</em></div></div></summary>
         <div class="card-body"><p class="desc">시설 좋은 리조트형 비치입니다. 저장 메모상 주차비 부담이 커서 가성비는 낮게 평가되어 있습니다.</p><div class="meta"><div><b>아이와 함께</b>가능</div><div><b>안전요원</b>리조트 운영 기준 확인 필요</div></div><div class="caution">주차비, 이용 가능 구역, 외부 이용 조건을 방문 전 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.5085448,127.8596123" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">13</div><div class="name"><b>아포가마</b><span>アポガマ / 아포가마</span></div><div class="type"><span>상급자</span><em>온나촌</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="13">⚠️</div><div class="name"><b>아포가마</b><span>アポガマ / 아포가마</span></div><div class="type"><span>상급자</span><em>온나촌</em></div></div></summary>
         <div class="card-body"><p class="desc">자연 지형이 강한 포인트로, 산호와 생물을 볼 가능성은 있지만 초보자에게는 어렵습니다.</p><div class="meta"><div><b>아이와 함께</b>비추천</div><div><b>안전요원</b>없음</div></div><div class="caution">조난 사례, 조류, 진입 경로, 주차·샤워시설 없음. 초보자 셀프 입수 비추천.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.5103445,127.8509382" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">14</div>
+            <div class="num" data-id="14">🌉</div>
             <div class="name"><b>안치 해변</b><span>アンチ浜</span></div>
             <div class="type"><span>해변 후보</span><em>세소코 인근</em></div>
           </div>
@@ -762,23 +768,43 @@
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">15</div><div class="name"><b>민나섬 해변</b><span>水納ビーチ / Minna Island Beach</span></div><div class="type"><span>섬 해변</span><em>민나섬</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="15">🏝️</div><div class="name"><b>민나섬 해변</b><span>水納ビーチ / Minna Island Beach</span></div><div class="type"><span>섬 해변</span><em>민나섬</em></div></div></summary>
         <div class="card-body"><p class="desc">토구치항에서 배를 타고 들어가는 섬 해변입니다. 해변 스노클링과 보트 스노클링 모두 후보로 볼 수 있습니다.</p><div class="meta"><div><b>아이와 함께</b>가능</div><div><b>안전요원</b>시즌·운영 여부 확인 필요</div></div><div class="caution">배편, 투어 예약, 해황 확인 필요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6453284,127.8177341" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">16</div><div class="name"><b>비세자키</b><span>備瀬崎 / 비세자키</span></div><div class="type"><span>셀프 후보</span><em>모토부</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="16">🐠</div><div class="name"><b>비세자키</b><span>備瀬崎 / 비세자키</span></div><div class="type"><span>셀프 후보</span><em>모토부</em></div></div></summary>
         <div class="card-body"><p class="desc">얕은 구간에서 물고기를 보기 좋은 포인트로 알려져 있습니다. 츄라우미 일정과 함께 묶기 좋습니다.</p><div class="meta"><div><b>아이와 함께</b>가능하나 주의 필요</div><div><b>안전요원</b>확인 필요</div></div><div class="caution">바위·산호 지형, 수로 쪽 조류 주의. 아쿠아슈즈와 구명조끼 권장.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.7099415,127.8787142" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">17</div><div class="name"><b>세소코 비치</b><span>瀬底ビーチ / 세소코 비치</span></div><div class="type"><span>해수욕장</span><em>세소코섬</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="17">🌅</div><div class="name"><b>세소코 비치</b><span>瀬底ビーチ / 세소코 비치</span></div><div class="type"><span>해수욕장</span><em>세소코섬</em></div></div></summary>
         <div class="card-body"><p class="desc">하얀 모래와 예쁜 바다색으로 유명한 해수욕장입니다. 스노클링보다는 해수욕, 사진, 일몰 감상에 가깝습니다.</p><div class="meta"><div><b>아이와 함께</b>추천</div><div><b>안전요원</b>시즌별 확인 필요</div></div><div class="caution">시설, 유영 구역, 주차 요금 확인 필요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6416824,127.8559382" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
 
       <details class="card">
-        <summary><div class="card-main"><div class="num">18</div><div class="name"><b>고릴라춉</b><span>ゴリラチョップ / 고릴라춉</span></div><div class="type"><span>입문 후보</span><em>모토부</em></div></div></summary>
+        <summary><div class="card-main"><div class="num" data-id="18">🪸</div><div class="name"><b>고릴라춉</b><span>ゴリラチョップ / 고릴라춉</span></div><div class="type"><span>입문 후보</span><em>모토부</em></div></div></summary>
         <div class="card-body"><p class="desc">접근성이 좋고 물고기를 보기 쉬운 스노클링 입문 후보입니다. 파도가 잔잔한 날에는 초보자도 많이 찾는 편입니다.</p><div class="meta"><div><b>아이와 함께</b>가능하나 보호자 동행 필수</div><div><b>안전요원</b>확인 필요</div></div><div class="caution">날씨와 해황에 따라 위험도 달라집니다. 구명조끼, 아쿠아슈즈 권장.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6418342,127.8864931" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B4">💎</div><div class="name"><b>다이아몬드 비치</b><span>ダイヤモンドビーチ</span></div><div class="type"><span>자연 해변</span><em>온나촌</em></div></div></summary>
+        <div class="card-body"><p class="desc">온나촌 세라가키 쪽 자연 해변 후보입니다. 북부 일정 중 조용한 해변 후보로 볼 수 있지만 입수 전 안전 확인이 필요합니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 주의태그: 갑자기 깊어짐, 위험 생물, 바닥 장애물, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.506830,127.879159" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B5">⚠️</div><div class="name"><b>온나 포인트</b><span>恩納ポイント</span></div><div class="type"><span>상급자</span><em>온나촌</em></div></div></summary>
+        <div class="card-body"><p class="desc">이름 그대로 포인트 성격이 강한 자연 해안입니다. 초보 스노클링보다는 프리다이빙·경험자 후보로 분리하는 게 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 주의태그: 이안류, 높은 파도, 기타 주의. 셀프 입수 전 해황 확인 필수.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.497624,127.839948" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B7">🪨</div><div class="name"><b>도케이하마</b><span>トケイ浜 / ポットホール</span></div><div class="type"><span>코우리섬</span><em>북부</em></div></div></summary>
+        <div class="card-body"><p class="desc">코우리섬 북쪽 자연 해변 후보입니다. 코우리 해변보다 자연 포인트 느낌이 강해 코우리섬 주변 선택지를 넓히기 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 위험 태그는 비어 있습니다. 정보 미수집일 수 있으니 파도와 조류를 현장에서 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.713681,128.018784" target="_blank" rel="noopener">지도 열기</a></div></div>
+      </details>
+
+      <details class="card candidate">
+        <summary><div class="card-main"><div class="num" data-id="B8">🌊</div><div class="name"><b>치누구하마</b><span>チヌグ浜 / チグヌ浜</span></div><div class="type"><span>코우리섬</span><em>북부</em></div></div></summary>
+        <div class="card-body"><p class="desc">코우리섬의 자연 해변 후보입니다. 코우리 해변과 도케이하마 사이의 보조 선택지로 정리하면 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>안전요원</b>공식 데이터상 미기재</div></div><div class="caution">공식 위험 태그는 비어 있습니다. 얕아 보여도 바위·산호·조류 확인은 필요합니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.696281,128.015033" target="_blank" rel="noopener">지도 열기</a></div></div>
       </details>
     </div>
   </section>
@@ -792,7 +818,7 @@
       <details class="card">
         <summary>
           <div class="card-main">
-            <div class="num">19</div>
+            <div class="num" data-id="19">🐢</div>
             <div class="name"><b>미나타 해안</b><span>皆田海岸 / Minata Coast</span></div>
             <div class="type"><span>요론섬</span><em>가고시마</em></div>
           </div>
@@ -806,117 +832,42 @@
       </details>
     </div>
   </section>
-
-  <section class="section" id="candidates">
-    <div class="section-head">
-      <h2 class="section-title">마린 세이프티 추가 후보<small>오키나와 마린 세이프티 공식 데이터에서 골라낸 해변·해안 후보</small></h2>
-      <div class="section-count">8곳</div>
-    </div>
-    <div class="cards">
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B1</div><div class="name"><b>존만 비치 · 오도 해안</b><span>ジョン万ビーチ / 大度海岸</span></div><div class="type"><span>주의 후보</span><em>남부</em></div></div></summary>
-        <div class="card-body"><p class="desc">이토만 남부의 자연 해안 포인트입니다. 스노클링 후보로 볼 수 있지만 공식 위험 태그가 많은 편이라 초보자 단독 입수보다는 해황 확인과 동행이 필요합니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>지역</b>오키나와 본섬 남부</div></div><div class="caution">공식 주의태그: 이안류, 갑자기 깊어짐, 높은 파도, 위험 생물, 미끄러운 바위, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.089811,127.706341" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B2</div><div class="name"><b>기타나시로 비치</b><span>北名城ビーチ</span></div><div class="type"><span>자연 해변</span><em>남부</em></div></div></summary>
-        <div class="card-body"><p class="desc">이토만 쪽 자연 해변 후보입니다. 남부권 스노클링 후보를 늘릴 때 넣기 좋지만, 가족 추천보다는 주의형 포인트로 정리하는 게 맞습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>주소</b>沖縄県糸満市名城960</div></div><div class="caution">공식 주의태그: 갑자기 깊어짐, 위험 생물, 바닥 장애물, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.108761,127.661348" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B3</div><div class="name"><b>스나베 해안</b><span>砂辺海岸</span></div><div class="type"><span>경험자</span><em>중부</em></div></div></summary>
-        <div class="card-body"><p class="desc">차탄의 다이빙·프리다이빙 성격이 강한 해안 후보입니다. 기존 미야기 해안과 같은 해안권으로 묶어 볼 수 있습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>지역</b>오키나와 본섬 중부</div></div><div class="caution">공식 주의태그: 미끄러운 바위, 서퍼·보트 접촉, 기타 주의. 아이 동반 물놀이용으로는 비추천.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.334951,127.745333" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B4</div><div class="name"><b>다이아몬드 비치</b><span>ダイヤモンドビーチ</span></div><div class="type"><span>자연 해변</span><em>북부</em></div></div></summary>
-        <div class="card-body"><p class="desc">온나촌 세라가키 쪽 자연 해변 후보입니다. 북부 일정 중 조용한 해변 후보로 볼 수 있지만 입수 전 안전 확인이 필요합니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>주소</b>沖縄県国頭郡恩納村瀬良垣</div></div><div class="caution">공식 주의태그: 갑자기 깊어짐, 위험 생물, 바닥 장애물, 기타 주의.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.506830,127.879159" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B5</div><div class="name"><b>온나 포인트</b><span>恩納ポイント</span></div><div class="type"><span>상급자</span><em>북부</em></div></div></summary>
-        <div class="card-body"><p class="desc">이름 그대로 포인트 성격이 강한 자연 해안입니다. 초보 스노클링보다는 프리다이빙·경험자 후보로 분리하는 게 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>지역</b>오키나와 본섬 북부</div></div><div class="caution">공식 주의태그: 이안류, 높은 파도, 기타 주의. 셀프 입수 전 해황 확인 필수.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.497624,127.839948" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B6</div><div class="name"><b>이케이 비치</b><span>伊計ビーチ</span></div><div class="type"><span>관리 해변</span><em>중부</em></div></div></summary>
-        <div class="card-body"><p class="desc">우루마 이케이섬의 관리형 해변 후보입니다. 스노클링 핵심 명소라기보다 가족 물놀이와 관리 해변 선택지로 넣는 편이 자연스럽습니다.</p><div class="meta"><div><b>공식 분류</b>지정 해변 · 민간 관리</div><div><b>주소</b>沖縄県うるま市与那城伊計</div></div><div class="caution">공식 위험 태그는 비어 있지만, 이용 가능 구역·요금·영업 상태는 방문 전 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.388179,127.991017" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B7</div><div class="name"><b>도케이하마</b><span>トケイ浜 / ポットホール</span></div><div class="type"><span>코우리섬</span><em>북부</em></div></div></summary>
-        <div class="card-body"><p class="desc">코우리섬 북쪽 자연 해변 후보입니다. 코우리 해변보다 자연 포인트 느낌이 강해 코우리섬 주변 선택지를 넓히기 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>주소</b>沖縄県国頭郡今帰仁村古宇利島</div></div><div class="caution">공식 위험 태그는 비어 있습니다. 정보 미수집일 수 있으니 파도와 조류를 현장에서 확인하세요.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.713681,128.018784" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-
-      <details class="card candidate">
-        <summary><div class="card-main"><div class="num">B8</div><div class="name"><b>치누구하마</b><span>チヌグ浜 / チグヌ浜</span></div><div class="type"><span>코우리섬</span><em>북부</em></div></div></summary>
-        <div class="card-body"><p class="desc">코우리섬의 자연 해변 후보입니다. 코우리 해변과 도케이하마 사이의 보조 선택지로 정리하면 좋습니다.</p><div class="meta"><div><b>공식 분류</b>자연 해변</div><div><b>주소</b>沖縄県国頭郡今帰仁村古宇利島</div></div><div class="caution">공식 위험 태그는 비어 있습니다. 얕아 보여도 바위·산호·조류 확인은 필요합니다.</div><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.696281,128.015033" target="_blank" rel="noopener">지도 열기</a></div></div>
-      </details>
-    </div>
-  </section>
-
-  <section class="section" id="reference">
-    <div class="section-head">
-      <h2 class="section-title">참고 데이터<small>스노클링과 관련 있지만 실제 명소 카드에서는 분리한 장소</small></h2>
-      <div class="section-count">9곳</div>
-    </div>
-    <div class="cards">
-      <details class="card ref"><summary><div class="card-main"><div class="num">A1</div><div class="name"><b>코우리 대교 남단 전망대</b><span>古宇利大橋 南詰展望所 / Kouri Bridge South View Point</span></div><div class="type"><span>전망</span><em>북부</em></div></div></summary><div class="card-body"><p class="desc">전망·사진 포인트 성격이 강합니다. 실제 스노클링은 코우리 해변 쪽으로 분리하는 게 정확합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6788164,128.0126263" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A2</div><div class="name"><b>오션스타일</b><span>オーシャンスタイル / 오션스타일</span></div><div class="type"><span>투어</span><em>북부</em></div></div></summary><div class="card-body"><p class="desc">민나섬 투어 집합장소로 저장된 곳입니다. 명소 본문보다는 투어 이용 참고 데이터로 보관합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6586920,127.8901559" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A3</div><div class="name"><b>하마가와 항구</b><span>浜川漁港 / 하마가와항구</span></div><div class="type"><span>항구</span><em>중부</em></div></div></summary><div class="card-body"><p class="desc">케라마 제도 스노클링 투어 집합장소로 저장된 곳입니다. 투어 업체별 집합 위치는 예약 전 확인해야 합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.3238664,127.7528578" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A4</div><div class="name"><b>마에다곶 유료주차장</b><span>真栄田岬駐車場 / 마에다곶 유료주차장</span></div><div class="type"><span>주차</span><em>북부</em></div></div></summary><div class="card-body"><p class="desc">푸른동굴, 마에다곶 접근 시 유용한 주차·샤워 편의시설입니다. 요금은 방문 전 확인이 필요합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.4443152,127.7719463" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A5</div><div class="name"><b>모토부항</b><span>本部港 / 모토부항</span></div><div class="type"><span>이동</span><em>북부</em></div></div></summary><div class="card-body"><p class="desc">요론섬 이동 거점으로 저장된 장소입니다. 배편 시간, 운항 여부, 승선 위치 확인이 필요합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.6579245,127.8916358" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A6</div><div class="name"><b>요론 섬</b><span>与論島 / 요론 섬</span></div><div class="type"><span>섬 전체</span><em>가고시마</em></div></div></summary><div class="card-body"><p class="desc">스노클링 단일 포인트가 아니라 섬 전체명입니다. 미나타 해안 같은 구체 포인트와 분리해 보관합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=27.0436214,128.4316521" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A7</div><div class="name"><b>Tokashiki</b><span>Tokashiki</span></div><div class="type"><span>투어</span><em>남부</em></div></div></summary><div class="card-body"><p class="desc">나간누섬 투어 업체로 저장된 장소입니다. 가격과 조건은 변동 가능성이 있어 별도 확인이 필요합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2238354,127.6811425" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A8</div><div class="name"><b>마린클럽 우미</b><span>マリンクラブ海 / 마린클럽 우미</span></div><div class="type"><span>투어</span><em>북부</em></div></div></summary><div class="card-body"><p class="desc">푸른동굴 투어 연결용 업체 데이터로 보관합니다. 언어 대응, 연령 제한, 날씨 취소 기준 확인이 필요합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.4385142,127.7801365" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-      <details class="card ref"><summary><div class="card-main"><div class="num">A9</div><div class="name"><b>다이브인 오키나와</b><span>DIVEIN OKINAWA</span></div><div class="type"><span>투어</span><em>중부</em></div></div></summary><div class="card-body"><p class="desc">다이빙·스노클링 투어 업체로 보관합니다. 한국어 대응 여부는 별도 확인 필요합니다.</p><div class="actions"><a href="https://www.google.com/maps/search/?api=1&query=26.2804561,127.7344182" target="_blank" rel="noopener">지도 열기</a></div></div></details>
-    </div>
-  </section>
 </main>
 
 <footer class="foot">
   <a class="safety-link" href="https://www.portal.marinesafety.okinawa/?lang=ko" target="_blank" rel="noopener">오키나와 마린 세이프티 공식 사이트 확인하기</a>
-  <p class="version-note">Ver.5 · 2026.05.20 업데이트</p>
+  <p class="version-note">Ver.7 · 2026.05.20 업데이트</p>
   <p class="copyright">© 2026 Daeronana. All rights reserved.</p>
 </footer>
 <script>
 const SNORKEL_POINTS = [
-  {id:'1', name:'쿠에프 비치', jp:'クエフ島 / Kuefu Beach', group:'main', region:'남부·치비시 제도', type:'보트 투어', lat:26.2499375, lng:127.5615625},
-  {id:'2', name:'가미야마 섬', jp:'神山島 / Kamiyama Island', group:'main', region:'남부·치비시 제도', type:'보트 투어', lat:26.2618128, lng:127.5808638},
-  {id:'3', name:'미야기 해안', jp:'宮城海岸', group:'main', region:'중부·차탄', type:'경험자 포인트', lat:26.3315872, lng:127.7441584},
-  {id:'4', name:'나카유쿠이 전망대 인근', jp:'ナカユクイ展望台', group:'main', region:'북부·온나촌', type:'상급자 자연 포인트', lat:26.5052532, lng:127.8793526},
-  {id:'5', name:'우라마에다비치', jp:'裏真栄田ビーチ', group:'main', region:'북부·온나촌', type:'셀프 후보', lat:26.4431517, lng:127.7688869},
-  {id:'6', name:'오키나와 푸른동굴', jp:'青の洞窟', group:'main', region:'북부·마에다곶', type:'대표 명소', lat:26.4442875, lng:127.7745368},
-  {id:'7', name:'코우리 해변', jp:'古宇利ビーチ', group:'main', region:'북부·코우리섬', type:'물놀이', lat:26.6946875, lng:128.0210625},
-  {id:'8', name:'나가하마 해변', jp:'長浜ビーチ', group:'main', region:'북부·나키진', type:'자연 해변', lat:26.7118671, lng:127.9542034},
-  {id:'9', name:'오키나와 에메랄드 비치', jp:'エメラルドビーチ', group:'main', region:'북부·모토부', type:'가족 해변', lat:26.7001475, lng:127.8765239},
-  {id:'10', name:'코키 비치', jp:'幸喜ビーチ', group:'main', region:'북부·나고', type:'가족 해변', lat:26.5385217, lng:127.9443582},
-  {id:'11', name:'온나촌 나비비치', jp:'恩納村海浜公園ナビービーチ', group:'main', region:'북부·온나촌', type:'가족 해변', lat:26.5042651, lng:127.8576328},
-  {id:'12', name:'만자 비치', jp:'万座ビーチ', group:'main', region:'북부·온나촌', type:'리조트 비치', lat:26.5085448, lng:127.8596123},
-  {id:'13', name:'아포가마', jp:'アポガマ', group:'main', region:'북부·온나촌', type:'상급자 자연 포인트', lat:26.5103445, lng:127.8509382},
-  {id:'14', name:'안치 해변', jp:'アンチ浜', group:'main', region:'북부·세소코 인근', type:'해변 후보', lat:26.6493185, lng:127.8821942},
-  {id:'15', name:'민나섬 해변', jp:'水納ビーチ / Minna Island Beach', group:'main', region:'북부·민나섬', type:'섬 해변', lat:26.6453284, lng:127.8177341},
-  {id:'16', name:'비세자키', jp:'備瀬崎', group:'main', region:'북부·모토부', type:'셀프 후보', lat:26.7099415, lng:127.8787142},
-  {id:'17', name:'세소코 비치', jp:'瀬底ビーチ', group:'main', region:'북부·세소코섬', type:'해수욕장', lat:26.6416824, lng:127.8559382},
-  {id:'18', name:'고릴라춉', jp:'ゴリラチョップ', group:'main', region:'북부·모토부', type:'입문 후보', lat:26.6418342, lng:127.8864931},
-  {id:'19', name:'미나타 해안', jp:'皆田海岸 / Minata Coast', group:'yoron', region:'요론섬·가고시마', type:'바다거북 후보', lat:27.0420785, lng:128.4420365},
-  {id:'B1', name:'존만 비치 · 오도 해안', jp:'ジョン万ビーチ / 大度海岸', group:'candidate', region:'남부·이토만', type:'주의 후보', lat:26.089811, lng:127.706341},
-  {id:'B2', name:'기타나시로 비치', jp:'北名城ビーチ', group:'candidate', region:'남부·이토만', type:'자연 해변', lat:26.108761, lng:127.661348},
-  {id:'B3', name:'스나베 해안', jp:'砂辺海岸', group:'candidate', region:'중부·차탄', type:'경험자 후보', lat:26.334951, lng:127.745333},
-  {id:'B4', name:'다이아몬드 비치', jp:'ダイヤモンドビーチ', group:'candidate', region:'북부·온나촌', type:'자연 해변', lat:26.506830, lng:127.879159},
-  {id:'B5', name:'온나 포인트', jp:'恩納ポイント', group:'candidate', region:'북부·온나촌', type:'상급자 후보', lat:26.497624, lng:127.839948},
-  {id:'B6', name:'이케이 비치', jp:'伊計ビーチ', group:'candidate', region:'중부·우루마', type:'관리 해변', lat:26.388179, lng:127.991017},
-  {id:'B7', name:'도케이하마', jp:'トケイ浜 / ポットホール', group:'candidate', region:'북부·코우리섬', type:'자연 해변', lat:26.713681, lng:128.018784},
-  {id:'B8', name:'치누구하마', jp:'チヌグ浜 / チグヌ浜', group:'candidate', region:'북부·코우리섬', type:'자연 해변', lat:26.696281, lng:128.015033},
-  {id:'A1', name:'코우리 대교 남단 전망대', jp:'古宇利大橋 南詰展望所', group:'ref', region:'북부', type:'전망 참고', lat:26.6788164, lng:128.0126263},
-  {id:'A2', name:'오션스타일', jp:'オーシャンスタイル', group:'ref', region:'북부', type:'투어 참고', lat:26.6586920, lng:127.8901559},
-  {id:'A3', name:'하마가와 항구', jp:'浜川漁港', group:'ref', region:'중부', type:'항구·집합장소', lat:26.3238664, lng:127.7528578},
-  {id:'A4', name:'마에다곶 유료주차장', jp:'真栄田岬駐車場', group:'ref', region:'북부', type:'주차·편의시설', lat:26.4443152, lng:127.7719463},
-  {id:'A5', name:'모토부항', jp:'本部港', group:'ref', region:'북부', type:'이동 거점', lat:26.6579245, lng:127.8916358},
-  {id:'A6', name:'요론 섬', jp:'与論島', group:'ref', region:'가고시마', type:'섬 전체', lat:27.0436214, lng:128.4316521},
-  {id:'A7', name:'Tokashiki', jp:'Tokashiki', group:'ref', region:'남부', type:'투어 업체', lat:26.2238354, lng:127.6811425},
-  {id:'A8', name:'마린클럽 우미', jp:'マリンクラブ海', group:'ref', region:'북부', type:'투어 업체', lat:26.4385142, lng:127.7801365},
-  {id:'A9', name:'다이브인 오키나와', jp:'DIVEIN OKINAWA', group:'ref', region:'중부', type:'다이빙 센터', lat:26.2804561, lng:127.7344182}
+  {id:'1', icon:'🚤', name:'쿠에프 비치', jp:'クエフ島 / Kuefu Beach', group:'main', region:'남부·치비시 제도', type:'보트 투어', lat:26.2499375, lng:127.5615625},
+  {id:'2', icon:'🐢', name:'가미야마 섬', jp:'神山島 / Kamiyama Island', group:'main', region:'남부·치비시 제도', type:'보트 투어', lat:26.2618128, lng:127.5808638},
+  {id:'3', icon:'🤿', name:'미야기 해안', jp:'宮城海岸', group:'main', region:'중부·차탄', type:'경험자 포인트', lat:26.3315872, lng:127.7441584},
+  {id:'4', icon:'🐢', name:'나카유쿠이 전망대 인근', jp:'ナカユクイ展望台', group:'main', region:'북부·온나촌', type:'상급자 자연 포인트', lat:26.5052532, lng:127.8793526},
+  {id:'5', icon:'🐠', name:'우라마에다비치', jp:'裏真栄田ビーチ', group:'main', region:'북부·온나촌', type:'셀프 후보', lat:26.4431517, lng:127.7688869},
+  {id:'6', icon:'🔵', name:'오키나와 푸른동굴', jp:'青の洞窟', group:'main', region:'북부·마에다곶', type:'대표 명소', lat:26.4442875, lng:127.7745368},
+  {id:'7', icon:'🏝️', name:'코우리 해변', jp:'古宇利ビーチ', group:'main', region:'북부·코우리섬', type:'물놀이', lat:26.6946875, lng:128.0210625},
+  {id:'8', icon:'🌿', name:'나가하마 해변', jp:'長浜ビーチ', group:'main', region:'북부·나키진', type:'자연 해변', lat:26.7118671, lng:127.9542034},
+  {id:'9', icon:'💎', name:'오키나와 에메랄드 비치', jp:'エメラルドビーチ', group:'main', region:'북부·모토부', type:'가족 해변', lat:26.7001475, lng:127.8765239},
+  {id:'10', icon:'🏖️', name:'코키 비치', jp:'幸喜ビーチ', group:'main', region:'북부·나고', type:'가족 해변', lat:26.5385217, lng:127.9443582},
+  {id:'11', icon:'🛟', name:'온나촌 나비비치', jp:'恩納村海浜公園ナビービーチ', group:'main', region:'북부·온나촌', type:'가족 해변', lat:26.5042651, lng:127.8576328},
+  {id:'12', icon:'🏨', name:'만자 비치', jp:'万座ビーチ', group:'main', region:'북부·온나촌', type:'리조트 비치', lat:26.5085448, lng:127.8596123},
+  {id:'13', icon:'⚠️', name:'아포가마', jp:'アポガマ', group:'main', region:'북부·온나촌', type:'상급자 자연 포인트', lat:26.5103445, lng:127.8509382},
+  {id:'14', icon:'🌉', name:'안치 해변', jp:'アンチ浜', group:'main', region:'북부·세소코 인근', type:'해변 후보', lat:26.6493185, lng:127.8821942},
+  {id:'15', icon:'🏝️', name:'민나섬 해변', jp:'水納ビーチ / Minna Island Beach', group:'main', region:'북부·민나섬', type:'섬 해변', lat:26.6453284, lng:127.8177341},
+  {id:'16', icon:'🐠', name:'비세자키', jp:'備瀬崎', group:'main', region:'북부·모토부', type:'셀프 후보', lat:26.7099415, lng:127.8787142},
+  {id:'17', icon:'🌅', name:'세소코 비치', jp:'瀬底ビーチ', group:'main', region:'북부·세소코섬', type:'해수욕장', lat:26.6416824, lng:127.8559382},
+  {id:'18', icon:'🪸', name:'고릴라춉', jp:'ゴリラチョップ', group:'main', region:'북부·모토부', type:'입문 후보', lat:26.6418342, lng:127.8864931},
+  {id:'19', icon:'🐢', name:'미나타 해안', jp:'皆田海岸 / Minata Coast', group:'yoron', region:'요론섬·가고시마', type:'바다거북 후보', lat:27.0420785, lng:128.4420365},
+  {id:'B1', icon:'⚠️', name:'존만 비치 · 오도 해안', jp:'ジョン万ビーチ / 大度海岸', group:'candidate', region:'남부·이토만', type:'주의 후보', lat:26.089811, lng:127.706341},
+  {id:'B2', icon:'🌊', name:'기타나시로 비치', jp:'北名城ビーチ', group:'candidate', region:'남부·이토만', type:'자연 해변', lat:26.108761, lng:127.661348},
+  {id:'B3', icon:'🪸', name:'스나베 해안', jp:'砂辺海岸', group:'candidate', region:'중부·차탄', type:'경험자 후보', lat:26.334951, lng:127.745333},
+  {id:'B4', icon:'💎', name:'다이아몬드 비치', jp:'ダイヤモンドビーチ', group:'candidate', region:'북부·온나촌', type:'자연 해변', lat:26.506830, lng:127.879159},
+  {id:'B5', icon:'⚠️', name:'온나 포인트', jp:'恩納ポイント', group:'candidate', region:'북부·온나촌', type:'상급자 후보', lat:26.497624, lng:127.839948},
+  {id:'B6', icon:'🏖️', name:'이케이 비치', jp:'伊計ビーチ', group:'candidate', region:'중부·우루마', type:'관리 해변', lat:26.388179, lng:127.991017},
+  {id:'B7', icon:'🪨', name:'도케이하마', jp:'トケイ浜 / ポットホール', group:'candidate', region:'북부·코우리섬', type:'자연 해변', lat:26.713681, lng:128.018784},
+  {id:'B8', icon:'🌊', name:'치누구하마', jp:'チヌグ浜 / チグヌ浜', group:'candidate', region:'북부·코우리섬', type:'자연 해변', lat:26.696281, lng:128.015033}
 ];
 
 const SPOT_EXTRA = {
@@ -946,35 +897,26 @@ const SPOT_EXTRA = {
   B5: {address:'恩納ポイント, 沖縄県国頭郡恩納村恩納', lifeguard:'공식 데이터상 안전요원 정보 미기재. 상급자 후보로 분류하고 셀프 입수 주의.'},
   B6: {address:'伊計ビーチ, 沖縄県うるま市与那城伊計', lifeguard:'공식 데이터상 지정 해변·민간 관리. 안전요원 상주 시간은 미기재라 운영처 확인 필요.'},
   B7: {address:'トケイ浜 / ポットホール, 沖縄県国頭郡今帰仁村古宇利島', lifeguard:'공식 데이터상 안전요원 정보 미기재. 자연 해변이라 현장 해황 확인 필요.'},
-  B8: {address:'チヌグ浜 / チグヌ浜, 沖縄県国頭郡今帰仁村古宇利島', lifeguard:'공식 데이터상 안전요원 정보 미기재. 자연 해변이라 보호자·동행자 없이 무리한 입수 비추천.'},
-  A1: {address:'古宇利大橋 南詰展望所, 沖縄県名護市済井出 古宇利大橋南詰周辺', lifeguard:null},
-  A2: {address:'オーシャンスタイル, 沖縄県国頭郡本部町崎本部周辺', lifeguard:null},
-  A3: {address:'浜川漁港, 沖縄県中頭郡北谷町港', lifeguard:null},
-  A4: {address:'真栄田岬駐車場, 沖縄県国頭郡恩納村真栄田469-1', lifeguard:null},
-  A5: {address:'本部港, 沖縄県国頭郡本部町崎本部5232', lifeguard:null},
-  A6: {address:'与論島, 鹿児島県大島郡与論町', lifeguard:null},
-  A7: {address:'株式会社とかしき周辺, 沖縄県那覇市泊3丁目', lifeguard:null},
-  A8: {address:'マリンクラブ海, 沖縄県国頭郡恩納村真栄田周辺', lifeguard:null},
-  A9: {address:'DIVEIN OKINAWA, 沖縄県宜野湾市周辺', lifeguard:null}
+  B8: {address:'チヌグ浜 / チグヌ浜, 沖縄県国頭郡今帰仁村古宇利島', lifeguard:'공식 데이터상 안전요원 정보 미기재. 자연 해변이라 보호자·동행자 없이 무리한 입수 비추천.'}
 };
 
 function markerColor(point) {
   if (point.group === 'yoron') return '#C85C1A';
   if (point.group === 'candidate') return '#15A6B5';
-  if (point.group === 'ref') return '#8A9A9C';
   return '#007C89';
 }
 
 function insertSpotDetails() {
   document.querySelectorAll('details.card').forEach((card) => {
-    const id = card.querySelector('.num')?.textContent?.trim();
+    const numEl = card.querySelector('.num');
+    const id = numEl?.dataset.id || numEl?.textContent?.trim();
     const body = card.querySelector('.card-body');
     const extra = SPOT_EXTRA[id];
     if (!id || !body || !extra || body.querySelector('.address-line')) return;
 
     const addressLine = document.createElement('div');
     addressLine.className = 'address-line';
-    addressLine.innerHTML = `<b>주소</b> ${extra.address}<br><b>좌표</b> ${SNORKEL_POINTS.find((point) => point.id === id)?.lat}, ${SNORKEL_POINTS.find((point) => point.id === id)?.lng}`;
+    addressLine.innerHTML = `<b>주소</b> ${extra.address}`;
     const desc = body.querySelector('.desc');
     if (desc) desc.insertAdjacentElement('afterend', addressLine);
     else body.prepend(addressLine);
@@ -1022,10 +964,10 @@ function initMap() {
       map,
       title: point.name,
       label: {
-        text: point.id.replace('A', ''),
+        text: point.icon || point.id,
         color: '#FFFFFF',
-        fontWeight: '800',
-        fontSize: point.id.length > 2 ? '10px' : '11px'
+        fontWeight: '400',
+        fontSize: '16px'
       },
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
@@ -1033,7 +975,7 @@ function initMap() {
         fillOpacity: 0.95,
         strokeColor: '#FFFFFF',
         strokeWeight: 2,
-        scale: point.group === 'ref' ? 10 : 12
+        scale: 14
       }
     });
 
