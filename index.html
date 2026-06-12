@@ -36,6 +36,8 @@
       background: var(--cream);
       line-height: 1.6;
       letter-spacing: 0;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     a {
@@ -94,15 +96,23 @@
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
+      width: 38px;
+      height: 38px;
+      display: block;
+      flex: 0 0 auto;
       border-radius: 50%;
-      background: var(--terra);
-      color: white;
-      font-size: 13px;
+      overflow: hidden;
+      background: #f6d5a6;
+      border: 2px solid rgba(255, 255, 255, 0.88);
       box-shadow: 0 8px 20px rgba(199, 111, 80, 0.28);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
     }
 
     .nav-links {
@@ -199,6 +209,7 @@
     h3,
     p {
       margin-top: 0;
+      text-wrap: pretty;
     }
 
     h1 {
@@ -207,6 +218,7 @@
       line-height: 0.95;
       letter-spacing: 0;
       white-space: nowrap;
+      text-wrap: nowrap;
     }
 
     .hero-copy {
@@ -311,6 +323,7 @@
       font-size: clamp(30px, 4vw, 48px);
       line-height: 1.12;
       letter-spacing: 0;
+      text-wrap: balance;
     }
 
     .section-head p {
@@ -770,24 +783,91 @@
     body.preview-mobile .hero {
       min-height: auto;
       grid-template-columns: 1fr;
-      gap: 28px;
-      padding: 38px 0 28px;
+      gap: 24px;
+      padding: 34px 0 26px;
     }
 
     body.preview-mobile h1 {
-      font-size: 48px;
+      font-size: 44px;
+      line-height: 1;
     }
 
     body.preview-mobile .hero-copy {
-      font-size: 19px;
+      margin-bottom: 22px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    body.preview-mobile .hero-subcopy {
+      margin-bottom: 26px;
+      font-size: 15px;
+      line-height: 1.78;
     }
 
     body.preview-mobile .hero-visual {
-      min-height: 520px;
+      min-height: 0;
+      aspect-ratio: 4 / 5;
     }
 
     body.preview-mobile .hero-photo {
-      min-height: 520px;
+      min-height: 0;
+      height: 100%;
+      object-position: center;
+    }
+
+    body.preview-mobile section {
+      padding: 56px 0;
+    }
+
+    body.preview-mobile .section-head {
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    body.preview-mobile .section-label {
+      font-size: 12px;
+    }
+
+    body.preview-mobile h2 {
+      font-size: 33px;
+      line-height: 1.18;
+    }
+
+    body.preview-mobile .section-head p {
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    body.preview-mobile .stat-card,
+    body.preview-mobile .insight-card,
+    body.preview-mobile .info-card,
+    body.preview-mobile .funnel-card,
+    body.preview-mobile .offer-card {
+      padding: 18px;
+      min-height: auto;
+    }
+
+    body.preview-mobile .stat-card strong,
+    body.preview-mobile .insight-card strong {
+      font-size: 25px;
+      line-height: 1.15;
+    }
+
+    body.preview-mobile .info-card h3,
+    body.preview-mobile .funnel-card h3,
+    body.preview-mobile .case-card h3,
+    body.preview-mobile .offer-card h3 {
+      font-size: 17px;
+      line-height: 1.38;
+    }
+
+    body.preview-mobile .info-card p,
+    body.preview-mobile .funnel-card p,
+    body.preview-mobile .case-card p,
+    body.preview-mobile .offer-card p,
+    body.preview-mobile .content-body p {
+      font-size: 14px;
+      line-height: 1.72;
     }
 
     body.preview-mobile .section-head,
@@ -845,11 +925,14 @@
       }
 
       .hero-visual {
-        min-height: 520px;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
       }
 
       .hero-photo {
-        min-height: 520px;
+        min-height: 0;
+        height: 100%;
+        object-position: center;
       }
 
       .content-grid {
@@ -903,11 +986,58 @@
       }
 
       h1 {
-        font-size: 44px;
+        font-size: 40px;
+        line-height: 1;
+      }
+
+      h2 {
+        font-size: 31px;
+        line-height: 1.18;
       }
 
       .hero-copy {
-        font-size: 19px;
+        margin-bottom: 22px;
+        font-size: 17px;
+        line-height: 1.45;
+      }
+
+      .hero-subcopy,
+      .section-head p {
+        font-size: 15px;
+        line-height: 1.78;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .section-head {
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .stat-card,
+      .insight-card,
+      .info-card,
+      .funnel-card,
+      .offer-card {
+        padding: 18px;
+        min-height: auto;
+      }
+
+      .stat-card strong,
+      .insight-card strong {
+        font-size: 24px;
+        line-height: 1.15;
+      }
+
+      .info-card p,
+      .funnel-card p,
+      .case-card p,
+      .offer-card p,
+      .content-body p {
+        font-size: 14px;
+        line-height: 1.72;
       }
 
       .button-row,
@@ -938,6 +1068,88 @@
       }
 
     }
+
+    @media (max-width: 380px) {
+      .nav,
+      main,
+      footer {
+        width: calc(100% - 24px);
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-link {
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+
+      .segmented button,
+      .segmented a {
+        min-width: 42px;
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+
+      .eyebrow {
+        gap: 7px;
+        font-size: 12px;
+      }
+
+      .eyebrow::before {
+        width: 26px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-subcopy,
+      .section-head p {
+        font-size: 14px;
+        line-height: 1.76;
+      }
+
+      .button {
+        padding: 11px 14px;
+      }
+
+      .stat-card strong,
+      .insight-card strong {
+        font-size: 22px;
+      }
+
+      .brand-cloud {
+        gap: 10px 12px;
+      }
+
+      .brand-item {
+        font-size: 11px;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -945,7 +1157,9 @@
     <header class="topbar">
       <nav class="nav" aria-label="주요 메뉴">
         <a class="brand" href="#top" aria-label="대로와 나나 홈">
-          <span class="brand-mark">DN</span>
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/daeronana-logo.jpg" alt="">
+          </span>
           <span>대로와 나나</span>
         </a>
         <div class="nav-links" aria-label="페이지 섹션">
