@@ -449,6 +449,180 @@
       line-height: 1.45;
     }
 
+    .audience-detail-grid,
+    .reaction-grid,
+    .performance-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .audience-detail-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-bottom: 24px;
+    }
+
+    .audience-detail-card,
+    .reaction-card,
+    .performance-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0 8px 22px rgba(65, 47, 31, 0.06);
+    }
+
+    .audience-detail-card {
+      padding: 18px;
+    }
+
+    .audience-detail-card h3 {
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .rank-list {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .rank-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(232, 220, 205, 0.56);
+    }
+
+    .rank-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .rank-list b {
+      color: var(--ink);
+    }
+
+    .reaction-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .reaction-card {
+      padding: 16px;
+      min-height: 170px;
+      display: grid;
+      align-content: space-between;
+      gap: 16px;
+    }
+
+    .reaction-shot {
+      min-height: 92px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed rgba(199, 111, 80, 0.42);
+      border-radius: calc(var(--radius) - 4px);
+      background: rgba(245, 239, 230, 0.58);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .reaction-card p {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.5;
+    }
+
+    .performance-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .performance-card {
+      padding: 18px;
+    }
+
+    .performance-thumb {
+      width: min(48%, 150px);
+      aspect-ratio: 9 / 16;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+      border: 1px dashed rgba(199, 111, 80, 0.42);
+      border-radius: calc(var(--radius) - 4px);
+      background: rgba(245, 239, 230, 0.68);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.35;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .performance-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .performance-thumb.has-image {
+      border-style: solid;
+      background: #eee;
+    }
+
+    .performance-card h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .performance-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .performance-actions {
+      margin-top: 14px;
+    }
+
+    .performance-actions .button {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .button.is-disabled {
+      opacity: 0.72;
+      pointer-events: none;
+    }
+
+    .performance-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .performance-meta span {
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(245, 239, 230, 0.76);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
     .funnel-card {
       padding: 20px;
       min-height: 190px;
@@ -842,7 +1016,10 @@
     body.preview-mobile .insight-card,
     body.preview-mobile .info-card,
     body.preview-mobile .funnel-card,
-    body.preview-mobile .offer-card {
+    body.preview-mobile .offer-card,
+    body.preview-mobile .audience-detail-card,
+    body.preview-mobile .reaction-card,
+    body.preview-mobile .performance-card {
       padding: 18px;
       min-height: auto;
     }
@@ -856,7 +1033,8 @@
     body.preview-mobile .info-card h3,
     body.preview-mobile .funnel-card h3,
     body.preview-mobile .case-card h3,
-    body.preview-mobile .offer-card h3 {
+    body.preview-mobile .offer-card h3,
+    body.preview-mobile .performance-card h3 {
       font-size: 17px;
       line-height: 1.38;
     }
@@ -865,6 +1043,7 @@
     body.preview-mobile .funnel-card p,
     body.preview-mobile .case-card p,
     body.preview-mobile .offer-card p,
+    body.preview-mobile .performance-card p,
     body.preview-mobile .content-body p {
       font-size: 14px;
       line-height: 1.72;
@@ -878,6 +1057,9 @@
     body.preview-mobile .funnel-grid,
     body.preview-mobile .case-grid,
     body.preview-mobile .offer-grid,
+    body.preview-mobile .audience-detail-grid,
+    body.preview-mobile .reaction-grid,
+    body.preview-mobile .performance-grid,
     body.preview-mobile .contact-panel {
       grid-template-columns: 1fr;
     }
@@ -915,6 +1097,9 @@
       .funnel-grid,
       .case-grid,
       .offer-grid,
+      .audience-detail-grid,
+      .reaction-grid,
+      .performance-grid,
       .contact-panel {
         grid-template-columns: 1fr;
       }
@@ -1020,7 +1205,10 @@
       .insight-card,
       .info-card,
       .funnel-card,
-      .offer-card {
+      .offer-card,
+      .audience-detail-card,
+      .reaction-card,
+      .performance-card {
         padding: 18px;
         min-height: auto;
       }
@@ -1035,6 +1223,7 @@
       .funnel-card p,
       .case-card p,
       .offer-card p,
+      .performance-card p,
       .content-body p {
         font-size: 14px;
         line-height: 1.72;
@@ -1200,7 +1389,7 @@
           </div>
         </div>
         <div class="hero-visual" aria-label="대로와 나나 대표 사진">
-          <img class="hero-photo" src="assets/daeronana-hero.jpg" alt="오사카 도톤보리에서 포즈를 취한 대로와 나나" loading="eager">
+          <img class="hero-photo" src="assets/daeronana-hero.svg" alt="오사카 도톤보리에서 포즈를 취한 대로와 나나" loading="eager">
         </div>
       </section>
 
@@ -1233,24 +1422,29 @@
             <div class="brand-item"><img class="logo-wide" src="https://upload.wikimedia.org/wikipedia/en/5/54/USJLogo2024.png" alt="" loading="lazy"><span>유니버셜 스튜디오 재팬</span></div>
             <div class="brand-item"><img class="logo-wide" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/AEON_logo.svg" alt="" loading="lazy"><span>Aeon</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=discovertokushima.net" alt="" loading="lazy"><span>도쿠시마 관광청</span></div>
+            <div class="brand-item"><img src="assets/seoul-logo.jpg" alt="서울특별시 로고" loading="lazy"><span>서울특별시</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=myrealtrip.com" alt="" loading="lazy"><span>마이리얼트립</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=cathaypacific.com" alt="" loading="lazy"><span>캐세이퍼시픽</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=flypeach.com" alt="" loading="lazy"><span>피치항공</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=gu-global.com" alt="" loading="lazy"><span>GU</span></div>
+            <div class="brand-item"><img src="assets/sk-telecom-logo.png" alt="" loading="lazy"><span>SK텔레콤</span></div>
+            <div class="brand-item"><img class="logo-wide" src="assets/familymart-logo.png" alt="" loading="lazy"><span>일본 패밀리마트</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=meg-snow.com" alt="" loading="lazy"><span>유키지루시 메그밀크</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=tokyobanana.jp" alt="" loading="lazy"><span>Grapestone (도쿄 바나나)</span></div>
           </div>
         </div>
         <div class="stats-grid" aria-label="채널 성과">
           <div class="stat-card">
-            <strong>87,000+</strong>
+            <strong>88,000+</strong>
             <span>Instagram 팔로워</span>
           </div>
           <div class="stat-card">
-            <strong>23만+</strong>
-            <span>릴스 평균 조회수(최근 20개 평균)</span>
+            <strong>555만+</strong>
+            <span>최근 3개월 조회</span>
           </div>
           <div class="stat-card">
-            <strong>1,368만+</strong>
-            <span>최고 릴스 조회수</span>
+            <strong>353만+</strong>
+            <span>최근 3개월 도달</span>
           </div>
           <div class="stat-card">
             <strong>50+</strong>
@@ -1268,7 +1462,7 @@
           </article>
           <article class="info-card">
             <h3>브랜드 협업</h3>
-            <p>여행, 결제, 디바이스, 플랫폼, 관광청 캠페인에 맞는 스토리텔링형 콘텐츠를 제작합니다.</p>
+            <p>여행, 결제, 디바이스, 플랫폼, 관광청 캠페인에 맞는 다양한 콘텐츠를 제작합니다.</p>
           </article>
         </div>
       </section>
@@ -1282,25 +1476,46 @@
           <p>
             대로와 나나의 콘텐츠는 단순한 여행 기록보다, 실제로 따라 하고 저장하며
             다음 여행을 준비하는 사람들에게 닿는 정보형 숏폼을 지향합니다.
-            아래 항목은 인사이트 자료를 받으면 바로 수치로 교체할 수 있도록 설계했습니다.
           </p>
         </div>
         <div class="insight-grid">
           <article class="insight-card">
-            <strong>87,000+</strong>
+            <strong>88,000+</strong>
             <span>Instagram 팔로워</span>
           </article>
           <article class="insight-card">
-            <strong>입력 예정</strong>
-            <span>한국 팔로워 비율</span>
+            <strong>96%</strong>
+            <span>대한민국 팔로워 비율</span>
           </article>
           <article class="insight-card">
-            <strong>입력 예정</strong>
-            <span>주요 연령대</span>
+            <strong>25-44</strong>
+            <span>핵심 연령대</span>
           </article>
           <article class="insight-card">
-            <strong>입력 예정</strong>
-            <span>성별 구성</span>
+            <strong>71% / 29%</strong>
+            <span>여성 / 남성 구성</span>
+          </article>
+        </div>
+        <div class="audience-detail-grid" aria-label="팔로워 지역 세부 정보">
+          <article class="audience-detail-card">
+            <h3>상위 국가</h3>
+            <ul class="rank-list">
+              <li><span>대한민국</span><b>96%</b></li>
+              <li><span>홍콩</span><b>1.1%</b></li>
+              <li><span>미국</span><b>0.6%</b></li>
+              <li><span>일본</span><b>0.4%</b></li>
+              <li><span>호주</span><b>0.3%</b></li>
+            </ul>
+          </article>
+          <article class="audience-detail-card">
+            <h3>상위 도시</h3>
+            <ul class="rank-list">
+              <li><span>서울특별시</span><b>18.9%</b></li>
+              <li><span>부산광역시</span><b>7%</b></li>
+              <li><span>인천광역시</span><b>5.7%</b></li>
+              <li><span>대구광역시</span><b>4.9%</b></li>
+              <li><span>대전광역시</span><b>2.9%</b></li>
+            </ul>
           </article>
         </div>
         <div class="intro-grid">
@@ -1314,7 +1529,7 @@
           </article>
           <article class="info-card">
             <h3>부부 크리에이터 신뢰감</h3>
-            <p>직장인 부부의 현실적인 여행 톤으로 브랜드 메시지를 과장 없이 전달합니다.</p>
+            <p>부부의 현실적인 여행 톤으로 브랜드 메시지를 과장 없이 전달합니다.</p>
           </article>
         </div>
       </section>
@@ -1359,52 +1574,136 @@
         <div class="section-head">
           <div>
             <p class="section-label">FEATURED CONTENTS & RESULTS</p>
-            <h2 id="contents-title">대표 콘텐츠 & 성과</h2>
+            <h2 id="contents-title">조회수 상위 콘텐츠 & 성과</h2>
           </div>
           <p>
-            대로와 나나의 콘텐츠 유형과 성과를 한 번에 볼 수 있도록 정리했습니다.
-            실제 썸네일이나 릴스 캡처를 넣으면 협업 제안서용 포트폴리오 카드로 바로 활용할 수 있습니다.
+            단순한 조회수뿐 아니라 공유, 저장, 댓글, 팔로우 유입까지 함께 확인할 수 있도록
+            성과가 큰 콘텐츠를 정리했습니다.
           </p>
         </div>
-        <div class="case-grid">
-          <article class="case-card">
-            <div class="case-media"><div class="photo-placeholder">릴스 세로<br>캡처 영역</div></div>
-            <div class="case-body">
-              <span class="tag">커플 릴스</span>
-              <h3>따라 하기 쉬운 커플 여행 숏폼</h3>
-              <p>비행기, 여행지, 커플 케미를 짧고 직관적으로 담아 대중적인 확산을 만든 콘텐츠 유형입니다.</p>
-              <div class="metric-row">
-                <div class="metric"><b>1,368만+</b><span>최고 릴스 조회수</span></div>
-                <div class="metric"><b>23만+</b><span>최근 20개 평균</span></div>
-              </div>
-              <a class="button secondary" href="https://www.instagram.com/reel/DPQy3BCE0Y3/" target="_blank" rel="noreferrer">대표 릴스 보기</a>
+        <div class="performance-grid">
+          <article class="performance-card">
+            <div class="performance-thumb">썸네일 이미지<br>추가 예정</div>
+            <span class="tag">콜라보레이션 콘텐츠</span>
+            <h3>비행기에서 친구 만드는 법</h3>
+            <div class="metric-row">
+              <div class="metric"><b>1,369만</b><span>조회</span></div>
+              <div class="metric"><b>49.7만</b><span>좋아요</span></div>
+            </div>
+            <div class="performance-meta">
+              <span>공유 10.3만</span><span>저장 2.4만</span><span>댓글 907</span>
+            </div>
+            <p>콜라보레이션 콘텐츠로 높은 공유량과 대중적인 확산력이 확인된 여행 숏폼 사례입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
             </div>
           </article>
-          <article class="case-card">
-            <div class="case-media"><div class="photo-placeholder">릴스 세로<br>캡처 영역</div></div>
-            <div class="case-body">
-              <span class="tag">여행 정보</span>
-              <h3>스토리텔링형 여행 정보 콘텐츠</h3>
-              <p>세부, 보홀, 일본, 홍콩처럼 여행 전 저장하고 다시 볼 수 있는 정보를 감성적인 흐름으로 전달합니다.</p>
-              <div class="metric-row">
-                <div class="metric"><b>87,000+</b><span>Instagram 팔로워</span></div>
-                <div class="metric"><b>저장형</b><span>여행 팁/동선/비용</span></div>
-              </div>
-              <a class="button secondary" href="https://www.instagram.com/reels/DPqz2Lpk4o9/" target="_blank" rel="noreferrer">대표 릴스 보기</a>
+          <article class="performance-card">
+            <div class="performance-thumb">썸네일 이미지<br>추가 예정</div>
+            <span class="tag">브랜디드 콘텐츠</span>
+            <h3>오사카 가성비 숙소 예약하는 방법</h3>
+            <div class="metric-row">
+              <div class="metric"><b>927.8만</b><span>조회</span></div>
+              <div class="metric"><b>1,326</b><span>댓글</span></div>
+            </div>
+            <div class="performance-meta">
+              <span>좋아요 1.4만</span><span>공유 1.2만</span><span>저장 3,422</span>
+            </div>
+            <p>브랜디드 콘텐츠를 여행자가 바로 활용할 수 있는 정보형 소재로 풀어 높은 댓글과 공유 반응을 만든 사례입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
             </div>
           </article>
-          <article class="case-card">
-            <div class="case-media"><div class="photo-placeholder">릴스 세로<br>캡처 영역</div></div>
-            <div class="case-body">
-              <span class="tag">브랜드 친화형</span>
-              <h3>가심비 여행 & 플랫폼 연결 콘텐츠</h3>
-              <p>숙소, 항공, 액티비티, 결제, 여행 플랫폼 혜택을 실제 여행 과정 안에 자연스럽게 연결할 수 있습니다.</p>
-              <div class="metric-row">
-                <div class="metric"><b>50+</b><span>협업 브랜드</span></div>
-                <div class="metric"><b>확장 가능</b><span>발리/일본/홍콩</span></div>
-              </div>
-              <a class="button secondary" href="https://www.instagram.com/reel/DR1hj5wk4jb/?igsh=cHI1bHQ5dnZvMWpz" target="_blank" rel="noreferrer">대표 릴스 보기</a>
+          <article class="performance-card">
+            <div class="performance-thumb">썸네일 이미지<br>추가 예정</div>
+            <span class="tag">커플 여행 포맷</span>
+            <h3>비행기에서 꼭 찍어야 하는 커플 릴스</h3>
+            <div class="metric-row">
+              <div class="metric"><b>328.1만</b><span>조회</span></div>
+              <div class="metric"><b>4.8만</b><span>좋아요</span></div>
             </div>
+            <div class="performance-meta">
+              <span>공유 2.9만</span><span>저장 1.7만</span><span>댓글 137</span>
+            </div>
+            <p>따라하기 쉽지만 와우 포인트가 있는 콘텐츠로 저장과 공유를 이끌어낸 확산형 콘텐츠입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
+            </div>
+          </article>
+          <article class="performance-card">
+            <div class="performance-thumb has-image"><img src="assets/thumbnail-japan-travel-empathy.jpg" alt="일본여행 무조건 공감하는 3가지 콘텐츠 썸네일" loading="lazy"></div>
+            <span class="tag">브랜디드 콘텐츠</span>
+            <h3>일본여행 무조건 공감하는 3가지</h3>
+            <div class="metric-row">
+              <div class="metric"><b>290만</b><span>조회</span></div>
+              <div class="metric"><b>2,847</b><span>좋아요</span></div>
+            </div>
+            <div class="performance-meta">
+              <span>공유 581</span><span>저장 38</span><span>댓글 44</span>
+            </div>
+            <p>브랜디드 콘텐츠로 일본 여행자가 공감할 수 있는 상황을 제시하여 브랜드를 자연스럽게 노출한 사례입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
+            </div>
+          </article>
+          <article class="performance-card">
+            <div class="performance-thumb has-image"><img src="assets/thumbnail-hong-kong-no-money.jpg" alt="홍콩에서 한국인한테 노머니한 이유 1탄 콘텐츠 썸네일" loading="lazy"></div>
+            <span class="tag">해외 반응</span>
+            <h3>홍콩에서 한국인한테 "노머니"한 이유? 1탄</h3>
+            <div class="metric-row">
+              <div class="metric"><b>217.3만</b><span>조회</span></div>
+              <div class="metric"><b>3.8만</b><span>좋아요</span></div>
+            </div>
+            <div class="performance-meta">
+              <span>댓글 972</span><span>공유 6,874</span><span>저장 3,111</span>
+            </div>
+            <p>홍콩 타깃 콘텐츠로 홍콩 현지인 반응과 댓글 참여가 높았고, 홍콩 현지 SNS 채널에도 소개되었던 콘텐츠입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
+            </div>
+          </article>
+          <article class="performance-card">
+            <div class="performance-thumb has-image"><img src="assets/thumbnail-fukuoka-time-saving.jpg" alt="후쿠오카 여행 시간 낭비 안 하는 법 콘텐츠 썸네일" loading="lazy"></div>
+            <span class="tag">저장형 정보</span>
+            <h3>후쿠오카 여행 시간 낭비 안 하는 법</h3>
+            <div class="metric-row">
+              <div class="metric"><b>166.8만</b><span>조회</span></div>
+              <div class="metric"><b>3.4만</b><span>저장</span></div>
+            </div>
+            <div class="performance-meta">
+              <span>댓글 1.6만</span><span>공유 2.8만</span><span>팔로우 약 12,700명 유입</span>
+            </div>
+            <p>후쿠오카 여행 총정리본 공유로 공유, 저장, 댓글, 팔로우 전환이 강하게 발생한 사례입니다.</p>
+            <div class="performance-actions">
+              <a class="button secondary is-disabled" href="#" aria-disabled="true">콘텐츠 링크 추가 예정</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="trust" aria-labelledby="trust-title">
+        <div class="section-head">
+          <div>
+            <p class="section-label">FOLLOWER TRUST</p>
+            <h2 id="trust-title">여행을 준비하는 팔로워들의 실제 반응</h2>
+          </div>
+          <p>
+            대로와 나나의 여행 정보는 단순 조회에서 끝나지 않고, 저장과 일정 참고, 자료 전송으로
+            팔로워의 감사 메시지로 이어집니다.
+          </p>
+        </div>
+        <div class="reaction-grid">
+          <article class="reaction-card">
+            <div class="reaction-shot">DM 캡처<br>추가 예정</div>
+            <p>여행 일정에 실제로 참고했다는 감사 메시지</p>
+          </article>
+          <article class="reaction-card">
+            <div class="reaction-shot">DM 캡처<br>추가 예정</div>
+            <p>맛집 지도와 저장형 자료를 활용했다는 반응</p>
+          </article>
+          <article class="reaction-card">
+            <div class="reaction-shot">DM 캡처<br>추가 예정</div>
+            <p>여행 전 정보 탐색과 예약 준비로 이어진 반응</p>
           </article>
         </div>
       </section>
