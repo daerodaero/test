@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>대로와 나나 | 채널 포트폴리오</title>
-  <meta name="description" content="연차 아껴 가심비 여행하는 직장인 부부, 대로와 나나 채널 포트폴리오">
+  <title>デロとナナ (Daero & NaNa) | チャンネルポートフォリオ</title>
+  <meta name="description" content="現実的で満足度の高い旅を発信する夫婦クリエイター、デロとナナのチャンネルポートフォリオ">
   <style>
     :root {
       --sand: #f5efe6;
@@ -214,11 +214,20 @@
 
     h1 {
       margin-bottom: 18px;
-      font-size: clamp(44px, 6vw, 82px);
-      line-height: 0.95;
+      font-size: clamp(44px, 5.2vw, 72px);
+      line-height: 1;
       letter-spacing: 0;
-      white-space: nowrap;
-      text-wrap: nowrap;
+      white-space: normal;
+      text-wrap: balance;
+    }
+
+    .name-en {
+      display: block;
+      margin: 12px 0 0;
+      font-family: "Pretendard", system-ui, sans-serif;
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 900;
+      line-height: 1.05;
     }
 
     .hero-copy {
@@ -1017,8 +1026,13 @@
     }
 
     body.preview-mobile h1 {
-      font-size: 44px;
-      line-height: 1;
+      font-size: 40px;
+      line-height: 1.05;
+    }
+
+    body.preview-mobile .name-en {
+      margin-top: 8px;
+      font-size: 24px;
     }
 
     body.preview-mobile .hero-copy {
@@ -1226,8 +1240,12 @@
       }
 
       h1 {
-        font-size: 40px;
-        line-height: 1;
+        font-size: 36px;
+        line-height: 1.06;
+      }
+
+      .name-en {
+        font-size: 23px;
       }
 
       h2 {
@@ -1351,7 +1369,11 @@
       }
 
       h1 {
-        font-size: 36px;
+        font-size: 32px;
+      }
+
+      .name-en {
+        font-size: 21px;
       }
 
       h2 {
@@ -1399,26 +1421,26 @@
 <body>
   <div class="site-shell">
     <header class="topbar">
-      <nav class="nav" aria-label="주요 메뉴">
-        <a class="brand" href="#top" aria-label="대로와 나나 홈">
+      <nav class="nav" aria-label="メインメニュー">
+        <a class="brand" href="#top" aria-label="デロとナナ ホーム">
           <span class="brand-mark" aria-hidden="true">
             <img src="daeronana-logo.jpg" alt="">
           </span>
-          <span>대로와 나나</span>
+          <span>デロとナナ (Daero & NaNa)</span>
         </a>
-        <div class="nav-links" aria-label="페이지 섹션">
-          <a class="nav-link" href="#about">소개</a>
-          <a class="nav-link" href="#contents">대표 콘텐츠</a>
-          <a class="nav-link" href="#trust">팔로워 반응</a>
-          <a class="nav-link" href="#contact">협업 문의</a>
+        <div class="nav-links" aria-label="ページセクション">
+          <a class="nav-link" href="#about">紹介</a>
+          <a class="nav-link" href="#contents">代表コンテンツ</a>
+          <a class="nav-link" href="#trust">フォロワー反応</a>
+          <a class="nav-link" href="#contact">協業相談</a>
         </div>
         <div class="toolbar">
-          <div class="segmented" aria-label="언어 선택">
-            <a class="is-active" href="daeronana_portfolio_ko_media_kit_v5.html" aria-current="page">KR</a>
+          <div class="segmented" aria-label="言語選択">
+            <a href="daeronana_portfolio_ko_media_kit_v5.html">KR</a>
             <a href="daeronana_portfolio_en_media_kit_v5.html">EN</a>
-            <a href="daeronana_portfolio_jp_media_kit_v5.html">JP</a>
+            <a class="is-active" href="daeronana_portfolio_jp_media_kit_v5.html" aria-current="page">JP</a>
           </div>
-          <div class="segmented" aria-label="화면 보기">
+          <div class="segmented" aria-label="表示切り替え">
             <button class="is-active" type="button" data-view="pc">PC</button>
             <button type="button" data-view="mobile">Mobile</button>
           </div>
@@ -1430,21 +1452,21 @@
       <section class="hero" aria-labelledby="hero-title">
         <div>
           <p class="eyebrow">TRAVEL CREATOR PORTFOLIO</p>
-          <h1 id="hero-title">대로와 나나</h1>
-          <p class="hero-copy">연차 아껴 가심비 여행하는 직장인 부부</p>
+          <h1 id="hero-title">デロとナナ <span class="name-en">(Daero & NaNa)</span></h1>
+          <p class="hero-copy">有休と予算を大切にする、現実派の夫婦トラベルクリエイター</p>
           <p class="hero-subcopy">
-            바쁜 일상 속에서도 현실적으로 떠날 수 있는 여행을 소개합니다.
-            합리적인 예산, 따뜻한 시선, 따라 하고 싶은 커플 여행 콘텐츠로
-            여행지와 브랜드의 이야기를 자연스럽게 전합니다.
+            忙しい日常の中でも現実的に出かけられる旅を紹介します。
+            無理のない予算、あたたかい視点、真似したくなる夫婦旅コンテンツで、
+            旅先とブランドの魅力を自然に伝えます。
           </p>
           <div class="button-row">
-            <a class="button primary" href="mailto:dleogh888@naver.com">협업 문의하기</a>
-            <a class="button secondary" href="https://www.instagram.com/daero._.nana/" target="_blank" rel="noreferrer">Instagram 보기</a>
-            <a class="button secondary" href="https://blog.naver.com/dleogh888" target="_blank" rel="noreferrer">Blog 보기</a>
+            <a class="button primary" href="mailto:dleogh888@naver.com">協業について相談</a>
+            <a class="button secondary" href="https://www.instagram.com/daero._.nana/" target="_blank" rel="noreferrer">Instagramを見る</a>
+            <a class="button secondary" href="https://blog.naver.com/dleogh888" target="_blank" rel="noreferrer">ブログを見る</a>
           </div>
         </div>
-        <div class="hero-visual" aria-label="대로와 나나 대표 사진">
-          <img class="hero-photo" src="daeronana-hero-enhanced-v4.jpg" alt="오사카 도톤보리에서 포즈를 취한 대로와 나나" loading="eager">
+        <div class="hero-visual" aria-label="デロとナナ メイン写真">
+          <img class="hero-photo" src="daeronana-hero-enhanced-v4.jpg" alt="大阪・道頓堀でポーズをとるデロとナナ" loading="eager">
         </div>
       </section>
 
@@ -1452,69 +1474,69 @@
         <div class="section-head">
           <div>
             <p class="section-label">ABOUT CHANNEL</p>
-            <h2 id="about-title">여행을 더 현실적으로, 더 따뜻하게.</h2>
+            <h2 id="about-title">旅をもっと現実的に、もっとあたたかく。</h2>
           </div>
           <p>
-            대로와 나나는 연차와 예산을 아끼면서도 만족도 높은 여행을 찾는 사람들을 위한
-            여행 콘텐츠를 만듭니다. 커플 여행 릴스, 여행지 정보, 트랜지션 영상, 브랜드 캠페인을
-            친근한 톤으로 연결합니다.
+            デロとナナは、有休と予算を大切にしながら満足度の高い旅を探す人に向けて、
+            旅コンテンツを制作しています。夫婦旅リール、旅行先情報、トランジション動画、ブランドキャンペーンを、
+            親しみやすいトーンでつなげます。
           </p>
         </div>
-        <div class="partner-list" id="partners" aria-label="협업 브랜드 목록">
-          <p class="partner-list-title">주요 협업 브랜드</p>
+        <div class="partner-list" id="partners" aria-label="協業ブランド一覧">
+          <p class="partner-list-title">主な協業ブランド</p>
           <div class="brand-cloud">
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=dji.com" alt="" loading="lazy"><span>DJI</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=visa.com" alt="" loading="lazy"><span>Visa</span></div>
             <div class="brand-item"><img class="logo-wide" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/JCB_logo.svg" alt="" loading="lazy"><span>JCB</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=unionpayintl.com" alt="" loading="lazy"><span>유니온페이</span></div>
-            <div class="brand-item"><img src="kakaopay-icon.svg" alt="" loading="lazy"><span>카카오페이</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=unionpayintl.com" alt="" loading="lazy"><span>UnionPay</span></div>
+            <div class="brand-item"><img src="kakaopay-icon.svg" alt="" loading="lazy"><span>KakaoPay</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=insta360.com" alt="" loading="lazy"><span>Insta360</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=samsung.com" alt="" loading="lazy"><span>삼성전자</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=hanatour.com" alt="" loading="lazy"><span>하나투어</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=klook.com" alt="" loading="lazy"><span>클룩</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=trip.com" alt="" loading="lazy"><span>트립닷컴</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=airbnb.com" alt="" loading="lazy"><span>에어비앤비</span></div>
-            <div class="brand-item"><img class="logo-wide" src="https://upload.wikimedia.org/wikipedia/en/5/54/USJLogo2024.png" alt="" loading="lazy"><span>유니버셜 스튜디오 재팬</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=samsung.com" alt="" loading="lazy"><span>Samsung Electronics</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=hanatour.com" alt="" loading="lazy"><span>Hanatour</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=klook.com" alt="" loading="lazy"><span>Klook</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=trip.com" alt="" loading="lazy"><span>Trip.com</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=airbnb.com" alt="" loading="lazy"><span>Airbnb</span></div>
+            <div class="brand-item"><img class="logo-wide" src="https://upload.wikimedia.org/wikipedia/en/5/54/USJLogo2024.png" alt="" loading="lazy"><span>ユニバーサル・スタジオ・ジャパン</span></div>
             <div class="brand-item"><img class="logo-wide" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/AEON_logo.svg" alt="" loading="lazy"><span>Aeon</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=discovertokushima.net" alt="" loading="lazy"><span>도쿠시마 관광청</span></div>
-            <div class="brand-item"><img src="seoul-logo.png" alt="서울특별시 로고" loading="lazy"><span>서울특별시</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=myrealtrip.com" alt="" loading="lazy"><span>마이리얼트립</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=cathaypacific.com" alt="" loading="lazy"><span>캐세이퍼시픽</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=flypeach.com" alt="" loading="lazy"><span>피치항공</span></div>
-            <div class="brand-item"><img src="tway-logo.png" alt="티웨이 로고" loading="lazy"><span>티웨이(트리니티항공)</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=discovertokushima.net" alt="" loading="lazy"><span>徳島観光</span></div>
+            <div class="brand-item"><img src="seoul-logo.png" alt="ソウル特別市ロゴ" loading="lazy"><span>ソウル特別市</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=myrealtrip.com" alt="" loading="lazy"><span>MyRealTrip</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=cathaypacific.com" alt="" loading="lazy"><span>Cathay Pacific</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=flypeach.com" alt="" loading="lazy"><span>Peach Aviation</span></div>
+            <div class="brand-item"><img src="tway-logo.png" alt="ティーウェイ航空ロゴ" loading="lazy"><span>ティーウェイ航空(トリニティ航空)</span></div>
             <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=gu-global.com" alt="" loading="lazy"><span>GU</span></div>
-            <div class="brand-item"><img src="sk-telecom-logo.png" alt="" loading="lazy"><span>SK텔레콤</span></div>
-            <div class="brand-item"><img class="logo-wide" src="familymart-logo.png" alt="" loading="lazy"><span>일본 패밀리마트</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=meg-snow.com" alt="" loading="lazy"><span>유키지루시 메그밀크</span></div>
-            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=tokyobanana.jp" alt="" loading="lazy"><span>Grapestone (도쿄 바나나)</span></div>
+            <div class="brand-item"><img src="sk-telecom-logo.png" alt="" loading="lazy"><span>SK Telecom</span></div>
+            <div class="brand-item"><img class="logo-wide" src="familymart-logo.png" alt="" loading="lazy"><span>日本ファミリーマート</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=meg-snow.com" alt="" loading="lazy"><span>雪印メグミルク</span></div>
+            <div class="brand-item"><img src="https://www.google.com/s2/favicons?sz=64&domain=tokyobanana.jp" alt="" loading="lazy"><span>Grapestone (東京ばな奈)</span></div>
           </div>
         </div>
-        <div class="stats-grid" aria-label="채널 성과">
+        <div class="stats-grid" aria-label="チャンネル実績">
           <div class="stat-card">
             <strong>88,000+</strong>
-            <span>Instagram 팔로워</span>
+            <span>Instagramフォロワー</span>
           </div>
           <div class="stat-card">
-            <strong>23만+</strong>
-            <span>릴스 평균 조회수(최근 20개 평균)</span>
+            <strong>23万+</strong>
+            <span>リール平均再生数（直近20本平均）</span>
           </div>
           <div class="stat-card">
-            <strong>1,369만+</strong>
-            <span>최고 릴스 조회수</span>
+            <strong>1,369万+</strong>
+            <span>最高リール再生数</span>
           </div>
         </div>
         <div class="intro-grid">
           <article class="info-card">
-            <h3>가심비 여행</h3>
-            <p>무조건 저렴한 여행이 아니라, 시간과 비용 대비 만족도가 높은 여행 경험을 소개합니다.</p>
+            <h3>満足度重視の旅</h3>
+            <p>ただ安い旅ではなく、時間と費用に対して満足度の高い旅の体験を紹介します。</p>
           </article>
           <article class="info-card">
-            <h3>커플 콘텐츠</h3>
-            <p>여행지의 분위기와 두 사람의 자연스러운 케미를 짧은 릴스에 담아냅니다.</p>
+            <h3>夫婦コンテンツ</h3>
+            <p>旅先の雰囲気と2人の自然な空気感を短いリールに落とし込みます。</p>
           </article>
           <article class="info-card">
-            <h3>브랜드 협업</h3>
-            <p>여행, 결제, 디바이스, 플랫폼, 관광청 캠페인에 맞는 다양한 콘텐츠를 제작합니다.</p>
+            <h3>ブランド協業</h3>
+            <p>旅行、決済、デバイス、プラットフォーム、観光キャンペーンに合わせた多様なコンテンツを制作します。</p>
           </article>
         </div>
       </section>
@@ -1523,65 +1545,65 @@
         <div class="section-head">
           <div>
             <p class="section-label">AUDIENCE FIT</p>
-            <h2 id="fit-title">브랜드가 찾는 여행 준비 단계의 시청자.</h2>
+            <h2 id="fit-title">ブランドが出会いたい、旅行準備中の視聴者。</h2>
           </div>
           <p>
-            대로와 나나의 콘텐츠는 단순한 여행 기록보다, 실제로 따라 하고 저장하며
-            다음 여행을 준비하는 사람들에게 닿는 정보형 숏폼을 지향합니다.
+            デロとナナのコンテンツは単なる旅の記録ではなく、実際に真似して保存し、
+            次の旅を準備する人に届く情報型ショート動画を目指しています。
           </p>
         </div>
         <div class="insight-grid">
           <article class="insight-card">
             <strong>88,000+</strong>
-            <span>Instagram 팔로워</span>
+            <span>Instagramフォロワー</span>
           </article>
           <article class="insight-card">
             <strong>96%</strong>
-            <span>대한민국 팔로워 비율</span>
+            <span>韓国フォロワー比率</span>
           </article>
           <article class="insight-card">
             <strong>25-44</strong>
-            <span>핵심 연령대</span>
+            <span>主要年齢層</span>
           </article>
           <article class="insight-card">
             <strong>71% / 29%</strong>
-            <span>여성 / 남성 구성</span>
+            <span>女性 / 男性構成</span>
           </article>
         </div>
-        <div class="audience-detail-grid" aria-label="팔로워 지역 세부 정보">
+        <div class="audience-detail-grid" aria-label="フォロワー地域詳細">
           <article class="audience-detail-card">
-            <h3>상위 국가</h3>
+            <h3>上位国</h3>
             <ul class="rank-list">
-              <li><span>대한민국</span><b>96%</b></li>
-              <li><span>홍콩</span><b>1.1%</b></li>
-              <li><span>미국</span><b>0.6%</b></li>
-              <li><span>일본</span><b>0.4%</b></li>
-              <li><span>호주</span><b>0.3%</b></li>
+              <li><span>韓国</span><b>96%</b></li>
+              <li><span>香港</span><b>1.1%</b></li>
+              <li><span>米国</span><b>0.6%</b></li>
+              <li><span>日本</span><b>0.4%</b></li>
+              <li><span>オーストラリア</span><b>0.3%</b></li>
             </ul>
           </article>
           <article class="audience-detail-card">
-            <h3>상위 도시</h3>
+            <h3>上位都市</h3>
             <ul class="rank-list">
-              <li><span>서울특별시</span><b>18.9%</b></li>
-              <li><span>부산광역시</span><b>7%</b></li>
-              <li><span>인천광역시</span><b>5.7%</b></li>
-              <li><span>대구광역시</span><b>4.9%</b></li>
-              <li><span>대전광역시</span><b>2.9%</b></li>
+              <li><span>ソウル特別市</span><b>18.9%</b></li>
+              <li><span>釜山</span><b>7%</b></li>
+              <li><span>仁川</span><b>5.7%</b></li>
+              <li><span>大邱</span><b>4.9%</b></li>
+              <li><span>大田</span><b>2.9%</b></li>
             </ul>
           </article>
         </div>
         <div class="intro-grid">
           <article class="info-card">
-            <h3>여행 구매 의향</h3>
-            <p>항공권, 숙소, 액티비티, 결제 수단, 여행 앱처럼 실제 여행 준비 과정에서 필요한 브랜드와 자연스럽게 만납니다.</p>
+            <h3>旅行購買意欲</h3>
+            <p>航空券、宿泊、アクティビティ、決済手段、旅行アプリなど、実際の旅行準備に必要なブランドと自然に出会います。</p>
           </article>
           <article class="info-card">
-            <h3>저장형 콘텐츠</h3>
-            <p>여행 전 다시 꺼내 보는 팁, 동선, 촬영법, 비용 정보 중심으로 저장과 공유가 일어나는 콘텐츠를 만듭니다.</p>
+            <h3>保存されるコンテンツ</h3>
+            <p>旅行前に見返したくなるコツ、動線、撮影方法、費用情報を中心に、保存と共有が起きるコンテンツを作ります。</p>
           </article>
           <article class="info-card">
-            <h3>부부 크리에이터 신뢰감</h3>
-            <p>부부의 현실적인 여행 톤으로 브랜드 메시지를 과장 없이 전달합니다.</p>
+            <h3>夫婦クリエイターとしての信頼感</h3>
+            <p>夫婦ならではの現実的な旅のトーンで、ブランドメッセージを誇張なく伝えます。</p>
           </article>
         </div>
       </section>
@@ -1590,34 +1612,34 @@
         <div class="section-head">
           <div>
             <p class="section-label">CONVERSION STRATEGY</p>
-            <h2 id="conversion-title">노출에서 저장, 탐색, 문의까지.</h2>
+            <h2 id="conversion-title">リーチから保存、検索、問い合わせまで。</h2>
           </div>
           <p>
-            참고 자료의 핵심은 조회수 자체보다 조회 이후의 행동입니다.
-            대로와 나나의 협업 콘텐츠도 릴스 도달, 저장과 공유, 블로그 상세 탐색,
-            브랜드 상세 탐색으로 이어지는 구조를 제안할 수 있습니다.
+            重要なのは再生数そのものだけではなく、視聴後の行動です。
+            デロとナナの協業コンテンツも、リールでのリーチ、保存と共有、ブログでの詳細確認、
+            ブランド情報の探索につながる設計を提案できます。
           </p>
         </div>
         <div class="funnel-grid">
           <article class="funnel-card">
             <div class="funnel-step">1</div>
-            <h3>릴스 도달</h3>
-            <p>여행지의 분위기와 부부 케미를 숏폼 문법으로 전달해 첫 관심을 만듭니다.</p>
+            <h3>リールでのリーチ</h3>
+            <p>旅先の雰囲気と夫婦の空気感をショート動画の文法で伝え、最初の関心を作ります。</p>
           </article>
           <article class="funnel-card">
             <div class="funnel-step">2</div>
-            <h3>저장과 공유</h3>
-            <p>가격, 동선, 촬영법, 혜택처럼 다시 볼 이유가 있는 정보로 저장 행동을 유도합니다.</p>
+            <h3>保存と共有</h3>
+            <p>価格、動線、撮影方法、特典など、見返す理由のある情報で保存行動を促します。</p>
           </article>
           <article class="funnel-card">
             <div class="funnel-step">3</div>
-            <h3>블로그 상세 정보</h3>
-            <p>릴스에서 다 담기 어려운 일정, 예약 팁, 사용 후기를 블로그로 확장합니다.</p>
+            <h3>ブログでの詳細情報</h3>
+            <p>リールだけでは伝えきれない日程、予約のコツ、使用レビューをブログへ展開します。</p>
           </article>
           <article class="funnel-card">
             <div class="funnel-step">4</div>
-            <h3>문의와 전환</h3>
-            <p>프로필, 스토리, 댓글, 링크를 통해 브랜드 페이지나 예약/구매 흐름으로 연결합니다.</p>
+            <h3>問い合わせと転換</h3>
+            <p>プロフィール、ストーリーズ、コメント、リンクを通じてブランドページや予約・購入導線につなげます。</p>
           </article>
         </div>
       </section>
@@ -1626,124 +1648,124 @@
         <div class="section-head">
           <div>
             <p class="section-label">FEATURED CONTENTS & RESULTS</p>
-            <h2 id="contents-title">조회수 상위 콘텐츠 & 성과</h2>
+            <h2 id="contents-title">再生数上位コンテンツと実績</h2>
           </div>
           <p>
-            단순한 조회수뿐 아니라 공유, 저장, 댓글, 팔로우 유입까지 함께 확인할 수 있도록
-            성과가 큰 콘텐츠를 정리했습니다.
+            単なる再生数だけでなく、共有、保存、コメント、フォロー流入まで確認できるように、
+            実績の大きいコンテンツを整理しました。
           </p>
         </div>
         <div class="performance-grid">
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-osaka-budget-hotel.jpg" alt="오사카 가성비 숙소 예약하는 방법 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">브랜디드 콘텐츠</span>
-            <h3>오사카 가성비 숙소 예약하는 방법</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-osaka-budget-hotel.jpg" alt="大阪でコスパ宿を予約する方法 コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">ブランドコンテンツ</span>
+            <h3>大阪でコスパ宿を予約する方法</h3>
             <div class="metric-row">
-              <div class="metric"><b>927.8만</b><span>조회</span></div>
-              <div class="metric"><b>1,326</b><span>댓글</span></div>
+              <div class="metric"><b>927.8万</b><span>再生</span></div>
+              <div class="metric"><b>1,326</b><span>コメント</span></div>
             </div>
             <div class="performance-meta">
-              <span>좋아요 1.4만</span><span>공유 1.2만</span><span>저장 3,422</span>
+              <span>いいね 1.4万</span><span>共有 1.2万</span><span>保存 3,422</span>
             </div>
-            <p>브랜디드 콘텐츠를 여행자가 바로 활용할 수 있는 정보형 소재로 풀어 높은 댓글과 공유 반응을 만든 사례입니다.</p>
+            <p>旅行者がすぐ活用できる情報型素材として展開し、高いコメントと共有反応を生んだ事例です。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DOYU6Z5E5_U/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DOYU6Z5E5_U/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-airplane-couple-reels.jpg" alt="비행기에서 꼭 찍어야 하는 커플 릴스 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">커플 여행 포맷</span>
-            <h3>비행기에서 꼭 찍어야 하는 커플 릴스</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-airplane-couple-reels.jpg" alt="飛行機で撮りたい夫婦リール コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">夫婦旅フォーマット</span>
+            <h3>飛行機で撮りたい夫婦リール</h3>
             <div class="metric-row">
-              <div class="metric"><b>328.1만</b><span>조회</span></div>
-              <div class="metric"><b>4.8만</b><span>좋아요</span></div>
+              <div class="metric"><b>328.1万</b><span>再生</span></div>
+              <div class="metric"><b>4.8万</b><span>いいね</span></div>
             </div>
             <div class="performance-meta">
-              <span>공유 2.9만</span><span>저장 1.7만</span><span>댓글 137</span>
+              <span>共有 2.9万</span><span>保存 1.7万</span><span>コメント 137</span>
             </div>
-            <p>따라하기 쉽지만 와우 포인트가 있는 콘텐츠로 저장과 공유를 이끌어낸 확산형 콘텐츠입니다.</p>
+            <p>真似しやすく印象に残るポイントで、保存と共有を引き出した拡散型の事例です。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DPQy3BCE0Y3/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DPQy3BCE0Y3/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-japan-travel-empathy.jpg" alt="일본여행 무조건 공감하는 3가지 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">브랜디드 콘텐츠</span>
-            <h3>일본여행 무조건 공감하는 3가지</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-japan-travel-empathy.jpg" alt="日本旅行で必ず共感する3つのこと コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">ブランドコンテンツ</span>
+            <h3>日本旅行で必ず共感する3つのこと</h3>
             <div class="metric-row">
-              <div class="metric"><b>290만</b><span>조회</span></div>
-              <div class="metric"><b>2,847</b><span>좋아요</span></div>
+              <div class="metric"><b>290万</b><span>再生</span></div>
+              <div class="metric"><b>2,847</b><span>いいね</span></div>
             </div>
             <div class="performance-meta">
-              <span>공유 581</span><span>저장 38</span><span>댓글 44</span>
+              <span>共有 581</span><span>保存 38</span><span>コメント 44</span>
             </div>
-            <p>브랜디드 콘텐츠로 일본 여행자가 공감할 수 있는 상황을 제시하여 브랜드를 자연스럽게 노출한 사례입니다.</p>
+            <p>日本旅行者が共感できる状況を提示し、ブランドを自然に露出した事例です。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DWgnvPpgvWu/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DWgnvPpgvWu/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-hong-kong-no-money.jpg" alt="홍콩에서 한국인한테 노머니한 이유 1탄 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">해외 반응</span>
-            <h3>홍콩에서 한국인한테 "노머니"한 이유? 1탄</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-hong-kong-no-money.jpg" alt="香港で韓国人に「ノーマネー」と言った理由？第1弾 コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">海外反応</span>
+            <h3>香港で韓国人に「ノーマネー」と言った理由？第1弾</h3>
             <div class="metric-row">
-              <div class="metric"><b>217.3만</b><span>조회</span></div>
-              <div class="metric"><b>3.8만</b><span>좋아요</span></div>
+              <div class="metric"><b>217.3万</b><span>再生</span></div>
+              <div class="metric"><b>3.8万</b><span>いいね</span></div>
             </div>
             <div class="performance-meta">
-              <span>댓글 972</span><span>공유 6,874</span><span>저장 3,111</span>
+              <span>コメント 972</span><span>共有 6,874</span><span>保存 3,111</span>
             </div>
-            <p>홍콩 타깃 콘텐츠로 홍콩 현지인 반응과 댓글 참여가 높았고, 홍콩 현지 SNS 채널에도 소개되었던 콘텐츠입니다.</p>
+            <p>香港向けコンテンツとして現地の反応とコメント参加が高く、現地SNSにも紹介されたコンテンツです。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DV0Q0feAkcs/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DV0Q0feAkcs/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-fukuoka-time-saving.jpg" alt="후쿠오카 여행 시간 낭비 안 하는 법 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">저장형 정보</span>
-            <h3>후쿠오카 여행 시간 낭비 안 하는 법</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-fukuoka-time-saving.jpg" alt="福岡旅行で時間を無駄にしない方法 コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">保存型情報</span>
+            <h3>福岡旅行で時間を無駄にしない方法</h3>
             <div class="metric-row">
-              <div class="metric"><b>166.8만</b><span>조회</span></div>
-              <div class="metric"><b>3.4만</b><span>저장</span></div>
+              <div class="metric"><b>166.8万</b><span>再生</span></div>
+              <div class="metric"><b>3.4万</b><span>保存</span></div>
             </div>
             <div class="performance-meta">
-              <span>댓글 1.6만</span><span>공유 2.8만</span><span>팔로우 약 12,700명 유입</span>
+              <span>コメント 1.6万</span><span>共有 2.8万</span><span>約12,700人のフォロー流入</span>
             </div>
-            <p>후쿠오카 여행 총정리본 공유로 공유, 저장, 댓글, 팔로우 전환이 강하게 발생한 사례입니다.</p>
+            <p>福岡旅行の総まとめ資料の共有により、共有、保存、コメント、フォロー転換が強く発生した事例です。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DGxoHbkT6_x/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DGxoHbkT6_x/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-obihiro-small-city.jpg" alt="일본 소도시 오비히로 여행 일정 소개 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">소도시 여행 일정</span>
-            <h3>일본 소도시 오비히로 여행 일정 소개</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-obihiro-small-city.jpg" alt="日本の地方都市・帯広の旅行プラン紹介 コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">地方都市旅程</span>
+            <h3>日本の地方都市・帯広の旅行プラン紹介</h3>
             <div class="metric-row">
-              <div class="metric"><b>38.3만</b><span>조회</span></div>
-              <div class="metric"><b>7,006</b><span>저장</span></div>
+              <div class="metric"><b>38.3万</b><span>再生</span></div>
+              <div class="metric"><b>7,006</b><span>保存</span></div>
             </div>
             <div class="performance-meta">
-              <span>좋아요 3,389</span><span>댓글 133</span><span>공유 7,121</span>
+              <span>いいね 3,389</span><span>コメント 133</span><span>共有 7,121</span>
             </div>
-            <p>예산과 휴가가 부족한 직장인들을 위해 가성비 여행을 즐길 수 있게 구체적인 일정을 소개해 저장과 공유를 이끌어낸 정보성 콘텐츠입니다.</p>
+            <p>予算や休暇が限られた会社員に向けて、コスパよく楽しめる具体的な旅程を紹介し、保存と共有につながった情報型コンテンツです。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DQg7Hl2E0eD/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DQg7Hl2E0eD/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
           <article class="performance-card">
-            <div class="performance-thumb has-image"><img src="thumbnail-airplane-friends.jpg" alt="비행기에서 친구 만드는 법 콘텐츠 썸네일" loading="lazy"></div>
-            <span class="tag">콜라보레이션 콘텐츠</span>
-            <h3>비행기에서 친구 만드는 법</h3>
+            <div class="performance-thumb has-image"><img src="thumbnail-airplane-friends.jpg" alt="飛行機で友達を作る方法 コンテンツサムネイル" loading="lazy"></div>
+            <span class="tag">コラボレーションコンテンツ</span>
+            <h3>飛行機で友達を作る方法</h3>
             <div class="metric-row">
-              <div class="metric"><b>1,369만</b><span>조회</span></div>
-              <div class="metric"><b>49.7만</b><span>좋아요</span></div>
+              <div class="metric"><b>1,369万</b><span>再生</span></div>
+              <div class="metric"><b>49.7万</b><span>いいね</span></div>
             </div>
             <div class="performance-meta">
-              <span>공유 10.3만</span><span>저장 2.4만</span><span>댓글 907</span>
+              <span>共有 10.3万</span><span>保存 2.4万</span><span>コメント 907</span>
             </div>
-            <p>콜라보레이션 콘텐츠로 높은 공유량과 대중적인 확산력이 확인된 여행 숏폼 사례입니다.</p>
+            <p>高い共有数と大衆的な拡散力が確認された旅行ショート動画の事例です。</p>
             <div class="performance-actions">
-              <a class="button secondary" href="https://www.instagram.com/reel/DRXIX5liRl_/" target="_blank" rel="noreferrer">콘텐츠 보기</a>
+              <a class="button secondary" href="https://www.instagram.com/reel/DRXIX5liRl_/" target="_blank" rel="noreferrer">コンテンツを見る</a>
             </div>
           </article>
         </div>
@@ -1753,34 +1775,34 @@
         <div class="section-head">
           <div>
             <p class="section-label">FOLLOWER TRUST</p>
-            <h2 id="trust-title">여행을 준비하는 팔로워들의 실제 반응</h2>
+            <h2 id="trust-title">旅行を準備するフォロワーのリアルな反応</h2>
           </div>
           <p>
-            대로와 나나의 여행 정보는 단순 조회에서 끝나지 않고, 저장과 일정 참고, 자료 전송으로
-            팔로워의 감사 메시지로 이어집니다.
+            デロとナナの旅行情報は再生だけで終わらず、保存、旅程の参考、資料共有を通じて
+            フォロワーからの感謝メッセージにつながっています。
           </p>
         </div>
         <div class="reaction-carousel">
-          <div class="reaction-controls" aria-label="팔로워 반응 이미지 이동">
-            <button class="reaction-control" type="button" data-reaction-scroll="prev" aria-label="이전 DM 보기">‹</button>
-            <button class="reaction-control" type="button" data-reaction-scroll="next" aria-label="다음 DM 보기">›</button>
+          <div class="reaction-controls" aria-label="フォロワー反応画像の移動">
+            <button class="reaction-control" type="button" data-reaction-scroll="prev" aria-label="前のDMを見る">‹</button>
+            <button class="reaction-control" type="button" data-reaction-scroll="next" aria-label="次のDMを見る">›</button>
           </div>
           <div class="reaction-grid" data-reaction-carousel>
             <article class="reaction-card">
-              <div class="reaction-shot"><img src="dm-reaction-01.jpg" alt="팔로워가 채널을 응원한다고 전한 DM 캡처" loading="lazy"></div>
-              <p>채널을 꾸준히 보고 응원한다는 팔로워 반응</p>
+              <div class="reaction-shot"><img src="dm-reaction-01.jpg" alt="チャンネルを応援するフォロワーのDMキャプチャ" loading="lazy"></div>
+              <p>チャンネルを継続的に見て応援しているという反応</p>
             </article>
             <article class="reaction-card">
-              <div class="reaction-shot"><img src="dm-reaction-02.jpg" alt="지도 링크와 할인 정보를 보고 방문 의사를 전한 DM 캡처" loading="lazy"></div>
-              <p>공유한 지도와 정보가 실제 방문 의사로 이어진 사례</p>
+              <div class="reaction-shot"><img src="dm-reaction-02.jpg" alt="地図リンクと割引情報を見て訪問意向を伝えたDMキャプチャ" loading="lazy"></div>
+              <p>共有した地図と情報が実際の訪問意向につながった事例</p>
             </article>
             <article class="reaction-card">
-              <div class="reaction-shot"><img src="dm-reaction-03.jpg" alt="오사카 여행 전 정보를 받고 감사 인사를 전한 DM 캡처" loading="lazy"></div>
-              <p>여행 전 자료 확인과 일정 준비에 도움을 받은 반응</p>
+              <div class="reaction-shot"><img src="dm-reaction-03.jpg" alt="大阪旅行前の情報に感謝するDMキャプチャ" loading="lazy"></div>
+              <p>旅行前の資料確認と日程準備に役立ったという反応</p>
             </article>
             <article class="reaction-card">
-              <div class="reaction-shot"><img src="dm-reaction-04.jpg" alt="여행 준비 자료를 확인하고 감사 인사를 전한 DM 캡처" loading="lazy"></div>
-              <p>콘텐츠 저장 후 숙소와 여행 준비를 이어간 사례</p>
+              <div class="reaction-shot"><img src="dm-reaction-04.jpg" alt="旅行準備資料を確認して感謝を伝えたDMキャプチャ" loading="lazy"></div>
+              <p>コンテンツ保存後、宿泊と旅行準備につながった事例</p>
             </article>
           </div>
         </div>
@@ -1790,39 +1812,39 @@
         <div class="section-head">
           <div>
             <p class="section-label">COLLABORATION MENU</p>
-            <h2 id="offers-title">협업 가능한 콘텐츠 형태</h2>
+            <h2 id="offers-title">協業可能なコンテンツ形式</h2>
           </div>
           <p>
-            대로와 나나는 여행자의 실제 준비 과정에 자연스럽게 들어가는 콘텐츠를 제안합니다.
-            브랜드 목적에 따라 도달형, 저장형, 전환형 콘텐츠로 나눠 설계할 수 있습니다.
+            デロとナナは、旅行者の実際の準備過程に自然に入るコンテンツを提案します。
+            ブランドの目的に応じて、リーチ型、保存型、転換型のコンテンツとして設計できます。
           </p>
         </div>
         <div class="offer-grid">
           <article class="offer-card">
-            <h3>릴스 캠페인</h3>
-            <p>여행지, 브랜드, 제품의 첫 인상을 숏폼으로 빠르게 전달합니다.</p>
+            <h3>リールキャンペーン</h3>
+            <p>旅先、ブランド、商品の第一印象をショート動画で素早く伝えます。</p>
             <ul class="check-list">
-              <li>커플 여행 릴스</li>
-              <li>트랜지션 영상</li>
-              <li>제품/서비스 자연 노출</li>
+              <li>夫婦旅リール</li>
+              <li>トランジション動画</li>
+              <li>商品・サービスの自然露出</li>
             </ul>
           </article>
           <article class="offer-card">
-            <h3>정보형 콘텐츠</h3>
-            <p>저장과 공유가 일어나는 여행 팁 형태로 브랜드 메시지를 남깁니다.</p>
+            <h3>情報型コンテンツ</h3>
+            <p>保存と共有が起きる旅行Tipsの形でブランドメッセージを残します。</p>
             <ul class="check-list">
-              <li>가성비/가심비 여행 팁</li>
-              <li>숙소, 항공, 투어 추천</li>
-              <li>혜택/예약 정보 안내</li>
+              <li>コスパ・満足度重視の旅行Tips</li>
+              <li>宿泊、航空券、ツアー推薦</li>
+              <li>特典・予約情報の案内</li>
             </ul>
           </article>
           <article class="offer-card">
-            <h3>블로그 연계</h3>
-            <p>릴스에서 생긴 관심을 자세한 후기와 검색 가능한 정보로 확장합니다.</p>
+            <h3>ブログ連携</h3>
+            <p>リールで生まれた関心を、詳しいレビューと検索可能な情報へ拡張します。</p>
             <ul class="check-list">
-              <li>네이버 블로그 리뷰</li>
-              <li>여행 일정형 가이드</li>
-              <li>브랜드 페이지 연결</li>
+              <li>NAVERブログレビュー</li>
+              <li>旅行日程型ガイド</li>
+              <li>ブランドページ接続</li>
             </ul>
           </article>
         </div>
@@ -1831,10 +1853,10 @@
       <section id="contact" aria-labelledby="contact-title">
         <div class="contact-panel">
           <div>
-            <h2 id="contact-title">브랜드와 여행자의 접점을 따뜻하게 만듭니다.</h2>
+            <h2 id="contact-title">ブランドと旅行者の接点をあたたかく作ります。</h2>
             <p>
-              브랜드 협업, 여행 캠페인, 릴스 제작, 여행지 홍보 문의를 기다립니다.
-              대로와 나나의 톤에 맞춰 자연스럽고 신뢰감 있는 콘텐츠로 제안드립니다.
+              ブランド協業、旅行キャンペーン、リール制作、旅行先プロモーションのご相談をお待ちしています。
+              デロとナナのトーンに合わせて、自然で信頼感のあるコンテンツをご提案します。
             </p>
           </div>
           <a class="button" href="mailto:dleogh888@naver.com">dleogh888@naver.com</a>
